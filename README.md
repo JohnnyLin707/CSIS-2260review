@@ -1,4 +1,4 @@
-# Operating Systems — Quiz 1 Review
+# Operating Systems — Review
 
 > 🌐 **Languages / 语言 / 語言**: [English](README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md)
 
