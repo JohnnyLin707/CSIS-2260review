@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070b16'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%235eead4' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2360a5fa'/%3E%3C/svg%3E">
+  <title>Quiz1-Fall-2026 &middot; Quiz 1 Review</title>
+  <meta name="description" content="Quiz 1 Fall 2026 real exam questions with model answers taken from the lecture slides, plus write-and-check answer boxes.">
+  <link rel="stylesheet" href="../css/style.css">
+  <noscript><style>.reveal{opacity:1 !important}</style></noscript>
+</head>
+<body class="review-page" data-topic="quiz1fall2026" data-page="1">
+
+  <div class="animated-bg" aria-hidden="true">
+    <span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <button class="btn btn-menu" type="button" data-sidebar-toggle aria-label="Toggle navigation">&#9776;</button>
+        <a class="btn btn-home" href="https://johnnylin707.github.io/CSIS-2260review/index.html">&#8962; Home Page</a>
+      </div>
+      <div class="topbar-center">
+        <div class="topbar-title">Quiz1-Fall-2026<span>&middot; Short Questions (20 marks)</span></div>
+      </div>
+      <div class="topbar-right">
+        <span class="pdf-tag">Intro to HW v2.pdf &middot; Ch01v2a.pdf</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <header class="page-head">
+      <div class="page-meta"><span>Quiz 1 &middot; Fall 2026</span></div>
+      <h1 class="page-title">Quiz1-Fall-2026</h1>
+      <p class="page-title-zh">2026 年秋季测验 1 真题 &middot; 共 20 分</p>
+      <div class="source-badge">
+        The Fall 2026 Quiz 1 questions &mdash; every model answer below is quoted or derived from the lecture slides &mdash;
+        所有标准答案均出自课件原文。答完请到页面底部的 Self-Check 逐点自检。
+      </div>
+    </header>
+
+    <!-- ======================= Q1 ======================= -->
+    <section class="panel original">
+      <h2>Question 1 &middot; 4 marks</h2>
+      <p class="qz-q">Name and briefly explain two components besides the CPU that modern microprocessors usually contain.</p>
+      <p class="q-zh">说出并简要解释现代微处理器中除 CPU 以外通常还包含的两个部件。（4 分）</p>
+
+      <p class="qz-src-head">TEXTBOOK SOURCE &middot; 教材原文</p>
+      <ul class="content-list">
+        <li>To satisfy the requirements of handheld devices, the classic microprocessor is giving way to the SoC.<span class="item-zh">为满足手持设备的需求，经典微处理器正让位于片上系统（SoC）。</span></li>
+        <li>Other components of the system, such as DSPs, GPUs, I/O devices (such as codecs and radios) and main memory, in addition to the CPUs and caches, are on the same chip.<span class="item-zh">除 CPU 和缓存之外，系统中的其他部件，如 DSP、GPU、I/O 设备（如编解码器和无线模块）以及主存储器，都位于同一个芯片上。</span></li>
+        <li>Cache memory: the first level of the memory hierarchy &mdash; invisible to the OS, holds the data and instructions the processor is most likely to need next.<span class="item-zh">高速缓存：存储器层次的第一级 &mdash; 对操作系统不可见，保存处理器最可能马上需要的数据和指令。</span></li>
+      </ul>
+      <span class="src">Source: &ldquo;Ch01v2a.pdf&rdquo; &mdash; Pages 12 (System on a Chip), 8 (The Evolution of the Intel x86), 29&ndash;32 (Cache Memory)</span>
+    </section>
+
+    <!-- ======================= Q2 ====================== -->
+    <section class="panel original">
+      <h2>Question 2 &middot; 4 marks</h2>
+      <p class="qz-q">What does BIOS stand for? Name two of its main purposes. What is the modern version/replacement of BIOS called?</p>
+      <p class="q-zh">BIOS 代表什么？说出它的两个主要用途。BIOS 的现代版本／替代者叫什么？（4 分）</p>
+
+      <p class="qz-src-head">TEXTBOOK SOURCE &middot; 教材原文</p>
+      <ul class="content-list">
+        <li>BIOS (basic input/output system).<span class="item-zh">BIOS（基本输入/输出系统）。</span></li>
+        <li>Three purposes served by motherboard ROM BIOS: System BIOS: manages simple devices; Startup BIOS: starts the computer; CMOS setup: changes motherboard settings.<span class="item-zh">主板 ROM BIOS 的三个用途：系统 BIOS 管理简单设备；启动 BIOS 启动计算机；CMOS 设置更改主板设置。</span></li>
+        <li>Motherboards may use these types of firmware: BIOS &ndash; used on older motherboards; UEFI &ndash; replacing BIOS.<span class="item-zh">主板可能使用的固件类型：BIOS —— 用于较老的主板；UEFI —— 正在取代 BIOS。</span></li>
+        <li>ROM BIOS: Helps start PCs; manages simple devices; changes some motherboard settings.<span class="item-zh">ROM BIOS：帮助启动 PC；管理简单设备；更改某些主板设置。</span></li>
+      </ul>
+      <span class="src">Source: &ldquo;Intro to HW v2.pdf&rdquo; &mdash; Pages 34 (BIOS), 35 (Motherboard Firmware Types), 40 (The Electrical System: ROM BIOS)</span>
+    </section>
+
+    <!-- ======================= Q3 ====================== -->
+    <section class="panel original">
+      <h2>Question 3 &middot; 3 marks</h2>
+      <p class="qz-q">Briefly describe the main differences between primary and secondary storage.</p>
+      <p class="q-zh">简述主存储器与二级存储器（外存）的主要区别。（3 分）</p>
+
+      <p class="qz-src-head">TEXTBOOK SOURCE &middot; 教材原文</p>
+      <ul class="content-list">
+        <li>Primary storage: provided by random access memory (RAM) &mdash; temporary (volatile) storage for data and instructions as they are being processed by the CPU.<span class="item-zh">主存：由随机存取存储器（RAM）提供 &mdash; 在 CPU 处理数据和指令时为其提供临时（易失）存储。</span></li>
+        <li>Secondary storage: containing data and programs; cannot be directly processed by CPU.<span class="item-zh">外存：存放数据和程序；不能被 CPU 直接处理。</span></li>
+        <li>Secondary storage is &ldquo;permanent&rdquo; (nonvolatile) &mdash; remains in storage after the system is power off.<span class="item-zh">外存是&ldquo;永久性&rdquo;（非易失）的 &mdash; 系统断电后仍保留在存储器中。</span></li>
+      </ul>
+      <span class="src">Source: &ldquo;Intro to HW v2.pdf&rdquo; &mdash; Pages 20 (Primary Storage), 21 (Secondary Storage)</span>
+    </section>
+
+    <!-- ======================= Q4 ====================== -->
+    <section class="panel original">
+      <h2>Question 4 &middot; 6 marks</h2>
+      <p class="qz-q">Assume the simplified processor from Chapter 1 of the textbook, with a partial list of opcodes and excerpts from memory and the CPU registers in the state shown below. Simulate the execution of the two instructions shown and write down the correct values for the empty cells A to L.</p>
+      <p class="q-zh">使用教材第 1 章的简化处理器，按下列操作码与内存/CPU 寄存器的状态，模拟两条指令的执行，写出空格 A–L 的正确值。（6 分）</p>
+
+      <figure class="slide-figure reveal">
+        <img class="slide-image" src="../Quiz1diagram/quiz1-fall2026-simulation.png"
+             alt="Quiz 1 Fall 2026 &mdash; instruction-cycle simulation: fetch and execute stages with empty cells A&ndash;L"
+             loading="lazy" decoding="async">
+      </figure>
+
+      <p class="qz-src-head">OPCODES &middot; 操作码</p>
+      <ul class="content-list">
+        <li>0001 (hexadecimal 1): Load AC from memory.<span class="item-zh">0001（十六进制 1）：从内存装入 AC。</span></li>
+        <li>0010 (hexadecimal 2): Store AC to memory.<span class="item-zh">0010（十六进制 2）：把 AC 存入内存。</span></li>
+        <li>0101 (hexadecimal 5): Add to AC from memory.<span class="item-zh">0101（十六进制 5）：把内存的值加到 AC。</span></li>
+      </ul>
+
+      <p class="qz-src-head">TEXTBOOK SOURCE &middot; 教材原文</p>
+      <ul class="content-list">
+        <li>Instruction cycle: the processor fetches an instruction from memory and executes it; the program counter (PC) holds the address of the next instruction to be fetched and is incremented after each fetch.<span class="item-zh">指令周期：处理器从内存取指令并执行；程序计数器（PC）保存下一条待取指令的地址，每次取指后递增。</span></li>
+        <li>The instruction register (IR) contains the instruction most recently fetched.<span class="item-zh">指令寄存器（IR）保存最近取出的那条指令。</span></li>
+        <li>The accumulator (AC) is used to temporarily hold data and results of ALU operations.<span class="item-zh">累加器（AC）用于临时保存数据和 ALU 运算结果。</span></li>
+        <li>The address field of 5861 is 861: add the contents of location 861 (0006) to the AC (0002) &rarr; AC = 0008. Opcode 2 in 2860 stores the AC into location 860.<span class="item-zh">5861 的地址字段是 861：把 861 号单元的内容（0006）加到 AC（0002）&rarr; AC = 0008。2860 的操作码 2 把 AC 存入 860 号单元。</span></li>
+      </ul>
+      <span class="src">Source: &ldquo;Ch01v2a.pdf&rdquo; &mdash; Pages 13&ndash;16 (Instruction Fetch and Execute, IAS example 5861 / 2961), the Quiz 1 Fall 2026 diagram in <code>Quiz1diagram/</code></span>
+    </section>
+
+    <!-- ======================= Q5 ====================== -->
+    <section class="panel original">
+      <h2>Question 5 &middot; 3 marks</h2>
+      <p class="qz-q">Name and briefly explain three different classes of interrupts.</p>
+      <p class="q-zh">说出并简要解释三种不同的中断类别。（3 分）</p>
+
+      <p class="qz-src-head">TEXTBOOK SOURCE &middot; 教材原文</p>
+      <ul class="content-list">
+        <li>Program: generated by some condition that occurs as a result of an instruction execution, such as arithmetic overflow, division by zero, attempt to execute an illegal machine instruction, and reference outside a user&rsquo;s allowed memory space.<span class="item-zh">程序中断：由指令执行过程中出现的某种情况产生，例如算术溢出、除以零、试图执行非法机器指令，以及引用超出用户允许的存储空间。</span></li>
+        <li>Timer: generated by a timer within the processor. This allows the operating system to perform certain functions on a regular basis.<span class="item-zh">定时器中断：由处理器内部的定时器产生。这使操作系统能够定期执行某些功能。</span></li>
+        <li>I/O: generated by an I/O controller, to signal normal completion of an operation or to signal a variety of error conditions.<span class="item-zh">I/O 中断：由 I/O 控制器产生，用于表示操作正常完成或表示各种错误情况。</span></li>
+        <li>Hardware failure: generated by a failure, such as power failure or memory parity error. (A fourth class &mdash; any three of the four earn the marks.)<span class="item-zh">硬件故障中断：由故障产生，例如电源故障或存储器奇偶校验错误。（第四类 &mdash; 四类中任答三类即可得分。）</span></li>
+      </ul>
+      <span class="src">Source: &ldquo;Ch01v2a.pdf&rdquo; &mdash; Page 20 (Table 1.1: Classes of Interrupts)</span>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Page navigation">
+      <a class="btn btn-back" href="../index.html">&#8592; Back to home</a>
+      <a class="btn btn-next" href="Quiz1importantShortAnswer.html">Quiz1importantShortAnswer &#8594;</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    Quiz 1 Review &middot; Quiz1-Fall-2026 &middot; model answers quoted from the lecture slides.
+  </footer>
+
+  <script>
+    /* Standard answers for the Fall 2026 quiz.
+       Q1: 1 box per component (name + brief explanation together)
+       Q2: 4 boxes (1 + 2 + 1)
+       Q3: 3 boxes
+       Q4: 12 boxes, one per empty cell A–L (6 marks)
+       Q5: 3 boxes (any three of the four classes)
+       Order does not matter — the checker matches any box to any unused point. */
+    window.QUIZ_OVERRIDES = {
+      "quiz1fall2026/1": [
+        {
+          en: "Q1. Name and briefly explain two components besides the CPU that modern microprocessors usually contain. (4 marks)",
+          zh: "第 1 题：现代微处理器中除 CPU 以外通常还包含的两个部件。（4 分）",
+          kind: "points",
+          lenient: true,
+          slots: [
+            { en: "Cache memory: fast on-chip memory that holds the data and instructions the processor is most likely to need next",
+              zh: "高速缓存（Cache）：芯片上的高速存储器，保存处理器最可能马上需要的数据和指令" },
+            { en: "Second component on the same chip: GPU (graphics processing unit) or DSP, or I/O devices such as codecs and radios, or main memory (SoC puts them all on one chip)",
+              zh: "同一芯片上的另一部件：GPU（图形处理器）或 DSP，或 I/O 设备（如编解码器和无线模块），或主存储器（SoC 把它们都放在同一芯片上）" }
+          ]
+        },
+        {
+          en: "Q2. What does BIOS stand for? Name two of its main purposes. What is the modern version/replacement of BIOS called? (4 marks)",
+          zh: "第 2 题：BIOS 代表什么？说出它的两个主要用途。BIOS 的现代替代者叫什么？（4 分）",
+          kind: "points",
+          lenient: true,
+          slots: [
+            { en: "BIOS stands for basic input/output system",
+              zh: "BIOS = 基本输入/输出系统（basic input/output system）" },
+            { en: "Startup BIOS: starts (boots) the computer",
+              zh: "启动 BIOS：启动计算机" },
+            { en: "System BIOS: manages simple devices (or CMOS setup: changes motherboard settings)",
+              zh: "系统 BIOS：管理简单设备（或 CMOS 设置：更改主板设置）" },
+            { en: "UEFI is replacing BIOS (the modern version/replacement of BIOS)",
+              zh: "UEFI 正在取代 BIOS（现代版本／替代者）" }
+          ]
+        },
+        {
+          en: "Q3. Briefly describe the main differences between primary and secondary storage. (3 marks)",
+          zh: "第 3 题：简述主存与外存的主要区别。（3 分）",
+          kind: "points",
+          lenient: true,
+          slots: [
+            { en: "Primary storage is provided by RAM: temporary (volatile) storage for data and instructions as they are being processed by the CPU",
+              zh: "主存由 RAM 提供：在 CPU 处理数据与指令时提供临时（易失）存储" },
+            { en: "Secondary storage is permanent (nonvolatile): it remains in storage after the system is powered off",
+              zh: "外存是永久性（非易失）的：系统断电后数据仍保留" },
+            { en: "Secondary storage holds data and programs but cannot be directly processed by the CPU (primary storage holds what the CPU is processing)",
+              zh: "外存存放数据和程序，但不能被 CPU 直接处理（主存存放 CPU 正在处理的内容）" }
+          ]
+        },
+        {
+          en: "Q4. Simulate the execution of the two instructions and write down the correct values for the empty cells A to L. (6 marks)",
+          zh: "第 4 题：模拟两条指令的执行，写出空格 A–L 的正确值。（6 分）",
+          kind: "points",
+          lenient: true,
+          slots: [
+            { en: "A: IR = 5861 — the instruction at address 450 is fetched into the instruction register",
+              zh: "A：IR = 5861 —— 450 号单元的指令被取入指令寄存器" },
+            { en: "B: PC = 451 — the PC is incremented after each fetch",
+              zh: "B：PC = 451 —— 每次取指后 PC 递增" },
+            { en: "C: AC = 0008 — opcode 5 adds the contents of memory location 861 (0006) to the AC (0002 + 0006 = 0008)",
+              zh: "C：AC = 0008 —— 操作码 5 把 861 号单元的内容（0006）加到 AC（0002 + 0006 = 0008）" },
+            { en: "D: IR = 5861 — the IR still holds the current instruction during the execute stage",
+              zh: "D：IR = 5861 —— 执行阶段 IR 仍保存当前指令" },
+            { en: "E: PC = 451 — the next fetch reads the instruction at address 451",
+              zh: "E：PC = 451 —— 下一次取指读取 451 号单元的指令" },
+            { en: "F: AC = 0008 — the AC keeps the result produced by the previous execute stage",
+              zh: "F：AC = 0008 —— AC 保留上一条指令执行的结果" },
+            { en: "G: IR = 2860 — instruction 2860 (store AC to memory) is fetched",
+              zh: "G：IR = 2860 —— 取出指令 2860（把 AC 存入内存）" },
+            { en: "H: PC = 452 — the PC is incremented again after fetching the instruction at 451",
+              zh: "H：PC = 452 —— 取出 451 号指令后 PC 再次递增" },
+            { en: "I: AC = 0008 — the store instruction does not change the AC",
+              zh: "I：AC = 0008 —— 存储指令不改变 AC" },
+            { en: "J: IR = 2860 — the IR holds the store instruction during the execute stage",
+              zh: "J：IR = 2860 —— 执行阶段 IR 保存的是存储指令" },
+            { en: "K: memory location 860 = 0008 — opcode 2 stores the AC (0008) into memory location 860",
+              zh: "K：内存 860 号单元 = 0008 —— 操作码 2 把 AC（0008）存入 860 号单元" },
+            { en: "L: memory location 861 = 0006 — this location is not changed by the two instructions",
+              zh: "L：内存 861 号单元 = 0006 —— 两条指令都不改变该单元" }
+          ]
+        },
+        {
+          en: "Q5. Name and briefly explain three different classes of interrupts. (3 marks)",
+          zh: "第 5 题：说出并简要解释三种不同的中断类别。（3 分）",
+          kind: "points",
+          lenient: true,
+          slots: [
+            { en: "Program interrupt: generated by some condition that occurs as a result of an instruction execution, such as arithmetic overflow, division by zero, an illegal machine instruction, or a reference outside a user's allowed memory space",
+              zh: "程序中断：由指令执行过程中出现的某种情况产生，例如算术溢出、除以零、非法机器指令或引用超出允许的存储空间" },
+            { en: "Timer interrupt: generated by a timer within the processor, allowing the operating system to perform certain functions on a regular basis",
+              zh: "定时器中断：由处理器内部的定时器产生，使操作系统能够定期执行某些功能" },
+            { en: "I/O interrupt: generated by an I/O controller, to signal normal completion of an operation or a variety of error conditions (a fourth class, hardware failure, is also accepted)",
+              zh: "I/O 中断：由 I/O 控制器产生，表示操作正常完成或各种错误情况（第四类&ldquo;硬件故障&rdquo;也算对）" }
+          ]
+        }
+      ]
+    };
+  </script>
+  <script src="../javascript/quiz.js"></script>
+  <script src="../javascript/animations.js"></script>
+  <script src="../javascript/speech.js"></script>
+</body>
+</html>
