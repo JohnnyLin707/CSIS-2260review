@@ -10,6 +10,7 @@ A static, dependency-free review site for **Operating Systems Quiz 1**. Every le
 
 ## ✨ Latest additions
 
+- **Review-question decks** — `pages/Chapter1Review.html` (18 questions) and `pages/Chapter2Review.html` (23 questions): the original English question with a Chinese translation, and an answer written in the simplest English using the wording of the lecture slides, with a 简体中文 translation under every answer line.
 - **New deck — `pages/chapter3.html`** — Stallings Chapter 3 *Process Description and Control*, all **58 slides** with **126 exam questions**: what a process is, the process elements and the process control block, traces and the dispatcher, the two-state and five-state models, process creation and termination, suspended processes, the operating system control tables, process control structures, modes of execution, process switching, and UNIX SVR4 process management.
 - **Slide scans for Chapter 3** — 58 new images under `Ch03v2a-images/`, so all 232 review pages now open with a full-width scan of the real slide.
 - **Quiz1-Fall-2026** — `pages/Quiz1Fall2026.html` holds the real Fall 2026 quiz: 5 questions (20 marks) with the instruction-cycle simulation diagram stored in `Quiz1diagram/` and 24 auto-marked answer boxes.
@@ -28,7 +29,9 @@ A static, dependency-free review site for **Operating Systems Quiz 1**. Every le
 | 05 | Quiz1importantShortAnswer / 测验 1 重点简答题 | Short Questions (17 marks) | — | 4 |
 | 06 | Quiz 1 Key Questions / 测验 1 重点回忆题 | Decks 01–04 | — | 25 |
 | 07 | Quiz1-Fall-2026 / 2026 年秋季测验 1 真题 | 5 real exam questions (20 marks) | — | 5 |
-| | **Total** | | **232** | **621** |
+| 08 | Chapter 1: Review Questions / 第 1 章：复习问答题 | `Ch01v2a.pdf` | — | 18 |
+| 09 | Chapter 2: Review Questions / 第 2 章：复习问答题 | `Ch02v2a.pdf` | — | 23 |
+| | **Total** | | **232** | **662** |
 
 ### Deck 01 — Introduction to Computer Hardware
 Hardware vs. software, binary numbers, PC components, the motherboard, storage devices, buses, BIOS/UEFI, and the electrical system.
@@ -57,6 +60,12 @@ A professor-style consolidated recall quiz: **25 questions / 84 marks**, one mar
 
 ### Deck 07 — Quiz1-Fall-2026
 The real Fall 2026 quiz: **5 questions / 20 marks** — components of a modern microprocessor besides the CPU, BIOS and UEFI, primary vs. secondary storage, the instruction-cycle simulation diagram (cells A–L, image in `Quiz1diagram/`), and three classes of interrupts. Every answer point gets its own auto-marked box.
+
+### Deck 08 — Chapter 1: Review Questions
+The **18** Chapter 1 review questions (four basic elements of a computer, primary vs. secondary memory, I/O device types, GPU / DSP / cache, SoC, interrupts and their classes, the memory hierarchy, the principle of locality, cache design tradeoffs, LRU, programmed / interrupt-driven / DMA I/O, SMP and multicore). Questions are shown in English with a Chinese translation; answers are written in the simplest English using the words of the lecture slides, with a 简体中文 line under every answer.
+
+### Deck 09 — Chapter 2: Review Questions
+The **23** Chapter 2 review questions (ISA / ABI / API, why operating systems evolve, serial → batch → multiprogramming → time sharing, JCL, memory protection / timers / privileged instructions / interrupts, user vs kernel mode, processes, memory management, virtual memory paging, security, scheduling priorities, interrupt vs service call, monolithic vs microkernel, multithreading, SMP vs distributed systems, fault-tolerance measures, fault types, Windows fault tolerance). Same format: English question + 中文, simple English answer + 简体中文.
 
 ---
 
@@ -124,7 +133,9 @@ CSIS-2260review/
 │   │   └── page-01 … page-58.html
 │   ├── Quiz1importantShortAnswer.html   # Deck 05 — 4 short questions, 19 answer boxes
 │   ├── Quiz1keyQuestions.html           # Deck 06 — 25 recall questions (84 marks)
-│   └── Quiz1Fall2026.html               # Deck 07 — Fall 2026 quiz, 20 marks
+│   ├── Quiz1Fall2026.html               # Deck 07 — Fall 2026 quiz, 20 marks
+│   ├── Chapter1Review.html              # Deck 08 — 18 Ch.1 review questions
+│   └── Chapter2Review.html              # Deck 09 — 23 Ch.2 review questions
 ├── Ch01v2a-images/            # Slide scans for deck 02 (59 images)
 ├── Ch02v2a-images/            # Slide scans for deck 03 (75 images)
 ├── Ch03v2a-images/            # Slide scans for deck 04 (58 images)
