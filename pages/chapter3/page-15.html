@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070b16'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%235eead4' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2360a5fa'/%3E%3C/svg%3E">
+  <title>Process Creation &mdash; Ch03v2a.pdf (Slide 15) | Quiz 1 Review</title>
+  <meta name="description" content="Quiz 1 review notes excerpted from Ch03v2a.pdf, page 15: Process Creation">
+  <link rel="stylesheet" href="../../css/style.css">
+  <noscript><style>.reveal{opacity:1 !important}</style></noscript>
+</head>
+<body class="review-page has-sidebar" data-topic="chapter3" data-page="15">
+
+  <div class="animated-bg" aria-hidden="true">
+    <span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" id="sidebar" aria-label="Slide navigation">
+    <div class="sidebar-head">
+      <span class="sidebar-title">Slides</span>
+      <button class="sidebar-close" type="button" aria-label="Close navigation">&#10005;</button>
+    </div>
+    <div class="sidebar-search">
+      <input class="sidebar-filter" type="search" placeholder="Jump to slide&hellip;" aria-label="Filter slides">
+    </div>
+    <nav class="sidebar-list">
+        <a class="sidebar-link" href="page-01.html" data-num="01" data-title="Title Slide">
+          <span class="snum">01</span>
+          <span class="sname">Title Slide<span class="sname-zh">第 3 章 标题页</span></span>
+        </a>
+        <a class="sidebar-link" href="page-02.html" data-num="02" data-title="Summary of Earlier Concepts">
+          <span class="snum">02</span>
+          <span class="sname">Summary of Earlier Concepts<span class="sname-zh">前期概念小结</span></span>
+        </a>
+        <a class="sidebar-link" href="page-03.html" data-num="03" data-title="OS Management of Application Execution">
+          <span class="snum">03</span>
+          <span class="sname">OS Management of Application Execution<span class="sname-zh">操作系统对应用程序执行的管理</span></span>
+        </a>
+        <a class="sidebar-link" href="page-04.html" data-num="04" data-title="What is a Process?">
+          <span class="snum">04</span>
+          <span class="sname">What is a Process?<span class="sname-zh">什么是进程？</span></span>
+        </a>
+        <a class="sidebar-link" href="page-05.html" data-num="05" data-title="Process Elements">
+          <span class="snum">05</span>
+          <span class="sname">Process Elements<span class="sname-zh">进程的组成要素</span></span>
+        </a>
+        <a class="sidebar-link" href="page-06.html" data-num="06" data-title="Process Elements (continued)">
+          <span class="snum">06</span>
+          <span class="sname">Process Elements (continued)<span class="sname-zh">进程的组成要素（续）</span></span>
+        </a>
+        <a class="sidebar-link" href="page-07.html" data-num="07" data-title="Process Control Block (PCB)">
+          <span class="snum">07</span>
+          <span class="sname">Process Control Block (PCB)<span class="sname-zh">进程控制块（PCB）</span></span>
+        </a>
+        <a class="sidebar-link" href="page-08.html" data-num="08" data-title="Process States">
+          <span class="snum">08</span>
+          <span class="sname">Process States<span class="sname-zh">进程状态</span></span>
+        </a>
+        <a class="sidebar-link" href="page-09.html" data-num="09" data-title="Process Execution">
+          <span class="snum">09</span>
+          <span class="sname">Process Execution<span class="sname-zh">进程的执行</span></span>
+        </a>
+        <a class="sidebar-link" href="page-10.html" data-num="10" data-title="Figure 3.3 Traces of Processes">
+          <span class="snum">10</span>
+          <span class="sname">Figure 3.3 Traces of Processes<span class="sname-zh">图 3.3 各进程的轨迹</span></span>
+        </a>
+        <a class="sidebar-link" href="page-11.html" data-num="11" data-title="Figure 3.4 Combined Trace of Processes">
+          <span class="snum">11</span>
+          <span class="sname">Figure 3.4 Combined Trace of Processes<span class="sname-zh">图 3.4 进程的组合轨迹</span></span>
+        </a>
+        <a class="sidebar-link" href="page-12.html" data-num="12" data-title="Two-State Process Model">
+          <span class="snum">12</span>
+          <span class="sname">Two-State Process Model<span class="sname-zh">两状态进程模型</span></span>
+        </a>
+        <a class="sidebar-link" href="page-13.html" data-num="13" data-title="Figure 3.5 Two-State Process Model">
+          <span class="snum">13</span>
+          <span class="sname">Figure 3.5 Two-State Process Model<span class="sname-zh">图 3.5 两状态进程模型</span></span>
+        </a>
+        <a class="sidebar-link" href="page-14.html" data-num="14" data-title="Table 3.1 Reasons for Process Creation">
+          <span class="snum">14</span>
+          <span class="sname">Table 3.1 Reasons for Process Creation<span class="sname-zh">表 3.1 进程创建的原因</span></span>
+        </a>
+        <a class="sidebar-link active" href="page-15.html" data-num="15" data-title="Process Creation">
+          <span class="snum">15</span>
+          <span class="sname">Process Creation<span class="sname-zh">进程的创建</span></span>
+        </a>
+        <a class="sidebar-link" href="page-16.html" data-num="16" data-title="Process Termination">
+          <span class="snum">16</span>
+          <span class="sname">Process Termination<span class="sname-zh">进程的终止</span></span>
+        </a>
+        <a class="sidebar-link" href="page-17.html" data-num="17" data-title="Table 3.2 Reasons for Process Termination">
+          <span class="snum">17</span>
+          <span class="sname">Table 3.2 Reasons for Process Termination<span class="sname-zh">表 3.2 进程终止的原因</span></span>
+        </a>
+        <a class="sidebar-link" href="page-18.html" data-num="18" data-title="Five-State Process Model">
+          <span class="snum">18</span>
+          <span class="sname">Five-State Process Model<span class="sname-zh">五状态进程模型</span></span>
+        </a>
+        <a class="sidebar-link" href="page-19.html" data-num="19" data-title="Figure 3.7 Process States for Trace of Figure 3.4">
+          <span class="snum">19</span>
+          <span class="sname">Figure 3.7 Process States for Trace of Figure 3.4<span class="sname-zh">图 3.7 图 3.4 轨迹对应的进程状态</span></span>
+        </a>
+        <a class="sidebar-link" href="page-20.html" data-num="20" data-title="Figure 3.8 Queuing Model for Figure 3.6">
+          <span class="snum">20</span>
+          <span class="sname">Figure 3.8 Queuing Model for Figure 3.6<span class="sname-zh">图 3.8 图 3.6 的排队模型</span></span>
+        </a>
+        <a class="sidebar-link" href="page-21.html" data-num="21" data-title="Suspended Processes">
+          <span class="snum">21</span>
+          <span class="sname">Suspended Processes<span class="sname-zh">挂起进程</span></span>
+        </a>
+        <a class="sidebar-link" href="page-22.html" data-num="22" data-title="Figure 3.9 (a) With One Suspend State">
+          <span class="snum">22</span>
+          <span class="sname">Figure 3.9 (a) With One Suspend State<span class="sname-zh">图 3.9（a）单个挂起状态</span></span>
+        </a>
+        <a class="sidebar-link" href="page-23.html" data-num="23" data-title="Figure 3.9 (b) With Two Suspend States">
+          <span class="snum">23</span>
+          <span class="sname">Figure 3.9 (b) With Two Suspend States<span class="sname-zh">图 3.9（b）两个挂起状态</span></span>
+        </a>
+        <a class="sidebar-link" href="page-24.html" data-num="24" data-title="Characteristics of a Suspended Process">
+          <span class="snum">24</span>
+          <span class="sname">Characteristics of a Suspended Process<span class="sname-zh">被挂起进程的特征</span></span>
+        </a>
+        <a class="sidebar-link" href="page-25.html" data-num="25" data-title="Table 3.3 Reasons for Process Suspension">
+          <span class="snum">25</span>
+          <span class="sname">Table 3.3 Reasons for Process Suspension<span class="sname-zh">表 3.3 进程被挂起的原因</span></span>
+        </a>
+        <a class="sidebar-link" href="page-26.html" data-num="26" data-title="Figure 3.10 Processes and Resources">
+          <span class="snum">26</span>
+          <span class="sname">Figure 3.10 Processes and Resources<span class="sname-zh">图 3.10 进程与资源</span></span>
+        </a>
+        <a class="sidebar-link" href="page-27.html" data-num="27" data-title="Figure 3.11 General Structure of Operating System Control Tables">
+          <span class="snum">27</span>
+          <span class="sname">Figure 3.11 General Structure of Operating System Control Tables<span class="sname-zh">图 3.11 操作系统控制表的总体结构</span></span>
+        </a>
+        <a class="sidebar-link" href="page-28.html" data-num="28" data-title="Memory Tables">
+          <span class="snum">28</span>
+          <span class="sname">Memory Tables<span class="sname-zh">存储器表</span></span>
+        </a>
+        <a class="sidebar-link" href="page-29.html" data-num="29" data-title="I/O Tables">
+          <span class="snum">29</span>
+          <span class="sname">I/O Tables<span class="sname-zh">I/O 表</span></span>
+        </a>
+        <a class="sidebar-link" href="page-30.html" data-num="30" data-title="File Tables">
+          <span class="snum">30</span>
+          <span class="sname">File Tables<span class="sname-zh">文件表</span></span>
+        </a>
+        <a class="sidebar-link" href="page-31.html" data-num="31" data-title="Process Tables">
+          <span class="snum">31</span>
+          <span class="sname">Process Tables<span class="sname-zh">进程表</span></span>
+        </a>
+        <a class="sidebar-link" href="page-32.html" data-num="32" data-title="Process Control Structures">
+          <span class="snum">32</span>
+          <span class="sname">Process Control Structures<span class="sname-zh">进程控制结构</span></span>
+        </a>
+        <a class="sidebar-link" href="page-33.html" data-num="33" data-title="Process Control Structures (continued)">
+          <span class="snum">33</span>
+          <span class="sname">Process Control Structures (continued)<span class="sname-zh">进程控制结构（续）</span></span>
+        </a>
+        <a class="sidebar-link" href="page-34.html" data-num="34" data-title="Table 3.4 Typical Elements of a Process Image">
+          <span class="snum">34</span>
+          <span class="sname">Table 3.4 Typical Elements of a Process Image<span class="sname-zh">表 3.4 进程映像的典型组成</span></span>
+        </a>
+        <a class="sidebar-link" href="page-35.html" data-num="35" data-title="Process Identification">
+          <span class="snum">35</span>
+          <span class="sname">Process Identification<span class="sname-zh">进程标识</span></span>
+        </a>
+        <a class="sidebar-link" href="page-36.html" data-num="36" data-title="Process Identification (continued)">
+          <span class="snum">36</span>
+          <span class="sname">Process Identification (continued)<span class="sname-zh">进程标识（续）</span></span>
+        </a>
+        <a class="sidebar-link" href="page-37.html" data-num="37" data-title="Processor State Information">
+          <span class="snum">37</span>
+          <span class="sname">Processor State Information<span class="sname-zh">处理器状态信息</span></span>
+        </a>
+        <a class="sidebar-link" href="page-38.html" data-num="38" data-title="Figure 3.12 x86 EFLAGS Register">
+          <span class="snum">38</span>
+          <span class="sname">Figure 3.12 x86 EFLAGS Register<span class="sname-zh">图 3.12 x86 EFLAGS 寄存器</span></span>
+        </a>
+        <a class="sidebar-link" href="page-39.html" data-num="39" data-title="Table 3.6 x86 EFLAGS Register Bits">
+          <span class="snum">39</span>
+          <span class="sname">Table 3.6 x86 EFLAGS Register Bits<span class="sname-zh">表 3.6 x86 EFLAGS 寄存器各位</span></span>
+        </a>
+        <a class="sidebar-link" href="page-40.html" data-num="40" data-title="Process Control Information">
+          <span class="snum">40</span>
+          <span class="sname">Process Control Information<span class="sname-zh">进程控制信息</span></span>
+        </a>
+        <a class="sidebar-link" href="page-41.html" data-num="41" data-title="Process Control Information (continued)">
+          <span class="snum">41</span>
+          <span class="sname">Process Control Information (continued)<span class="sname-zh">进程控制信息（续）</span></span>
+        </a>
+        <a class="sidebar-link" href="page-42.html" data-num="42" data-title="Figure 3.13 User Processes in Virtual Memory">
+          <span class="snum">42</span>
+          <span class="sname">Figure 3.13 User Processes in Virtual Memory<span class="sname-zh">图 3.13 虚拟存储器中的用户进程</span></span>
+        </a>
+        <a class="sidebar-link" href="page-43.html" data-num="43" data-title="Figure 3.14 Process List Structures">
+          <span class="snum">43</span>
+          <span class="sname">Figure 3.14 Process List Structures<span class="sname-zh">图 3.14 进程链表结构</span></span>
+        </a>
+        <a class="sidebar-link" href="page-44.html" data-num="44" data-title="Role of the Process Control Block">
+          <span class="snum">44</span>
+          <span class="sname">Role of the Process Control Block<span class="sname-zh">进程控制块的作用</span></span>
+        </a>
+        <a class="sidebar-link" href="page-45.html" data-num="45" data-title="Modes of Execution">
+          <span class="snum">45</span>
+          <span class="sname">Modes of Execution<span class="sname-zh">执行模式</span></span>
+        </a>
+        <a class="sidebar-link" href="page-46.html" data-num="46" data-title="Table 3.7 Typical Functions of an Operating System Kernel">
+          <span class="snum">46</span>
+          <span class="sname">Table 3.7 Typical Functions of an Operating System Kernel<span class="sname-zh">表 3.7 操作系统内核的典型功能</span></span>
+        </a>
+        <a class="sidebar-link" href="page-47.html" data-num="47" data-title="Process Creation">
+          <span class="snum">47</span>
+          <span class="sname">Process Creation<span class="sname-zh">进程的创建</span></span>
+        </a>
+        <a class="sidebar-link" href="page-48.html" data-num="48" data-title="Mechanisms for Interrupting the Execution of a Process">
+          <span class="snum">48</span>
+          <span class="sname">Mechanisms for Interrupting the Execution of a Process<span class="sname-zh">中断进程执行的机制</span></span>
+        </a>
+        <a class="sidebar-link" href="page-49.html" data-num="49" data-title="System Interrupts">
+          <span class="snum">49</span>
+          <span class="sname">System Interrupts<span class="sname-zh">系统中断</span></span>
+        </a>
+        <a class="sidebar-link" href="page-50.html" data-num="50" data-title="Mode Switching">
+          <span class="snum">50</span>
+          <span class="sname">Mode Switching<span class="sname-zh">模式切换</span></span>
+        </a>
+        <a class="sidebar-link" href="page-51.html" data-num="51" data-title="Change of Process State">
+          <span class="snum">51</span>
+          <span class="sname">Change of Process State<span class="sname-zh">进程状态的改变</span></span>
+        </a>
+        <a class="sidebar-link" href="page-52.html" data-num="52" data-title="Execution of the Operating System">
+          <span class="snum">52</span>
+          <span class="sname">Execution of the Operating System<span class="sname-zh">操作系统的执行方式</span></span>
+        </a>
+        <a class="sidebar-link" href="page-53.html" data-num="53" data-title="Execution Within User Processes">
+          <span class="snum">53</span>
+          <span class="sname">Execution Within User Processes<span class="sname-zh">在用户进程内执行</span></span>
+        </a>
+        <a class="sidebar-link" href="page-54.html" data-num="54" data-title="Unix SVR4">
+          <span class="snum">54</span>
+          <span class="sname">Unix SVR4<span class="sname-zh">UNIX SVR4</span></span>
+        </a>
+        <a class="sidebar-link" href="page-55.html" data-num="55" data-title="Table 3.9 UNIX Process States">
+          <span class="snum">55</span>
+          <span class="sname">Table 3.9 UNIX Process States<span class="sname-zh">表 3.9 UNIX 进程状态</span></span>
+        </a>
+        <a class="sidebar-link" href="page-56.html" data-num="56" data-title="Figure 3.17 UNIX Process State Transition Diagram">
+          <span class="snum">56</span>
+          <span class="sname">Figure 3.17 UNIX Process State Transition Diagram<span class="sname-zh">图 3.17 UNIX 进程状态转换图</span></span>
+        </a>
+        <a class="sidebar-link" href="page-57.html" data-num="57" data-title="Process Control">
+          <span class="snum">57</span>
+          <span class="sname">Process Control<span class="sname-zh">进程控制</span></span>
+        </a>
+        <a class="sidebar-link" href="page-58.html" data-num="58" data-title="Summary">
+          <span class="snum">58</span>
+          <span class="sname">Summary<span class="sname-zh">本章小结</span></span>
+        </a>
+    </nav>
+  </aside>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <button class="btn btn-menu" type="button" data-sidebar-toggle aria-label="Toggle navigation">&#9776;</button>
+        <a class="btn btn-home" href="https://johnnylin707.github.io/CSIS-2260review/index.html">&#8962; Home Page</a>
+      </div>
+      <div class="topbar-center">
+        <div class="topbar-title">Chapter 3: Process Description and Control<span>&middot; Slide 15 of 58</span></div>
+      </div>
+      <div class="topbar-right">
+        <span class="pdf-tag">Ch03v2a.pdf</span>
+      </div>
+    </div>
+    <div class="progress-track"><div class="progress-bar" data-progress="25.9"></div></div>
+  </header>
+
+  <main class="page-wrap">
+    <header class="page-head">
+      <div class="page-meta"><span>Slide 15 / 58</span></div>
+      <h1 class="page-title reveal">Process Creation</h1>
+      <p class="page-title-zh reveal">进程的创建</p>
+      <div class="source-badge reveal">Excerpted from &ldquo;Ch03v2a.pdf&rdquo; &mdash; Page 15</div>
+    </header>
+
+    <nav class="top-nav" aria-label="Top slide navigation">
+      <a class="btn btn-back" href="page-14.html">&#8592; Back</a>
+      <a class="btn btn-next" href="page-16.html">Next &#8594;</a>
+    </nav>
+
+        <figure class="slide-figure reveal">
+      <img class="slide-image" src="../../Ch03v2a-images/Ch03v2a-images-14.jpg" alt="Original slide from Ch03v2a.pdf &mdash; slide 15: Process Creation" loading="lazy" decoding="async">
+    </figure>
+
+    <section class="panel original reveal">
+      <h2>Original Content (verbatim)</h2>
+<ul class="content-list">
+        <li>Process spawning: when the OS creates a process at the explicit request of another process<span class="item-zh">进程派生（Process spawning）：操作系统应另一个进程的明确请求而创建新进程</span></li>
+        <li class="sub">Parent process: the original, creating process<span class="item-zh">父进程：最初的、负责创建的进程</span></li>
+        <li class="sub">Child process: the new process<span class="item-zh">子进程：新创建出来的进程</span></li>
+      </ul>
+    </section>
+
+    <section class="qa-section">
+      <div class="qa-heading reveal">
+        <span class="icon">&#63;</span>
+        <span>Possible Exam Questions</span>
+        <span class="count">(2 questions &middot; click to reveal)</span>
+      </div>
+
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q1</span>
+          <span class="q-text">What is process spawning?<span class="q-zh">什么是进程派生？</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">When the OS creates a process at the explicit request of another process.</p>
+            <p class="ans-zh">操作系统应另一个进程的明确请求而创建新进程。</p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; Page 15</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q2</span>
+          <span class="q-text">What are the parent and child processes?<span class="q-zh">什么是父进程和子进程？</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">The parent process is the original, creating process; the child process is the new process.</p>
+            <p class="ans-zh">父进程是最初负责创建的进程，子进程是新创建出来的进程。</p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; Page 15</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <nav class="bottom-nav" aria-label=" slide navigation">
+      <a class="btn btn-back" href="page-14.html">&#8592; Back</a>
+      <a class="btn btn-next" href="page-16.html">Next &#8594;</a>
+    </nav>
+
+    <div class="kbd-hint">
+      <kbd>&#8592;</kbd> Back &nbsp; <kbd>&#8594;</kbd> Next &nbsp; <kbd>Esc</kbd> Home
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    Quiz 1 Review &middot; Chapter 3: Process Description and Control &middot; slide content is quoted directly from &ldquo;Ch03v2a.pdf&rdquo;.
+  </footer>
+
+  <script src="../../javascript/main.js"></script>
+  <script src="../../javascript/animations.js"></script>
+  <script src="../../javascript/speech.js"></script>
+</body>
+</html>

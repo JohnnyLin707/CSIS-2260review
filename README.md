@@ -10,11 +10,10 @@ A static, dependency-free review site for **Operating Systems Quiz 1**. Every le
 
 ## ✨ Latest additions
 
-- **New deck — `pages/chapter2.html`** — Stallings Chapter 2 *Operating System Overview*, all **75 slides** with **225 exam questions**: what an operating system does, the evolution from serial processing through batch and multiprogramming to time sharing, processes and the process table, memory management and virtual memory, scheduling, system architecture, fault tolerance, plus Windows / Linux / Android case studies.
-- **Chapter 1 is now complete** — the deck grew from 47 to **59 slides** (132 exam questions), so it runs past *Write Policy* all the way to the end-of-chapter summary.
-- **Read-aloud** — a small speaker button after every page title and after every English line (`javascript/speech.js`) reads the text using the built-in Web Speech API; the Chinese translation lines are skipped automatically, and nothing needs to be installed.
-- **Quiz 1 Key Questions** — `pages/Quiz1keyQuestions.html` collects **25 recall questions (84 marks)** across all three decks, each with an English + 中文 model answer written in the slides' own wording.
-- **Slide scans for Chapter 2** — 75 new images under `Ch02v2a-images/`, so all 174 review pages now open with a full-width scan of the real slide.
+- **New deck — `pages/chapter3.html`** — Stallings Chapter 3 *Process Description and Control*, all **58 slides** with **126 exam questions**: what a process is, the process elements and the process control block, traces and the dispatcher, the two-state and five-state models, process creation and termination, suspended processes, the operating system control tables, process control structures, modes of execution, process switching, and UNIX SVR4 process management.
+- **Slide scans for Chapter 3** — 58 new images under `Ch03v2a-images/`, so all 232 review pages now open with a full-width scan of the real slide.
+- **Quiz1-Fall-2026** — `pages/Quiz1Fall2026.html` holds the real Fall 2026 quiz: 5 questions (20 marks) with the instruction-cycle simulation diagram stored in `Quiz1diagram/` and 24 auto-marked answer boxes.
+- **Top Back / Next buttons** — every slide page and every deck page now has Back / Next at the top as well as at the bottom, so you can page through a deck without scrolling.
 
 ---
 
@@ -25,9 +24,11 @@ A static, dependency-free review site for **Operating Systems Quiz 1**. Every le
 | 01 | Introduction to Computer Hardware / 计算机硬件导论 | `Intro to HW v2.pdf` | 40 (all) | 109 |
 | 02 | Chapter 1: Computer System Overview / 第 1 章：计算机系统概述 | `Ch01v2a.pdf` | 59 (all) | 132 |
 | 03 | Chapter 2: Operating System Overview / 第 2 章：操作系统概述 | `Ch02v2a.pdf` | 75 (all) | 225 |
-| 04 | Quiz1importantShortAnswer / 测验 1 重点简答题 | Short Questions (17 marks) | — | 4 |
-| 05 | Quiz 1 Key Questions / 测验 1 重点回忆题 | Decks 01–03 | — | 25 |
-| | **Total** | | **174** | **495** |
+| 04 | Chapter 3: Process Description and Control / 第 3 章：进程描述与控制 | `Ch03v2a.pdf` | 58 (all) | 126 |
+| 05 | Quiz1importantShortAnswer / 测验 1 重点简答题 | Short Questions (17 marks) | — | 4 |
+| 06 | Quiz 1 Key Questions / 测验 1 重点回忆题 | Decks 01–04 | — | 25 |
+| 07 | Quiz1-Fall-2026 / 2026 年秋季测验 1 真题 | 5 real exam questions (20 marks) | — | 5 |
+| | **Total** | | **232** | **621** |
 
 ### Deck 01 — Introduction to Computer Hardware
 Hardware vs. software, binary numbers, PC components, the motherboard, storage devices, buses, BIOS/UEFI, and the electrical system.
@@ -38,7 +39,10 @@ Basic elements (processor, main memory, I/O modules, system bus), microprocessor
 ### Deck 03 — Chapter 2: Operating System Overview (Stallings)
 What an operating system is and what it does as a resource manager, the evolution of operating systems (serial processing → simple batch → multiprogramming → time sharing), major achievements, process concepts and the process table, memory management and virtual memory, scheduling and process states, system architecture and multiprocessor / multicore organisation, fault tolerance, and the Windows, Linux and Android case studies.
 
-### Deck 04 — Quiz1importantShortAnswer
+### Deck 04 — Chapter 3: Process Description and Control (Stallings)
+What a process is and its two essential elements, the process elements held in the process control block, traces and the dispatcher, the two-state and five-state process models, process creation and termination, suspended processes and swapping, the operating system control tables, process control structures and the process image, modes of execution, process switching, and UNIX SVR4 process management.
+
+### Deck 05 — Quiz1importantShortAnswer
 Four short-answer questions in the exact style of the quiz (17 marks), answered straight from the slides — each question quotes the **textbook source** with page references and then gives **one answer box per mark**:
 
 | Q | Topic | Source | Marks | Boxes |
@@ -48,19 +52,23 @@ Four short-answer questions in the exact style of the quiz (17 marks), answered 
 | 11 | What a program counter holds, and when its value increases | `Ch01v2a.pdf` p. 13, 15 | 4 | 4 |
 | 12 | The principle of locality in a multilevel memory structure | `Ch01v2a.pdf` p. 33, 35, 36, 37 | 7 | 7 |
 
-### Deck 05 — Quiz 1 Key Questions
+### Deck 06 — Quiz 1 Key Questions
 A professor-style consolidated recall quiz: **25 questions / 84 marks**, one mark per answer point, covering basic elements, the processor and its registers, the instruction cycle, interrupts, the memory hierarchy, cache design, the computer's internal hardware and the operating-system overview. Click any question to reveal its English + 中文 model answer.
+
+### Deck 07 — Quiz1-Fall-2026
+The real Fall 2026 quiz: **5 questions / 20 marks** — components of a modern microprocessor besides the CPU, BIOS and UEFI, primary vs. secondary storage, the instruction-cycle simulation diagram (cells A–L, image in `Quiz1diagram/`), and three classes of interrupts. Every answer point gets its own auto-marked box.
 
 ---
 
 ## Features
 
-- **Slide-by-slide pages** — one HTML page per slide, 174 in total across three decks.
-- **The real slide image** — a full-width scan of the actual slide at the top of every page (174 images). Plain display: not clickable, and always scaled to fit the screen width.
+- **Slide-by-slide pages** — one HTML page per slide, 232 in total across four decks.
+- **The real slide image** — a full-width scan of the actual slide at the top of every page (232 images). Plain display: not clickable, and always scaled to fit the screen width.
+- **Back / Next at the top and the bottom** — page through a whole deck without scrolling back down.
 - **Bilingual** — every original line is followed by its Chinese translation.
 - **Read-aloud** — a speaker button after the title and after every English line reads it with the built-in Web Speech API (Chinese lines are skipped).
 - **Textbook answers highlighted** — model answers on warm highlight chips, slide points on numbered low-glare cards, Chinese lines on soft mint chips.
-- **Exam-style Q&A** — 466 click-to-reveal questions with answers and source references on the slide pages, 25 recall questions on the key-questions page, plus 4 short-answer drills with answer boxes.
+- **Exam-style Q&A** — 592 click-to-reveal questions with answers and source references on the slide pages, 25 recall questions on the key-questions page, 4 short-answer drills with answer boxes, and the 5-question Fall 2026 quiz.
 - **Write-and-check drills** — one input box per answer point, marked automatically: order does not matter, English or 中文 both accepted, missing keywords are reported.
 - **Searchable navigation** — a collapsible sidebar with live filtering, plus a keyword filter on each deck page.
 - **Keyboard shortcuts** — `←` previous slide, `→` next slide, `Esc` back to home.
@@ -111,10 +119,16 @@ CSIS-2260review/
 │   ├── chapter2.html          # Deck 03 index (all 75 slides)
 │   ├── chapter2/
 │   │   └── page-01 … page-75.html
-│   ├── Quiz1importantShortAnswer.html   # Deck 04 — 4 short questions, 19 answer boxes
-│   └── Quiz1keyQuestions.html           # Deck 05 — 25 recall questions (84 marks)
+│   ├── chapter3.html          # Deck 04 index (all 58 slides)
+│   ├── chapter3/
+│   │   └── page-01 … page-58.html
+│   ├── Quiz1importantShortAnswer.html   # Deck 05 — 4 short questions, 19 answer boxes
+│   ├── Quiz1keyQuestions.html           # Deck 06 — 25 recall questions (84 marks)
+│   └── Quiz1Fall2026.html               # Deck 07 — Fall 2026 quiz, 20 marks
 ├── Ch01v2a-images/            # Slide scans for deck 02 (59 images)
 ├── Ch02v2a-images/            # Slide scans for deck 03 (75 images)
+├── Ch03v2a-images/            # Slide scans for deck 04 (58 images)
+├── Quiz1diagram/              # The Fall 2026 instruction-cycle simulation image
 ├── Intro to HW v2-images/     # Slide scans for deck 01 (40 images)
 └── .gitignore                 # ignores .DS_Store and temporary *.zip files
 ```
@@ -150,7 +164,7 @@ Push the repository, then go to **Settings → Pages → Build and deployment �
 
 ## Notes
 
-- Content is excerpted verbatim from the course lecture slides (`Intro to HW v2.pdf`, `Ch01v2a.pdf`, `Ch02v2a.pdf`); the PDFs themselves are **not** included in this repository. The images under `Intro to HW v2-images/`, `Ch01v2a-images/` and `Ch02v2a-images/` are page scans extracted from those PDFs.
+- Content is excerpted verbatim from the course lecture slides (`Intro to HW v2.pdf`, `Ch01v2a.pdf`, `Ch02v2a.pdf`, `Ch03v2a.pdf`); the PDFs themselves are **not** included in this repository. The images under `Intro to HW v2-images/`, `Ch01v2a-images/`, `Ch02v2a-images/` and `Ch03v2a-images/` are page scans extracted from those PDFs.
 - Translations, exam questions and model answers are study aids generated for review purposes — always cross-check against the official slides and your instructor's guidance before the quiz.
 - The answer checking is keyword based and deliberately forgiving, so it is a memorisation aid, not a strict grader: a box marked ✓ still means "you reproduced the point", not "this is the only correct wording".
 
