@@ -1160,3 +1160,44 @@ kbd {
   .hq-field { flex: 1 1 100%; }
   .hq-score { margin-left: 0; width: 100%; text-align: right; }
 }
+
+/* =====================================================================
+   Reading text at 2x  —  every body/reading element is doubled while
+   all titles and headings keep their original size.
+   (Chinese chips use `em`, so they scale with their parent for free.)
+   -------------------------------------------------------------------- */
+
+/* slide / deck body text */
+.content-list li { font-size: 2.02rem; }
+.content-list li.sub { font-size: 1.9rem; }
+.figure-caption { font-size: 1.8rem; }
+.item-zh.code-zh { font-size: 1.76rem; }
+.code-block { font-size: 1.72rem; }
+
+/* possible-exam-questions cards */
+.qa-question { font-size: 1.97rem; }
+.q-zh { font-size: 1.76rem; }
+.qa-answer-inner { font-size: 1.89rem; }
+.qa-answer-inner .ans-en { font-size: 1.97rem; }
+.qa-answer-inner .ans-zh { font-size: 1.88rem; }
+.qa-answer-inner .src { font-size: 1.56rem; }
+
+/* important short answers / key questions / Fall 2026 pages */
+.qz-q { font-size: 2.06rem; }
+
+/* self-check drills */
+.sc-q-en { font-size: 2rem; }
+.sc-q-zh { font-size: 1.8rem; }
+.sc-tip { font-size: 1.64rem; }
+.sc-input { font-size: 1.88rem; }
+.sc-missing { font-size: 1.6rem; }
+.sc-model li { font-size: 1.8rem; }
+.sc-model .m-zh { font-size: 1.72rem; }
+
+/* home-page fill-in-the-blank drill */
+.hq-q { font-size: 1.95rem; }
+.hq-input { font-size: 1.8rem; }
+.hq-fix { font-size: 1.66rem; }
+
+/* home-page deck cards */
+.deck-card .deck-desc { font-size: 1.88rem; }
