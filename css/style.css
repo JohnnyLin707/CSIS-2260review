@@ -1200,6 +1200,18 @@ kbd {
 /* home-page deck cards */
 .deck-card .deck-desc { font-size: 1.2rem; }
 
+/* review-question answers: keywords bold, explanation underlined */
+.qa-answer-inner strong {
+  color: var(--accent-1); font-weight: 800; letter-spacing: 0.1px;
+}
+.qa-answer-inner u,
+.ans-zh u {
+  text-decoration: underline;
+  text-decoration-color: rgba(94, 234, 212, 0.5);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 /* small mono / meta lines keep their original, smaller size:
    .qa-answer-inner .src (0.78rem), .sc-tip (0.82rem),
    .sc-missing (0.8rem), .hq-fix (0.83rem) */
