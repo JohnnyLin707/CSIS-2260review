@@ -2,7 +2,7 @@
 
 > 🌐 **Languages / 语言 / 語言**: [English](README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md)
 
-https://johnnylin707.github.io/CSIS-2260review/index.html
+https://johnnylin707.github.io/CSIS2260-reviews/index.html
 
 一个零依赖的静态复习网站，用于**操作系统第一次测验（Quiz 1）**。到目前为止讲过的每张课件幻灯片都被单独做成一个页面，包含**英文原文**、**逐行中文翻译**，以及一组**可能出现的考题**（点击即可展开答案）。每一条英文都可以**点击朗读**，在此之外还多了两套**可以自己作答并自动判分**的练习题。
 

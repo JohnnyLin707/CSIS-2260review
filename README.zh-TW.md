@@ -2,7 +2,7 @@
 
 > 🌐 **Languages / 语言 / 語言**: [English](README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md)
 
-https://johnnylin707.github.io/CSIS-2260review/index.html
+https://johnnylin707.github.io/CSIS2260-reviews/index.html
 
 一個零依賴的靜態複習網站，用於**作業系統第一次小考（Quiz 1）**。到目前為止上過的每一張課程投影片都被單獨做成一個頁面，包含**英文原文**、**逐行中文翻譯**，以及一組**可能出現的考題**（點擊即可展開答案）。每一條英文都可以**點擊朗讀**，除此之外還多了兩套**可以自己作答並自動批改**的練習題。
 
