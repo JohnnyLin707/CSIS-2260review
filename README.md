@@ -2,7 +2,7 @@
 
 > 🌐 **Languages / 语言 / 語言**: [English](README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md)
 
-https://johnnylin707.github.io/CSIS-2260review/index.html
+Online link: 🌍 https://johnnylin707.github.io/CSIS2260-reviews/
 
 A static, dependency-free review site for **Operating Systems Quiz 1**. Every lecture slide covered so far has been turned into its own page containing the **verbatim original text**, a **line-by-line Chinese translation**, and a set of **possible exam questions** with answers you can reveal by clicking. Every English line can also be **read aloud**, and on top of the slide pages there are two **write-and-check drills** with answer boxes that are marked automatically.
 
