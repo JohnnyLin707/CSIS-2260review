@@ -296,28 +296,47 @@
     <section class="panel original reveal">
       <h2>Original Content (verbatim)</h2>
 <ul class="content-list">
-        <li>Interrupt: due to some sort of event that is external to and independent of the currently running process<span class="item-zh">中断：由与当前进程无关的外部事件引起</span></li>
+        <li>System interrupt: an event that interrupts the execution of the currently running process and hands control of the processor to the OS<span class="item-zh">系统中断：打断当前进程的执行、把处理器控制权交给操作系统的事件</span></li>
+        <li class="sub">A process switch may occur any time that the OS has gained control<span class="item-zh">只要操作系统取得了控制权，就可能发生进程切换</span></li>
+        <li>Class 1 &mdash; Interrupt: due to some sort of event that is external to and independent of the currently running process<span class="item-zh">第 1 类 —— 中断（Interrupt）：由与当前进程无关的外部事件引起</span></li>
+        <li class="sub">Asynchronous: it is external to the execution of the current instruction<span class="item-zh">异步：产生于当前指令执行之外</span></li>
         <li class="sub">Clock interrupt<span class="item-zh">时钟中断</span></li>
         <li class="sub">I/O interrupt<span class="item-zh">I/O 中断</span></li>
         <li class="sub">Memory fault<span class="item-zh">存储器故障</span></li>
         <li class="sub">Time slice: the maximum amount of time that a process can execute before being interrupted<span class="item-zh">时间片：进程在被中断之前可以执行的最长时间</span></li>
-        <li class="sub">Trap: an error or exception condition generated within the currently running process<span class="item-zh">陷阱：当前运行的进程内部产生的错误或异常状况</span></li>
+        <li>Class 2 &mdash; Trap: an error or exception condition generated within the currently running process<span class="item-zh">第 2 类 —— 陷阱（Trap）：当前运行的进程内部产生的错误或异常状况</span></li>
+        <li class="sub">Synchronous: it is associated with the execution of the current instruction<span class="item-zh">同步：与当前指令的执行相关</span></li>
         <li class="sub">The OS determines if the condition is fatal<span class="item-zh">由操作系统判断该状况是否致命</span></li>
         <li class="sub">If fatal, the process is moved to the Exit state and a process switch occurs<span class="item-zh">若致命，进程被移入退出态并发生进程切换</span></li>
         <li class="sub">The action will depend on the nature of the error and the design of the OS<span class="item-zh">具体动作取决于错误的性质和操作系统的设计</span></li>
       </ul>
+      <p class="figure-caption">How to read the two columns: &ldquo;system interrupt&rdquo; is the UMBRELLA term for every event that takes control away from the running process; it splits into two mutually exclusive classes by SOURCE. <strong>Interrupt</strong> = external + asynchronous (clock, I/O, memory fault; a finished time slice is reported to the OS by the clock interrupt). <strong>Trap</strong> = internal + synchronous (an error or exception raised by the process itself). They are not two unrelated things &mdash; they are the two subclasses of the same mechanism. A third mechanism, the supervisor call, is listed on slide 48.<span class="item-zh">两栏的读法：&ldquo;system interrupt&rdquo; 是总称，泛指一切把控制权从运行进程手中取走的事件；按<strong>来源</strong>分为互斥的两类。<strong>Interrupt</strong>＝外部、异步（时钟、I/O、存储器故障；时间片用完由时钟中断报告给操作系统）。<strong>Trap</strong>＝内部、同步（进程自身产生的错误或异常）。二者并非互不相干，而是同一机制的两个子类。第三种机制——管态调用（supervisor call）——列在第 48 页。</span></p>
     </section>
 
     <section class="qa-section">
       <div class="qa-heading reveal">
         <span class="icon">&#63;</span>
         <span>Possible Exam Questions</span>
-        <span class="count">(3 questions &middot; click to reveal)</span>
+        <span class="count">(6 questions &middot; click to reveal)</span>
       </div>
 
       <article class="qa-card reveal">
         <button class="qa-question" type="button">
           <span class="q-label">Q1</span>
+          <span class="q-text">How are system interrupts classified on this slide, and on what basis?<span class="q-zh">本页把系统中断分为哪几类？分类的依据是什么？</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">Into two classes, <strong>Interrupt</strong> and <strong>Trap</strong>, classified by the SOURCE of the event: an interrupt comes from outside the currently running process and is asynchronous, while a trap is generated inside the currently running process and is synchronous. Together they form the single umbrella mechanism called the system interrupt.</p>
+            <p class="ans-zh">分为两类：<strong>Interrupt（中断）</strong>与<strong>Trap（陷阱）</strong>，依据是事件的<strong>来源</strong>：中断来自当前进程之外，是异步的；陷阱产生于当前进程内部，是同步的。二者合在一起构成称为&ldquo;系统中断&rdquo;的同一个总机制。</p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; Page 49</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q2</span>
           <span class="q-text">Give two examples of an interrupt.<span class="q-zh">举出两个中断的例子。</span></span>
           <span class="chev" aria-hidden="true">&#9662;</span>
         </button>
@@ -331,21 +350,35 @@
       </article>
       <article class="qa-card reveal">
         <button class="qa-question" type="button">
-          <span class="q-label">Q2</span>
-          <span class="q-text">What is a time slice?<span class="q-zh">什么是时间片？</span></span>
+          <span class="q-label">Q3</span>
+          <span class="q-text">What is a time slice, and which class does it belong to?<span class="q-zh">什么是时间片？它属于哪一类？</span></span>
           <span class="chev" aria-hidden="true">&#9662;</span>
         </button>
         <div class="qa-answer">
           <div class="qa-answer-inner">
-            <p class="ans-en">The maximum amount of time that a process can execute before being interrupted.</p>
-            <p class="ans-zh">进程在被中断之前可以执行的最长时间。</p>
+            <p class="ans-en">It is the maximum amount of time that a process can execute before being interrupted. It belongs to the <strong>interrupt</strong> class, not the trap class: when the time slice expires, the clock hardware raises a clock interrupt that is external to and independent of the running process.</p>
+            <p class="ans-zh">时间片是进程在被中断之前可以执行的最长时间。它属于<strong>中断</strong>类而非陷阱类：时间片用完时，由时钟硬件发出一个与运行进程无关的时钟中断。</p>
             <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; Page 49</span>
           </div>
         </div>
       </article>
       <article class="qa-card reveal">
         <button class="qa-question" type="button">
-          <span class="q-label">Q3</span>
+          <span class="q-label">Q4</span>
+          <span class="q-text">What is a trap?<span class="q-zh">什么是陷阱？</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">An error or exception condition generated within the currently running process. Because it is associated with the execution of the current instruction, it is synchronous. The OS then determines if the condition is fatal.</p>
+            <p class="ans-zh">当前运行的进程内部产生的错误或异常状况。由于它与当前指令的执行相关，因此是同步的。随后由操作系统判断该状况是否致命。</p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; Page 49</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q5</span>
           <span class="q-text">What happens when a trap condition is fatal?<span class="q-zh">当陷阱状况是致命的时会发生什么？</span></span>
           <span class="chev" aria-hidden="true">&#9662;</span>
         </button>
@@ -353,6 +386,20 @@
           <div class="qa-answer-inner">
             <p class="ans-en">The process is moved to the Exit state and a process switch occurs.</p>
             <p class="ans-zh">进程被移入退出态并发生进程切换。</p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; Page 49</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q6</span>
+          <span class="q-text">What happens when a trap condition is NOT fatal?<span class="q-zh">当陷阱状况不致命时会发生什么？</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">The action depends on the nature of the error and the design of the OS: the OS may simply handle the condition and let the process continue instead of terminating it.</p>
+            <p class="ans-zh">具体动作取决于错误的性质和操作系统的设计：操作系统可以直接处理该状况并让进程继续运行，而不终止它。</p>
             <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; Page 49</span>
           </div>
         </div>
