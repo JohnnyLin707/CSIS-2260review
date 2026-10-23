@@ -1212,6 +1212,15 @@ kbd {
   text-underline-offset: 3px;
 }
 
+/* inline command chips — used on the UNIX Commands page */
+.cmd {
+  font-family: var(--mono); font-size: 0.9em; font-weight: 600;
+  padding: 0.08rem 0.42rem; border-radius: 6px; white-space: nowrap;
+  background: rgba(94, 234, 212, 0.09);
+  border: 1px solid rgba(94, 234, 212, 0.24);
+  color: var(--accent-1);
+}
+
 /* small mono / meta lines keep their original, smaller size:
    .qa-answer-inner .src (0.78rem), .sc-tip (0.82rem),
    .sc-missing (0.8rem), .hq-fix (0.83rem) */

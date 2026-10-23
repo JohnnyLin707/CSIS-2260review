@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070b16'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%235eead4' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2360a5fa'/%3E%3C/svg%3E">
+  <title>Introduction to UNIX Commands and Scripting &middot; Quiz 1 Review</title>
+  <meta name="description" content="UNIX commands and scripting cheat sheet: every command from the course handout with a Chinese translation of every knowledge point.">
+  <link rel="stylesheet" href="../css/style.css">
+  <noscript><style>.reveal{opacity:1 !important}</style></noscript>
+</head>
+<body class="review-page" data-topic="unix" data-page="1" data-selfcheck="off">
+
+  <div class="animated-bg" aria-hidden="true">
+    <span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <a class="btn btn-home" href="https://johnnylin707.github.io/CSIS2260-reviews/index.html">&#8962; Home Page</a>
+      </div>
+      <div class="topbar-center">
+        <div class="topbar-title">UNIX Commands &amp; Scripting<span>&middot; Cheat sheet</span></div>
+      </div>
+      <div class="topbar-right">
+        <span class="pdf-tag">Introduction to UNIX Commands and Scripting.pdf</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <header class="page-head">
+      <div class="page-meta"><span>Lab handout &middot; 18 pages</span></div>
+      <h1 class="page-title reveal">Introduction to UNIX Commands and Scripting</h1>
+      <p class="page-title-zh reveal">UNIX 命令与脚本入门 &middot; 命令速查表</p>
+      <div class="source-badge reveal">
+        Every point of the course handout &ldquo;Introduction to UNIX Commands and Scripting&rdquo;, with a Chinese translation under each line &mdash;
+        课件《UNIX 命令与脚本入门》的每个知识点，下方都附有中文翻译。
+      </div>
+    </header>
+
+    <nav class="top-nav" aria-label="Top page navigation">
+      <a class="btn btn-back" href="../index.html">&#8592; Back to Home</a>
+      <a class="btn btn-next" href="Chapter1Review.html">Chapter 1 questions &#8594;</a>
+    </nav>
+
+    <!-- ===================== 0. Getting help ===================== -->
+    <section class="panel original reveal">
+      <h2>0.0 Getting Help &middot; 获取帮助</h2>
+      <ul class="content-list">
+        <li><strong>On-line manuals</strong> give information about most commands: the manual page tells you which options a command can take and how each option modifies its behaviour.<span class="item-zh">在线手册提供了大多数命令的信息：手册页说明某个命令有哪些选项，以及每个选项如何改变命令的行为。</span></li>
+        <li class="sub"><code class="cmd">man command</code> reads the manual page of a particular command.<span class="item-zh">man command 用于读取某个命令的手册页。</span></li>
+        <li class="sub"><code class="cmd">man wc</code> shows the manual page of the <code class="cmd">wc</code> (word count) command.<span class="item-zh">man wc 查看 wc（单词计数）命令的手册页。</span></li>
+        <li class="sub"><code class="cmd">whatis command</code> gives a one-line description of the command, but omits information about options.<span class="item-zh">whatis command 用一行简要说明该命令，但不含选项等信息。</span></li>
+        <li class="sub"><code class="cmd">apropos keyword</code> lists the commands whose manual page header contains the keyword.<span class="item-zh">apropos keyword 列出手册标题中含有该关键字的命令。</span></li>
+        <li class="sub">Try typing <code class="cmd">apropos copy</code>.<span class="item-zh">例如输入 apropos copy。</span></li>
+        <li><code class="cmd">*</code> matches any number of characters; <code class="cmd">?</code> matches one character.<span class="item-zh">* 匹配任意多个字符；? 匹配一个字符。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 1.1 ls ===================== -->
+    <section class="panel original reveal">
+      <h2>1.1 Listing files and directories &middot; 列出文件与目录</h2>
+      <ul class="content-list">
+        <li>When you first log in, your current working directory is your <strong>home directory</strong>; it has the same name as your user name and holds your personal files and subdirectories.<span class="item-zh">登录时，当前工作目录就是你的主目录；它与你的用户名相同，用来保存你的个人文件和子目录。</span></li>
+        <li class="sub"><code class="cmd">ls</code> (list) lists the contents of the current working directory.<span class="item-zh">ls（list）列出当前工作目录的内容。</span></li>
+        <li class="sub">If the directory is empty, the UNIX prompt is simply returned.<span class="item-zh">如果目录是空的，UNIX 只会返回提示符。</span></li>
+        <li class="sub">The System Administrator may also have put some files there when your account was created.<span class="item-zh">系统管理员也可能在创建你的账户时放了一些文件进去。</span></li>
+        <li><code class="cmd">ls</code> does not show files whose name begins with a dot (.). These are <strong>hidden files</strong> and usually contain important program configuration information; they are hidden because you should not change them unless you are very familiar with UNIX.<span class="item-zh">ls 不会显示名字以点（.）开头的文件。这些是隐藏文件，通常保存重要的程序配置信息；之所以隐藏，是因为除非你非常熟悉 UNIX，否则不应修改它们。</span></li>
+        <li class="sub"><code class="cmd">ls -a</code> lists all files, including the hidden ones.<span class="item-zh">ls -a 列出所有文件，包括隐藏文件。</span></li>
+        <li><strong>Options</strong> change the behaviour of a command; <code class="cmd">-a</code> is an example of such an option.<span class="item-zh">选项（options）用来改变命令的行为，-a 就是 ls 的一个选项。</span></li>
+        <li class="sub">Exercise 1a: make another directory inside <code class="cmd">unixstuff</code> called <code class="cmd">backups</code>.<span class="item-zh">练习 1a：在 unixstuff 目录中再创建一个名为 backups 的目录。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 1.2 mkdir ===================== -->
+    <section class="panel original reveal">
+      <h2>1.2 Making directories &middot; 创建目录</h2>
+      <ul class="content-list">
+        <li><code class="cmd">mkdir unixstuff</code> (make directory) creates a subdirectory called unixstuff in your current working directory.<span class="item-zh">mkdir（make directory）在当前工作目录下创建一个名为 unixstuff 的子目录。</span></li>
+        <li class="sub">Use it to hold the files you will create during this tutorial.<span class="item-zh">用它来存放你在本教程中要创建的文件。</span></li>
+        <li class="sub">Type <code class="cmd">ls</code> to see the directory you have just created.<span class="item-zh">输入 ls 查看刚创建的目录。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 1.3 cd ===================== -->
+    <section class="panel original reveal">
+      <h2>1.3 Changing to a different directory &middot; 切换目录</h2>
+      <ul class="content-list">
+        <li><code class="cmd">cd directory</code> (change directory) changes the current working directory to directory.<span class="item-zh">cd directory（change directory）把当前工作目录切换到 directory。</span></li>
+        <li class="sub">The current working directory may be thought of as the directory you are in, that is, your current position in the file-system tree.<span class="item-zh">当前工作目录可以理解为“你所在的目录”，也就是你在文件系统树中的当前位置。</span></li>
+        <li class="sub"><code class="cmd">cd unixstuff</code> changes to the directory you have just made.<span class="item-zh">cd unixstuff 进入你刚创建的目录。</span></li>
+        <li class="sub">Type <code class="cmd">ls</code> to see its contents (which should be empty).<span class="item-zh">输入 ls 查看它的内容（此时应该是空的）。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 1.4 . and .. ===================== -->
+    <section class="panel original reveal">
+      <h2>1.4 The directories . and .. &middot; 特殊目录 . 与 ..</h2>
+      <ul class="content-list">
+        <li>Every directory contains two special entries: <code class="cmd">.</code> (dot) and <code class="cmd">..</code> (dot dot).<span class="item-zh">每个目录中都包含两个特殊条目：.（点）和 ..（点点）。</span></li>
+        <li><code class="cmd">.</code> means the <strong>current directory</strong>, so <code class="cmd">cd .</code> means stay where you are.<span class="item-zh">. 表示当前目录，所以 cd . 表示留在原地（仍在这个目录）。</span></li>
+        <li class="sub">There must be a space between <code class="cmd">cd</code> and the dot.<span class="item-zh">cd 和点之间必须有一个空格。</span></li>
+        <li class="sub">Using <code class="cmd">.</code> saves a lot of typing, as we shall see later.<span class="item-zh">使用 . 可以省下大量输入，后文会看到它的用处。</span></li>
+        <li><code class="cmd">..</code> means the <strong>parent</strong> of the current directory, so <code class="cmd">cd ..</code> takes you one directory up the hierarchy.<span class="item-zh">.. 表示当前目录的父目录，所以 cd .. 会沿层次结构上移一层。</span></li>
+        <li class="sub">Try it now &mdash; it takes you back to your home directory.<span class="item-zh">现在试试，它会把你带回主目录。</span></li>
+        <li><code class="cmd">cd</code> with no argument always returns you to your home directory; this is very useful if you get lost in the file system.<span class="item-zh">不带任何参数的 cd 总是回到主目录，在文件系统中迷路时非常有用。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 1.5 pwd ===================== -->
+    <section class="panel original reveal">
+      <h2>1.5 Pathnames &middot; 路径名</h2>
+      <ul class="content-list">
+        <li>Pathnames enable you to work out where you are in relation to the whole file-system.<span class="item-zh">路径名让你知道自己相对于整个文件系统所处的位置。</span></li>
+        <li class="sub"><code class="cmd">cd</code> first, then type <code class="cmd">pwd</code> (print working directory) to see the absolute pathname of your home directory.<span class="item-zh">先输入 cd，再输入 pwd（print working directory）查看主目录的绝对路径。</span></li>
+        <li class="sub">The full pathname looks something like <code class="cmd">/usr/abc</code>, which means abc (your home directory) is in the usr sub-directory, which is inside the top-level root directory called <code class="cmd">/</code>.<span class="item-zh">完整路径形如 /usr/abc，意思是 abc（你的主目录）在 usr 子目录里，而 usr 在最顶层的根目录 / 之下。</span></li>
+        <li class="sub">Use <code class="cmd">ls</code>, <code class="cmd">pwd</code> and <code class="cmd">cd</code> to explore the file system; if you get lost, type <code class="cmd">cd</code> by itself.<span class="item-zh">用 ls、pwd 和 cd 探索文件系统；迷路时只要单独输入 cd。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 1.6 ~ ===================== -->
+    <section class="panel original reveal">
+      <h2>1.6 More about home directories and pathnames &middot; 关于主目录与路径名</h2>
+      <ul class="content-list">
+        <li>To use a command on a file that is not in the current working directory, you must either <code class="cmd">cd</code> to the correct directory or specify its full pathname.<span class="item-zh">要对不在当前工作目录中的文件使用命令，你必须要么 cd 到正确目录，要么给出它的完整路径名。</span></li>
+        <li class="sub">Example: <code class="cmd">ls backups</code> fails, because backups is not in your current directory.<span class="item-zh">例：ls backups 会失败，因为 backups 不在当前目录里。</span></li>
+        <li class="sub">The error message is <code class="cmd">backups: No such file or directory</code>.<span class="item-zh">错误信息是 backups: No such file or directory（没有那个文件或目录）。</span></li>
+        <li class="sub">Use the full pathname instead: <code class="cmd">ls unixstuff/backups</code>.<span class="item-zh">改用完整路径：ls unixstuff/backups。</span></li>
+        <li>Home directories can also be referred to by the tilde character <code class="cmd">~</code>; it can be used to specify paths starting at your home directory.<span class="item-zh">主目录也可以用波浪号 ~ 表示，它可以用来指定从主目录开始的路径。</span></li>
+        <li class="sub"><code class="cmd">ls ~/unixstuff</code> lists the contents of your unixstuff directory no matter where you currently are.<span class="item-zh">ls ~/unixstuff 无论你当前在哪里，都会列出 unixstuff 目录的内容。</span></li>
+        <li class="sub">Exercise 1b: what do you think <code class="cmd">ls ~</code> and <code class="cmd">ls ~/..</code> would list?<span class="item-zh">练习 1b：你认为 ls ~ 和 ls ~/.. 会列出什么？</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== Summary 1 ===================== -->
+    <section class="panel original reveal">
+      <h2>Summary 1 &middot; 小结（文件与目录）</h2>
+      <ul class="content-list">
+        <li><code class="cmd">ls</code> &mdash; list files and directories<span class="item-zh">列出文件与目录</span></li>
+        <li class="sub"><code class="cmd">ls -a</code> &mdash; list all files and directories<span class="item-zh">列出所有文件与目录（含隐藏文件）</span></li>
+        <li class="sub"><code class="cmd">mkdir</code> &mdash; make a directory<span class="item-zh">创建目录</span></li>
+        <li class="sub"><code class="cmd">cd directory</code> &mdash; change to the named directory<span class="item-zh">切换到指定目录</span></li>
+        <li class="sub"><code class="cmd">cd</code> or <code class="cmd">cd ~</code> &mdash; change to the home directory<span class="item-zh">切换回主目录</span></li>
+        <li class="sub"><code class="cmd">cd ..</code> &mdash; change to the parent directory<span class="item-zh">切换到父目录</span></li>
+        <li class="sub"><code class="cmd">pwd</code> &mdash; display the path of the current directory<span class="item-zh">显示当前目录的路径</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 2.1 cp ===================== -->
+    <section class="panel original reveal">
+      <h2>2.1 Copying files &middot; 复制文件</h2>
+      <ul class="content-list">
+        <li><code class="cmd">cp file1 file2</code> makes a copy of file1 in the current working directory and calls it file2.<span class="item-zh">cp file1 file2 在当前目录下把 file1 复制一份并命名为 file2。</span></li>
+        <li class="sub">First <code class="cmd">cd ~/unixstuff</code>.<span class="item-zh">先执行 cd ~/unixstuff。</span></li>
+        <li class="sub">Create a file called <code class="cmd">sample.txt</code> by typing <code class="cmd">man cp &gt; sample.txt</code>.<span class="item-zh">输入 man cp &gt; sample.txt 创建一个名为 sample.txt 的文件。</span></li>
+        <li class="sub">Then type <code class="cmd">cp sample.txt sample1.txt</code>, which makes a copy named sample1.txt.<span class="item-zh">再输入 cp sample.txt sample1.txt，得到一个名为 sample1.txt 的副本。</span></li>
+        <li>Copying leaves you with two files; moving leaves you with one file.<span class="item-zh">复制之后你会得到两个文件；移动之后只剩一个文件。</span></li>
+        <li class="sub">Exercise 2a: create a backup of sample.txt by copying it to a file called sample.bak.<span class="item-zh">练习 2a：把 sample.txt 复制为 sample.bak，作为备份。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 2.2 mv ===================== -->
+    <section class="panel original reveal">
+      <h2>2.2 Moving files &middot; 移动文件</h2>
+      <ul class="content-list">
+        <li><code class="cmd">mv file1 file2</code> moves (or renames) file1 to file2.<span class="item-zh">mv file1 file2 把 file1 移动（或重命名）为 file2。</span></li>
+        <li class="sub">Moving has the effect of moving rather than copying, so you end up with only one file rather than two.<span class="item-zh">移动是真正搬走而不是复制，因此结果只有一个文件而不是两个。</span></li>
+        <li class="sub">It can also rename a file: move it to the same directory but give it a different name.<span class="item-zh">它也可以用来重命名：在同一目录内把文件换成另一个名字。</span></li>
+        <li class="sub">Inside <code class="cmd">unixstuff</code>, type <code class="cmd">mv sample.bak backups/</code> to move the file into the backups directory.<span class="item-zh">在 unixstuff 目录内输入 mv sample.bak backups/，把文件移入 backups 目录。</span></li>
+        <li class="sub">Type <code class="cmd">ls</code> and <code class="cmd">ls backups</code> to see if it has worked.<span class="item-zh">用 ls 和 ls backups 检查是否成功。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 2.3 rm ===================== -->
+    <section class="panel original reveal">
+      <h2>2.3 Removing files and directories &middot; 删除文件与目录</h2>
+      <ul class="content-list">
+        <li><code class="cmd">rm file</code> (remove) deletes a file.<span class="item-zh">rm（remove）删除文件。</span></li>
+        <li class="sub">Inside <code class="cmd">unixstuff</code>: <code class="cmd">cp sample.txt tempfile.txt</code>, <code class="cmd">ls</code> to check it exists, then <code class="cmd">rm tempfile.txt</code>, then <code class="cmd">ls</code> again to check it is gone.<span class="item-zh">在 unixstuff 目录内：先 cp sample.txt tempfile.txt，用 ls 确认已存在，再 rm tempfile.txt，再用 ls 确认已删除。</span></li>
+        <li><code class="cmd">rmdir directory</code> removes a directory; make sure it is empty first.<span class="item-zh">rmdir 删除目录，使用前必须确保目录是空的。</span></li>
+        <li class="sub">You will not be able to remove the backups directory: UNIX will not remove a non-empty directory.<span class="item-zh">你无法删除 backups 目录，因为 UNIX 不会删除非空目录。</span></li>
+        <li class="sub">Exercise 2b: create a directory called tempstuff with <code class="cmd">mkdir</code>, then remove it with <code class="cmd">rmdir</code>.<span class="item-zh">练习 2b：用 mkdir 创建 tempstuff 目录，再用 rmdir 删除它。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 2.4 cat/less/head/tail ===================== -->
+    <section class="panel original reveal">
+      <h2>2.4 Displaying the contents of a file &middot; 显示文件内容</h2>
+      <ul class="content-list">
+        <li><code class="cmd">clear</code> (clear screen) clears the terminal window, so the output of the following commands is easy to read.<span class="item-zh">clear（clear screen）清空终端窗口，使后面命令的输出更容易看清。</span></li>
+        <li class="sub">It clears all text and leaves the prompt at the top of the window.<span class="item-zh">它清除所有文字，并把提示符留在窗口顶部。</span></li>
+        <li><code class="cmd">cat sample.txt</code> (concatenate) displays the contents of a file on the screen.<span class="item-zh">cat sample.txt（concatenate）把文件内容显示在屏幕上。</span></li>
+        <li class="sub">The file is longer than the window, so it scrolls past and becomes unreadable.<span class="item-zh">文件比窗口长，内容会滚动过去而难以阅读。</span></li>
+        <li><code class="cmd">less sample.txt</code> writes the contents of a file onto the screen a page at a time.<span class="item-zh">less sample.txt 一次显示一页文件内容。</span></li>
+        <li class="sub">Press the <strong>space-bar</strong> for the next page, type <code class="cmd">q</code> to quit reading.<span class="item-zh">按空格键看下一页，输入 q 退出阅读。</span></li>
+        <li class="sub">For long files, <code class="cmd">less</code> is used in preference to <code class="cmd">cat</code>.<span class="item-zh">对于长文件，应优先使用 less 而不是 cat。</span></li>
+        <li><code class="cmd">head sample.txt</code> writes the first ten lines of a file to the screen.<span class="item-zh">head sample.txt 把文件的前 10 行显示到屏幕上。</span></li>
+        <li class="sub"><code class="cmd">head -5 sample.txt</code> shows that <code class="cmd">-5</code> replaces the default of ten lines by five.<span class="item-zh">head -5 sample.txt 表明 -5 把默认的 10 行改成了 5 行。</span></li>
+        <li><code class="cmd">tail sample.txt</code> writes the last ten lines of a file to the screen.<span class="item-zh">tail sample.txt 把文件的最后 10 行显示到屏幕上。</span></li>
+        <li class="sub">Exercise 2c: how can you view the last 15 lines of the file?<span class="item-zh">练习 2c：如何查看文件最后 15 行？</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 2.5 tab / history ===================== -->
+    <section class="panel original reveal">
+      <h2>2.5 Tab completion &amp; command history &middot; 按键补全与命令历史</h2>
+      <ul class="content-list">
+        <li><strong>Tab completion</strong> saves a lot of time: while typing the name of a file, directory or command, press <strong>[Tab]</strong> and Ubuntu completes the name for you.<span class="item-zh">Tab 补全非常省时间：输入文件名、目录名或命令名时，按 [Tab] 键，Ubuntu 会帮你自动补全名字。</span></li>
+        <li class="sub">For instance, type <code class="cmd">tail sa</code> and press [Tab].<span class="item-zh">例如输入 tail sa 然后按 [Tab]。</span></li>
+        <li class="sub">If there is only one unambiguous choice, the filename is completed automatically to <code class="cmd">sample.txt</code>.<span class="item-zh">如果只有一个明确的候选，文件名会自动补全为 sample.txt。</span></li>
+        <li class="sub">If there are multiple options it will not complete it; press [Tab] once more to see the list of all files that start with what you have typed.<span class="item-zh">如果有多个候选，则不会自动补全；再按一次 [Tab] 会列出所有以已输入字符开头的文件。</span></li>
+        <li class="sub">Here two files start with <code class="cmd">sa</code>, so it completes as far as it can and shows: <code class="cmd">sample.txt  sample1.txt</code>.<span class="item-zh">这里有两个以 sa 开头的文件，所以它只补到能补的部分并列出：sample.txt  sample1.txt。</span></li>
+        <li class="sub">By typing an additional <code class="cmd">1</code> and pressing [Tab] again, the filename is completed.<span class="item-zh">再输入一个 1 并按 [Tab]，文件名即可补全。</span></li>
+        <li><strong>Command history</strong>: press the <strong>[Up]</strong> arrow and the Terminal shows your previous command; press [Return] to run it again without typing it.<span class="item-zh">命令历史：按 [Up] 方向键可显示上一条命令，按回车即可再次执行，无需重新输入。</span></li>
+        <li class="sub">Press the <strong>[Down]</strong> arrow to go forward in your command history.<span class="item-zh">按 [Down] 方向键在命令历史中向前翻。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 2.6 grep / wc ===================== -->
+    <section class="panel original reveal">
+      <h2>2.6 Searching the contents of a file &middot; 搜索文件内容</h2>
+      <ul class="content-list">
+        <li>Inside <code class="cmd">less sample.txt</code> (do not press q), type a forward slash <code class="cmd">/</code> followed by the word to search, e.g. <code class="cmd">/copy</code>.<span class="item-zh">在 less sample.txt 中（不要按 q 退出），输入正斜杠 / 再输入要搜索的单词，例如 /copy。</span></li>
+        <li class="sub"><code class="cmd">less</code> finds and highlights the keyword; type <code class="cmd">n</code> to search for the next occurrence.<span class="item-zh">less 会找到并高亮该关键字；输入 n 跳到下一个出现处。</span></li>
+        <li><code class="cmd">grep copy sample.txt</code> searches the file for specified words or patterns and prints each matching line.<span class="item-zh">grep copy sample.txt 在文件中搜索指定的单词或模式，并打印每个匹配行。</span></li>
+        <li class="sub">grep is <strong>case sensitive</strong>: <code class="cmd">grep Copy sample.txt</code> does not find copy.<span class="item-zh">grep 区分大小写：grep Copy sample.txt 找不到 copy。</span></li>
+        <li class="sub">Use the <code class="cmd">-i</code> option to ignore upper/lower case distinctions: <code class="cmd">grep -i copy sample.txt</code>.<span class="item-zh">用 -i 选项可以忽略大小写：grep -i copy sample.txt。</span></li>
+        <li class="sub">To search for a phrase or pattern, enclose it in single quotes: <code class="cmd">grep -i 'destination file' sample.txt</code>.<span class="item-zh">要搜索短语或模式，必须用单引号括起来：grep -i 'destination file' sample.txt。</span></li>
+        <li>Other options of grep:<span class="item-zh">grep 的其他选项：</span></li>
+        <li class="sub"><code class="cmd">-v</code> display those lines that do NOT match<span class="item-zh">-v 显示不匹配的行</span></li>
+        <li class="sub"><code class="cmd">-n</code> precede each matching line with the line number<span class="item-zh">-n 在每个匹配行前显示行号</span></li>
+        <li class="sub"><code class="cmd">-c</code> print only the total count of matched lines<span class="item-zh">-c 只输出匹配行的总数</span></li>
+        <li class="sub">Options can be combined: <code class="cmd">grep -ivc copy sample.txt</code> counts the lines without the word.<span class="item-zh">选项可以组合使用：grep -ivc copy sample.txt 统计不含该单词的行数。</span></li>
+        <li><code class="cmd">wc</code> (word count) is a handy little utility: <code class="cmd">wc -w sample.txt</code> counts words, <code class="cmd">wc -l sample.txt</code> counts lines.<span class="item-zh">wc（word count）是个很实用的小工具：wc -w sample.txt 数单词，wc -l sample.txt 数行数。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== Summary 2 ===================== -->
+    <section class="panel original reveal">
+      <h2>Summary 2 &middot; 小结（文件操作与查看）</h2>
+      <ul class="content-list">
+        <li><code class="cmd">cp file1 file2</code> &mdash; copy file1 and call it file2<span class="item-zh">复制 file1 为 file2</span></li>
+        <li class="sub"><code class="cmd">mv file1 file2</code> &mdash; move or rename file1 to file2<span class="item-zh">移动或重命名 file1 为 file2</span></li>
+        <li class="sub"><code class="cmd">rm file</code> &mdash; remove a file<span class="item-zh">删除文件</span></li>
+        <li class="sub"><code class="cmd">rmdir directory</code> &mdash; remove a directory<span class="item-zh">删除目录</span></li>
+        <li class="sub"><code class="cmd">cat file</code> &mdash; display a file<span class="item-zh">显示文件内容</span></li>
+        <li class="sub"><code class="cmd">more file</code> &mdash; display a file a page at a time<span class="item-zh">一次显示一页文件</span></li>
+        <li class="sub"><code class="cmd">head file</code> &mdash; display the first few lines of a file<span class="item-zh">显示文件开头几行</span></li>
+        <li class="sub"><code class="cmd">tail file</code> &mdash; display the last few lines of a file<span class="item-zh">显示文件末尾几行</span></li>
+        <li class="sub"><code class="cmd">grep 'keyword' file</code> &mdash; search a file for keywords<span class="item-zh">在文件中搜索关键字</span></li>
+        <li class="sub"><code class="cmd">wc file</code> &mdash; count lines / words / characters in a file<span class="item-zh">统计文件的行数、单词数或字符数</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 3.1 wildcards ===================== -->
+    <section class="panel original reveal">
+      <h2>3.1 Wildcards &middot; 通配符</h2>
+      <ul class="content-list">
+        <li>The character <code class="cmd">*</code> is called a <strong>wildcard</strong>, and will match against none or more characters in a file or directory name.<span class="item-zh">字符 * 称为通配符，可以匹配文件名或目录名中任意多个字符（包括零个）。</span></li>
+        <li class="sub"><code class="cmd">ls list*</code> lists all files starting with list.<span class="item-zh">ls list* 列出所有以 list 开头的文件。</span></li>
+        <li class="sub"><code class="cmd">ls *list</code> lists all files ending with list.<span class="item-zh">ls *list 列出所有以 list 结尾的文件。</span></li>
+        <li>The character <code class="cmd">?</code> will match exactly one character.<span class="item-zh">字符 ? 恰好匹配一个字符。</span></li>
+        <li class="sub">So <code class="cmd">ls ?ouse</code> matches files like house and mouse, but not grouse.<span class="item-zh">因此 ls ?ouse 会匹配 house 和 mouse，但不会匹配 grouse。</span></li>
+        <li class="sub">Try <code class="cmd">ls sample?.txt</code>.<span class="item-zh">试试 ls sample?.txt。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 3.2 filenames ===================== -->
+    <section class="panel original reveal">
+      <h2>3.2 Filename conventions &middot; 文件命名约定</h2>
+      <ul class="content-list">
+        <li>A directory is merely a special type of file, so the rules and conventions for naming files apply also to directories.<span class="item-zh">目录其实只是一种特殊的文件，因此文件命名规则同样适用于目录。</span></li>
+        <li>In naming files, characters with special meanings such as <code class="cmd">/ * &amp; %</code> should be avoided; also avoid using spaces within names.<span class="item-zh">命名时应避免使用 / * &amp; % 等有特殊含义的字符，也要避免在名称中使用空格。</span></li>
+        <li class="sub">The safest way to name a file is to use only alphanumeric characters, that is letters and numbers, together with <code class="cmd">_</code> (underscore) and <code class="cmd">.</code> (dot).<span class="item-zh">最安全的命名方式就是只用字母和数字，再加上下划线 _ 和点 .。</span></li>
+        <li>File names conventionally start with a lower-case letter, and may end with a dot followed by a group of letters indicating the contents of the file.<span class="item-zh">文件名通常以小写字母开头，并且可以用点加若干字母结尾来标明文件内容。</span></li>
+        <li class="sub">All files consisting of C code may be named with the ending <code class="cmd">.c</code>, for example <code class="cmd">prog1.c</code>.<span class="item-zh">所有 C 代码文件都可以用 .c 结尾，例如 prog1.c。</span></li>
+        <li class="sub">Then <code class="cmd">ls *.c</code> lists all files containing C code in that directory.<span class="item-zh">在该目录中输入 ls *.c 就能列出所有 C 代码文件。</span></li>
+        <li>Beware: some applications give the same name to all the output files; some compilers produce <code class="cmd">a.out</code> unless given the appropriate option.<span class="item-zh">注意：有些程序会给所有输出文件取同一个名字；有些编译器除非给出相应选项，否则都生成 a.out。</span></li>
+        <li class="sub">If you forget that option, rename the compiled file at once, otherwise the next one will overwrite it and it is lost.<span class="item-zh">如果忘了这个选项，应立即给编译出来的文件改名，否则下一个会覆盖它，文件就丢失了。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 4.1 redirection ===================== -->
+    <section class="panel original reveal">
+      <h2>4.1 Redirection &middot; 重定向</h2>
+      <ul class="content-list">
+        <li>Most processes started by UNIX commands write to the <strong>standard output</strong> (the terminal screen), and many take their input from the <strong>standard input</strong> (the keyboard).<span class="item-zh">UNIX 命令启动的大多数进程写到标准输出（终端屏幕），很多进程从标准输入（键盘）读取数据。</span></li>
+        <li class="sub">There is also the <strong>standard error</strong>, where processes write their error messages, by default to the terminal screen.<span class="item-zh">还有标准错误，进程把错误信息写到那里，默认也是终端屏幕。</span></li>
+        <li>Type <code class="cmd">cat</code> and press [Return] without naming a file, then type a few words and press [Return].<span class="item-zh">输入 cat 并回车（不指定文件），然后输入几个词并回车。</span></li>
+        <li class="sub">Hold [Ctrl] down and press <strong>[d]</strong> (written <code class="cmd">^D</code>) to end the input.<span class="item-zh">按住 Ctrl 再按 d（写作 ^D）来结束输入。</span></li>
+        <li class="sub">The cat command read the standard input (the keyboard) and copied it to the standard output (the screen).<span class="item-zh">cat 命令从标准输入（键盘）读取，并复制到标准输出（屏幕）。</span></li>
+        <li class="sub">In UNIX, we can redirect both the input and the output of commands.<span class="item-zh">在 UNIX 中，我们可以重定向命令的输入和输出。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 4.2 > >> ===================== -->
+    <section class="panel original reveal">
+      <h2>4.2 Redirecting the output &middot; 重定向输出</h2>
+      <ul class="content-list">
+        <li>We use the <code class="cmd">&gt;</code> symbol to redirect the output of a command.<span class="item-zh">使用 &gt; 符号来重定向命令的输出。</span></li>
+        <li class="sub">To create a file called <code class="cmd">list1</code> containing a list of fruit, type <code class="cmd">cat &gt; list1</code>.<span class="item-zh">要创建一个包含水果列表的文件 list1，输入 cat &gt; list1。</span></li>
+        <li class="sub">Then type in the names of some fruit, pressing [Return] after each one: pear, banana, apple, then <code class="cmd">^D</code> to stop.<span class="item-zh">然后输入水果名，每个之后按回车：pear、banana、apple，最后按 ^D 结束。</span></li>
+        <li class="sub">The cat command reads the standard input and <code class="cmd">&gt;</code> redirects the output, which normally goes to the screen, into a file called list1.<span class="item-zh">cat 命令读取标准输入，而 &gt; 把通常输出到屏幕的内容重定向到名为 list1 的文件。</span></li>
+        <li class="sub">Type <code class="cmd">cat list1</code> to read the contents of the file.<span class="item-zh">输入 cat list1 读取文件内容。</span></li>
+        <li class="sub">Exercise 4a: create another file called list2 containing orange, plum, mango and grapefruit, then read it.<span class="item-zh">练习 4a：再建一个 list2 文件，写入 orange、plum、mango、grapefruit，然后读取它。</span></li>
+        <li>The form <code class="cmd">&gt;&gt;</code> <strong>appends</strong> standard output to a file, so you can add more items to list1.<span class="item-zh">&gt;&gt; 的形式表示把标准输出追加到文件，因此可以继续向 list1 添加内容。</span></li>
+        <li class="sub">Type <code class="cmd">cat &gt;&gt; list1</code>, add more names (peach, grape, orange), then <code class="cmd">^D</code>.<span class="item-zh">输入 cat &gt;&gt; list1，继续添加名字（peach、grape、orange），然后按 ^D。</span></li>
+        <li class="sub">One file now contains six fruit, the other four. <code class="cmd">cat list1 list2 &gt; biglist</code> joins (concatenates) list1 and list2 into a new file biglist.<span class="item-zh">现在一个文件有六个水果，另一个有四个。cat list1 list2 &gt; biglist 把 list1 与 list2 合并（连接）成新文件 biglist。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 4.3 < ===================== -->
+    <section class="panel original reveal">
+      <h2>4.3 Redirecting the input &middot; 重定向输入</h2>
+      <ul class="content-list">
+        <li>We use the <code class="cmd">&lt;</code> symbol to redirect the input of a command.<span class="item-zh">使用 &lt; 符号来重定向命令的输入。</span></li>
+        <li class="sub"><code class="cmd">sort</code> sorts a list alphabetically or numerically.<span class="item-zh">sort 对一个列表按字母或数字排序。</span></li>
+        <li class="sub">Type <code class="cmd">sort</code>, then enter some vegetables (carrot, beetroot, artichoke) and press <code class="cmd">^D</code>; the output is sorted.<span class="item-zh">输入 sort，然后输入一些蔬菜（carrot、beetroot、artichoke）并按 ^D，输出就是排序后的结果。</span></li>
+        <li class="sub">With <code class="cmd">&lt;</code> you can redirect the input to come from a file rather than the keyboard: <code class="cmd">sort &lt; biglist</code>.<span class="item-zh">使用 &lt; 可以让输入来自文件而不是键盘：sort &lt; biglist。</span></li>
+        <li class="sub">To output the sorted list to a file: <code class="cmd">sort &lt; biglist &gt; slist</code>, then use <code class="cmd">cat</code> to read slist.<span class="item-zh">要把排序结果输出到文件：sort &lt; biglist &gt; slist，然后用 cat 读取 slist。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 4.4 pipes ===================== -->
+    <section class="panel original reveal">
+      <h2>4.4 Pipes &middot; 管道</h2>
+      <ul class="content-list">
+        <li>To see who is on the system with you, type <code class="cmd">who</code>.<span class="item-zh">要查看当前有哪些用户在系统上，输入 who。</span></li>
+        <li class="sub">A way to get a sorted list of names: <code class="cmd">who &gt; names.txt</code> then <code class="cmd">sort &lt; names.txt</code>.<span class="item-zh">得到排序的用户名列表可以这样做：who &gt; names.txt 然后 sort &lt; names.txt。</span></li>
+        <li class="sub">That is a bit slow and you have to remember to remove the temporary file when you have finished.<span class="item-zh">这样比较慢，而且结束后还要记得删除临时文件。</span></li>
+        <li>What you really want is to connect the output of one command directly to the input of the next command; this is exactly what <strong>pipes</strong> do. The symbol is the vertical bar <code class="cmd">|</code>.<span class="item-zh">你真正想要的是把一个命令的输出直接接到下一个命令的输入上，这正是管道（pipe）的作用，符号是竖线 |。</span></li>
+        <li class="sub"><code class="cmd">who | sort</code> gives the same result, but quicker and cleaner.<span class="item-zh">who | sort 得到相同结果，但更快也更干净。</span></li>
+        <li class="sub">To find out how many users are logged on, type <code class="cmd">who | wc -l</code>.<span class="item-zh">要统计有多少用户已登录，输入 who | wc -l。</span></li>
+        <li class="sub">Exercise 4b: using pipes, display all lines of list1 and list2 containing the letter p, and sort the result.<span class="item-zh">练习 4b：用管道显示 list1 和 list2 中所有含字母 p 的行，并对结果排序。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== Summary 3 ===================== -->
+    <section class="panel original reveal">
+      <h2>Summary 3 &middot; 小结（重定向与管道）</h2>
+      <ul class="content-list">
+        <li><code class="cmd">command &gt; file</code> &mdash; redirect standard output to a file<span class="item-zh">把标准输出重定向到文件</span></li>
+        <li class="sub"><code class="cmd">command &gt;&gt; file</code> &mdash; append standard output to a file<span class="item-zh">把标准输出追加到文件</span></li>
+        <li class="sub"><code class="cmd">command &lt; file</code> &mdash; redirect standard input from a file<span class="item-zh">从文件重定向标准输入</span></li>
+        <li class="sub"><code class="cmd">command1 | command2</code> &mdash; pipe the output of command1 to the input of command2<span class="item-zh">把命令 1 的输出通过管道接到命令 2 的输入</span></li>
+        <li class="sub"><code class="cmd">cat file1 file2 &gt; file0</code> &mdash; concatenate file1 and file2 to file0<span class="item-zh">把 file1 与 file2 合并到 file0</span></li>
+        <li class="sub"><code class="cmd">sort</code> &mdash; sort data<span class="item-zh">对数据排序</span></li>
+        <li class="sub"><code class="cmd">who</code> &mdash; list users currently logged in<span class="item-zh">列出当前登录的用户</span></li>
+        <li class="sub"><code class="cmd">a2ps -Pprinter textfile</code> &mdash; print a text file to the named printer<span class="item-zh">把文本文件打印到指定打印机</span></li>
+        <li class="sub"><code class="cmd">lpr -Pprinter psfile</code> &mdash; print a postscript file to the named printer<span class="item-zh">把 postscript 文件打印到指定打印机</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 5.1 permissions ===================== -->
+    <section class="panel original reveal">
+      <h2>5.1 File system security (access rights) &middot; 文件系统安全（访问权限）</h2>
+      <ul class="content-list">
+        <li>Type <code class="cmd">ls -l</code> (l for long listing) to see lots of details about the contents of your directory.<span class="item-zh">输入 ls -l（l 表示长格式列出）可看到目录内容的许多细节。</span></li>
+        <li class="sub">Each file (and directory) has associated access rights; <code class="cmd">ls -lg</code> also shows which group owns the file.<span class="item-zh">每个文件（和目录）都有相关的访问权限；ls -lg 还会显示文件属于哪个组。</span></li>
+        <li class="sub">Example: <code class="cmd">-rwxrw-r-- 1 ee51ab beng95 2450 Sept29 11:52 file1</code><span class="item-zh">示例：-rwxrw-r-- 1 ee51ab beng95 2450 Sept29 11:52 file1</span></li>
+        <li>In the left-hand column is a 10 symbol string made of <code class="cmd">d</code>, <code class="cmd">r</code>, <code class="cmd">w</code>, <code class="cmd">x</code>, <code class="cmd">-</code> and occasionally <code class="cmd">s</code> or <code class="cmd">S</code>.<span class="item-zh">最左边一列是由 d、r、w、x、-（偶尔还有 s 或 S）组成的 10 个符号的字符串。</span></li>
+        <li class="sub">If <code class="cmd">d</code> is present it is at the left end and indicates a directory; otherwise the first symbol is <code class="cmd">-</code>.<span class="item-zh">如果最左端是 d，表示这是一个目录；否则第一个符号是 -。</span></li>
+        <li>The 9 remaining symbols are the permissions, taken as three groups of 3.<span class="item-zh">剩下 9 个符号表示权限，分成三组，每组 3 个。</span></li>
+        <li class="sub">The left group gives the permissions for the user that owns the file.<span class="item-zh">左组给出文件所有者（用户）的权限。</span></li>
+        <li class="sub">The middle group gives the permissions for the group of people to whom the file belongs.<span class="item-zh">中组给出文件所属组的权限。</span></li>
+        <li class="sub">The rightmost group gives the permissions for all others.<span class="item-zh">最右一组给出其他所有人的权限。</span></li>
+        <li><strong>Access rights on files</strong>: <code class="cmd">r</code> read (and copy) the file; <code class="cmd">w</code> change the file; <code class="cmd">x</code> execute the file where appropriate.<span class="item-zh">文件上的权限：r 表示读取（复制）文件；w 表示修改文件；x 表示（在适用时）执行文件。</span></li>
+        <li><strong>Access rights on directories</strong>: <code class="cmd">r</code> allows users to list the files in the directory; <code class="cmd">w</code> allows users to delete files from it or move files into it; <code class="cmd">x</code> is the right to access the files in it.<span class="item-zh">目录上的权限：r 允许列出目录中的文件；w 允许从目录中删除文件或把文件移入；x 表示可以访问目录中的文件。</span></li>
+        <li class="sub">To read a file you must have execute permission on the directory containing it, and hence on every directory above it in the tree.<span class="item-zh">要读取某个文件，你必须对它所在的目录以及该目录之上的所有目录都有执行（x）权限。</span></li>
+        <li><strong>Examples</strong>:<span class="item-zh">一些例子：</span></li>
+        <li class="sub"><code class="cmd">-rwxrwxrwx</code> a file that everyone can read, write and execute.<span class="item-zh">-rwxrwxrwx 人人都可读、可写、可执行的文件。</span></li>
+        <li class="sub"><code class="cmd">-rw-------</code> a file that only the owner can read and write; no-one else can read or write and no-one has execution rights (e.g. your mailbox file).<span class="item-zh">-rw------- 只有所有者可读写的文件，其他人都不能读写，也没有执行权限（例如你的邮箱文件）。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 5.2 chmod ===================== -->
+    <section class="panel original reveal">
+      <h2>5.2 Changing access rights &middot; 修改访问权限（chmod）</h2>
+      <ul class="content-list">
+        <li>Only the owner of a file can use <code class="cmd">chmod</code> (change a file mode) to change the permissions of a file.<span class="item-zh">只有文件的所有者才能用 chmod（change a file mode）修改文件权限。</span></li>
+        <li>Symbols used by chmod:<span class="item-zh">chmod 使用的符号：</span></li>
+        <li class="sub"><code class="cmd">u</code> user &mdash; 用户<span class="item-zh">u 用户</span></li>
+        <li class="sub"><code class="cmd">g</code> group &mdash; 组<span class="item-zh">g 组</span></li>
+        <li class="sub"><code class="cmd">o</code> other &mdash; 其他人<span class="item-zh">o 其他人</span></li>
+        <li class="sub"><code class="cmd">a</code> all &mdash; 全部<span class="item-zh">a 全部</span></li>
+        <li class="sub"><code class="cmd">r</code> read &mdash; 读<span class="item-zh">r 读</span></li>
+        <li class="sub"><code class="cmd">w</code> write (and delete) &mdash; 写（以及删除）<span class="item-zh">w 写（以及删除）</span></li>
+        <li class="sub"><code class="cmd">x</code> execute (and access directory) &mdash; 执行（以及访问目录）<span class="item-zh">x 执行（以及访问目录）</span></li>
+        <li class="sub"><code class="cmd">+</code> add permission &mdash; 增加权限<span class="item-zh">+ 增加权限</span></li>
+        <li class="sub"><code class="cmd">-</code> take away permission &mdash; 去掉权限<span class="item-zh">- 去掉权限</span></li>
+        <li class="sub">To remove read, write and execute permission on <code class="cmd">biglist</code> for the group and others, type <code class="cmd">chmod go-rwx biglist</code>; other permissions are unaffected.<span class="item-zh">要去掉 biglist 对组和其他人的读、写、执行权限，输入 chmod go-rwx biglist，其它权限不受影响。</span></li>
+        <li class="sub">To give read and write permission on biglist to all, type <code class="cmd">chmod a+rw biglist</code>.<span class="item-zh">要给所有人 biglist 的读、写权限，输入 chmod a+rw biglist。</span></li>
+        <li class="sub">Exercise 5a: try changing the permissions of sample.txt and of the backups directory, then check with <code class="cmd">ls -l</code>.<span class="item-zh">练习 5a：试着修改 sample.txt 和 backups 目录的权限，并用 ls -l 检查结果。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 5.3 processes ===================== -->
+    <section class="panel original reveal">
+      <h2>5.3 Processes and jobs &middot; 进程与作业</h2>
+      <ul class="content-list">
+        <li>A process is an executing program identified by a unique PID (process identifier).<span class="item-zh">进程是一个正在执行的程序，用唯一的 PID（进程标识号）标识。</span></li>
+        <li class="sub">Type <code class="cmd">ps</code> to see information about your processes with their PID and status.<span class="item-zh">输入 ps 可以看到你的进程信息及其 PID 和状态。</span></li>
+        <li>A process may be in the <strong>foreground</strong>, in the <strong>background</strong>, or be <strong>suspended</strong>.<span class="item-zh">进程可能处于前台、后台，或被挂起。</span></li>
+        <li class="sub">In general the shell does not return the UNIX prompt until the current process has finished executing.<span class="item-zh">一般来说，当前进程执行完之前 shell 不会返回 UNIX 提示符。</span></li>
+        <li class="sub">Some processes take a long time and hold up the terminal; backgrounding them returns the prompt immediately and lets you carry out other tasks.<span class="item-zh">有些进程运行很久会占住终端；把它们放到后台可立即返回提示符，让你做其它事情。</span></li>
+        <li>To background a process, type <code class="cmd">&amp;</code> at the end of the command line.<span class="item-zh">要把进程放到后台，只需在命令行末尾加上 &amp;。</span></li>
+        <li class="sub"><code class="cmd">sleep 10</code> waits ten seconds before returning the prompt; during that time you can do nothing except wait.<span class="item-zh">sleep 10 会等待 10 秒才返回提示符；这段时间里你除了等什么也做不了。</span></li>
+        <li class="sub"><code class="cmd">sleep 10 &amp;</code> runs the job in the background and returns the prompt straight away.<span class="item-zh">sleep 10 &amp; 在后台运行该作业并立即返回提示符。</span></li>
+        <li class="sub">The machine answers with the job number and the PID in square brackets, e.g. <code class="cmd">[1] 6259</code>, and notifies you when the background process has finished.<span class="item-zh">机器会用方括号给出作业号和 PID，例如 [1] 6259，并在后台进程结束时通知你。</span></li>
+        <li class="sub">You can suspend a foreground process by holding [Ctrl] and typing [z] (written <code class="cmd">^Z</code>), and then put it in the background with <code class="cmd">bg</code>.<span class="item-zh">按住 Ctrl 再按 z（写作 ^Z）可挂起前台进程，然后用 bg 把它放到后台。</span></li>
+        <li class="sub">Note: do not background programs that require user interaction.<span class="item-zh">注意：不要把需要用户交互的程序放到后台。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 5.4 jobs / fg ===================== -->
+    <section class="panel original reveal">
+      <h2>5.4 Listing suspended and background processes &middot; 列出挂起与后台进程</h2>
+      <ul class="content-list">
+        <li>When a process is running, backgrounded or suspended, it is entered onto a list together with a job number.<span class="item-zh">进程在运行、放到后台或被挂起时，都会连同一个作业号进入一个列表。</span></li>
+        <li class="sub">Type <code class="cmd">jobs</code> to examine this list, for example <code class="cmd">[1] Suspended sleep 100</code>.<span class="item-zh">输入 jobs 查看该列表，例如 [1] Suspended sleep 100。</span></li>
+        <li class="sub">To restart a suspended process in the foreground, type <code class="cmd">fg %jobnumber</code>, for example <code class="cmd">fg %1</code>.<span class="item-zh">要把挂起的进程恢复到前台运行，输入 fg %作业号，例如 fg %1。</span></li>
+        <li class="sub">Typing <code class="cmd">fg</code> with no job number foregrounds the last suspended process.<span class="item-zh">不带作业号输入 fg 会把最近挂起的进程调到前台。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 5.5 kill ===================== -->
+    <section class="panel original reveal">
+      <h2>5.5 Killing a process &middot; 终止进程</h2>
+      <ul class="content-list">
+        <li>It is sometimes necessary to kill a process, for example when a program is in an infinite loop.<span class="item-zh">有时必须终止一个进程，例如程序陷入死循环时。</span></li>
+        <li class="sub">To kill a job running in the foreground, type <code class="cmd">^C</code> (hold [control] and press [c]).<span class="item-zh">要终止前台作业，输入 ^C（按住 Ctrl 再按 c）。</span></li>
+        <li class="sub">To kill a suspended or background process, type <code class="cmd">kill %jobnumber</code>, for example <code class="cmd">kill %4</code>.<span class="item-zh">要终止挂起或后台进程，输入 kill %作业号，例如 kill %4。</span></li>
+        <li class="sub">Examine the job list again with <code class="cmd">jobs</code> to check whether the process has been removed.<span class="item-zh">再用 jobs 查看作业列表，确认进程是否已被删除。</span></li>
+        <li><code class="cmd">ps</code> (process status) lists processes with their process numbers (PIDs).<span class="item-zh">ps（process status）列出进程及其进程号（PID）。</span></li>
+        <li class="sub">You can also kill a process by its PID: <code class="cmd">kill 20077</code>.<span class="item-zh">也可以按进程号终止进程：kill 20077。</span></li>
+        <li class="sub">If a process refuses to be killed, use the <code class="cmd">-9</code> option: <code class="cmd">kill -9 20077</code>.<span class="item-zh">如果进程拒绝终止，使用 -9 选项：kill -9 20077。</span></li>
+        <li class="sub">Note: it is not possible to kill off other users&rsquo; processes.<span class="item-zh">注意：你无法终止其他用户的进程。</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== Summary 4 ===================== -->
+    <section class="panel original reveal">
+      <h2>Summary 4 &middot; 小结（权限与进程）</h2>
+      <ul class="content-list">
+        <li><code class="cmd">ls -lag</code> &mdash; list access rights for all files<span class="item-zh">列出所有文件的访问权限</span></li>
+        <li class="sub"><code class="cmd">chmod [options] file</code> &mdash; change access rights for the named file<span class="item-zh">修改指定文件的访问权限</span></li>
+        <li class="sub"><code class="cmd">command &amp;</code> &mdash; run command in background<span class="item-zh">在后台运行命令</span></li>
+        <li class="sub"><code class="cmd">^C</code> &mdash; kill the job running in the foreground<span class="item-zh">终止前台作业</span></li>
+        <li class="sub"><code class="cmd">^Z</code> &mdash; suspend the job running in the foreground<span class="item-zh">挂起前台作业</span></li>
+        <li class="sub"><code class="cmd">bg</code> &mdash; background the suspended job<span class="item-zh">把挂起的作业放到后台</span></li>
+        <li class="sub"><code class="cmd">jobs</code> &mdash; list current jobs<span class="item-zh">列出当前作业</span></li>
+        <li class="sub"><code class="cmd">fg %1</code> &mdash; foreground job number 1<span class="item-zh">把 1 号作业调到前台</span></li>
+        <li class="sub"><code class="cmd">kill %1</code> &mdash; kill job number 1<span class="item-zh">终止 1 号作业</span></li>
+        <li class="sub"><code class="cmd">ps</code> &mdash; list current processes<span class="item-zh">列出当前进程</span></li>
+        <li class="sub"><code class="cmd">kill 26152</code> &mdash; kill process number 26152<span class="item-zh">终止进程号为 26152 的进程</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== 6.1 other commands ===================== -->
+    <section class="panel original reveal">
+      <h2>6.1 Other useful UNIX commands &middot; 其他常用命令</h2>
+      <ul class="content-list">
+        <li><code class="cmd">df</code> reports on the space left on the file system.<span class="item-zh">df 报告文件系统的剩余空间。</span></li>
+        <li class="sub">Use it to find out how much space is left on the fileserver.<span class="item-zh">用它查看文件服务器上还剩多少空间。</span></li>
+        <li><code class="cmd">du</code> outputs the number of kilobytes used by each subdirectory.<span class="item-zh">du 输出每个子目录使用的 KB 数量。</span></li>
+        <li class="sub">Useful if you have gone over quota and you want to find out which directory has the most files.<span class="item-zh">如果你超出配额，可以用它找出哪个目录文件最多。</span></li>
+        <li><code class="cmd">compress file</code> reduces the size of a file, thus freeing valuable disk space, and produces <code class="cmd">file.Z</code>.<span class="item-zh">compress file 压缩文件以节省磁盘空间，生成 file.Z。</span></li>
+        <li class="sub">Compare with <code class="cmd">ls -l</code> before and after compressing.<span class="item-zh">可以用 ls -l 比较压缩前后的文件大小。</span></li>
+        <li class="sub"><code class="cmd">uncompress file.Z</code> restores the original file.<span class="item-zh">uncompress file.Z 还原原始文件。</span></li>
+        <li><code class="cmd">gzip file</code> also compresses a file and is more efficient than compress; it produces <code class="cmd">file.gz</code>.<span class="item-zh">gzip file 同样压缩文件，而且比 compress 更高效，生成 file.gz。</span></li>
+        <li class="sub"><code class="cmd">gunzip file.gz</code> unzips the file.<span class="item-zh">gunzip file.gz 解压文件。</span></li>
+        <li><code class="cmd">file *</code> classifies the named files according to the type of data they contain, for example ascii (text), pictures, compressed data.<span class="item-zh">file * 按文件所含数据类型分类，例如 ascii（文本）、图片、压缩数据等。</span></li>
+        <li><code class="cmd">history</code> shows the ordered list of all the commands you have entered.<span class="item-zh">history 显示你输入过的所有命令的有序列表。</span></li>
+        <li class="sub">If you use the C shell, the exclamation character <code class="cmd">!</code> recalls commands easily.<span class="item-zh">如果使用 C shell，可以用感叹号 ! 轻松调用之前的命令。</span></li>
+        <li class="sub"><code class="cmd">!!</code> recall last command &mdash; 调用上一条命令<span class="item-zh">!! 调用最近一条命令</span></li>
+        <li class="sub"><code class="cmd">!-3</code> recall third most recent command &mdash; 调用倒数第三条命令<span class="item-zh">!-3 调用倒数第三条命令</span></li>
+        <li class="sub"><code class="cmd">!5</code> recall 5th command in list &mdash; 调用列表中第 5 条命令<span class="item-zh">!5 调用列表中第 5 条命令</span></li>
+        <li class="sub"><code class="cmd">!grep</code> recall last command starting with grep &mdash; 调用最近一条以 grep 开头的命令<span class="item-zh">!grep 调用最近一条以 grep 开头的命令</span></li>
+        <li class="sub">Increase the size of the history buffer with <code class="cmd">set history=100</code>.<span class="item-zh">用 set history=100 可以增大历史记录缓冲区的大小。</span></li>
+      </ul>
+      <p class="qz-src-head">SOURCE &middot; 出处</p>
+      <ul class="content-list">
+        <li class="sub">Parts of this lab are adapted from M. Stonebank&rsquo;s UNIX Tutorial for Beginners (http://www.ee.surrey.ac.uk/Teaching/UNIX/).<span class="item-zh">本实验部分内容改编自 M. Stonebank 的《UNIX Tutorial for Beginners》（初学者 UNIX 教程）。</span></li>
+      </ul>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Page navigation">
+      <a class="btn btn-back" href="../index.html">&#8592; Back to Home</a>
+      <a class="btn btn-next" href="Chapter1Review.html">Chapter 1 questions &#8594;</a>
+    </nav>
+
+    <div class="kbd-hint">
+      <kbd>&#8592;</kbd> Back &nbsp; <kbd>&#8594;</kbd> Next &nbsp; <kbd>Esc</kbd> Home
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    Quiz 1 Review &middot; Introduction to UNIX Commands and Scripting &middot; content quoted from the course handout.
+  </footer>
+
+  <script src="../javascript/main.js"></script>
+  <script src="../javascript/animations.js"></script>
+  <script src="../javascript/speech.js"></script>
+</body>
+</html>

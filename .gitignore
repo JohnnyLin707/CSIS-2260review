@@ -3,3 +3,6 @@
 
 # Temp / download artifacts (e.g. smallpdf-convert-*.zip)
 *.zip
+
+# Course lecture slides (PDFs) are not redistributed in this repository
+*.pdf
