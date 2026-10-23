@@ -10,6 +10,7 @@ A static, dependency-free review site for **Operating Systems Quiz 1**. Every le
 
 ## ✨ Latest additions
 
+- **New deck — `pages/chapter4.html`** — Stallings Chapter 4 *Threads*, all **22 slides** with **38 exam questions**: processes vs. threads (unit of resource ownership vs. unit of dispatching), single-threaded and multithreaded approaches, what each thread has on its own and what it shares, the benefits of threads, thread states and the spawn / block / unblock / finish operations, thread synchronization, and user-level (ULT) vs kernel-level (KLT) threads. 22 new slide scans under `Ch04v2a-images/`, so all 254 review pages now open with a full-width scan of the real slide.
 - **UNIX Commands & Scripting cheat sheet** — `pages/UnixCommands.html`: the whole lab handout *Introduction to UNIX Commands and Scripting* as one bilingual page — **29 sections, 235 knowledge points**, every English line with a Simplified Chinese translation, and every command shown as a chip.
 - **Review-question decks** — `pages/Chapter1Review.html` (18 questions) and `pages/Chapter2Review.html` (23 questions): the original English question with a Chinese translation, and an answer written in the simplest English using the wording of the lecture slides, with a 简体中文 translation under every answer line.
 - **New deck — `pages/chapter3.html`** — Stallings Chapter 3 *Process Description and Control*, all **58 slides** with **126 exam questions**: what a process is, the process elements and the process control block, traces and the dispatcher, the two-state and five-state models, process creation and termination, suspended processes, the operating system control tables, process control structures, modes of execution, process switching, and UNIX SVR4 process management.
@@ -27,15 +28,16 @@ A static, dependency-free review site for **Operating Systems Quiz 1**. Every le
 | 02 | Chapter 1: Computer System Overview / 第 1 章：计算机系统概述 | `Ch01v2a.pdf` | 59 (all) | 132 |
 | 03 | Chapter 2: Operating System Overview / 第 2 章：操作系统概述 | `Ch02v2a.pdf` | 75 (all) | 225 |
 | 04 | Chapter 3: Process Description and Control / 第 3 章：进程描述与控制 | `Ch03v2a.pdf` | 58 (all) | 126 |
-| 05 | Quiz1importantShortAnswer / 测验 1 重点简答题 | Short Questions (17 marks) | — | 4 |
-| 06 | Quiz 1 Key Questions / 测验 1 重点回忆题 | Decks 01–04 | — | 25 |
-| 07 | Quiz1-Fall-2026 / 2026 年秋季测验 1 真题 | 5 real exam questions (20 marks) | — | 5 |
-| 08 | Chapter 1: Review Questions / 第 1 章：复习问答题 | `Ch01v2a.pdf` | — | 18 |
-| 09 | Chapter 2: Review Questions / 第 2 章：复习问答题 | `Ch02v2a.pdf` | — | 23 |
-| 10 | UNIX Commands & Scripting / UNIX 命令与脚本速查表 | `Introduction to UNIX Commands and Scripting.pdf` | 29 sections | 235 points |
-| | **Total** | | **232** | **662** |
+| 05 | Chapter 4: Threads / 第 4 章：线程 | `Ch04v2a.pdf` | 22 (all) | 38 |
+| 06 | Quiz1importantShortAnswer / 测验 1 重点简答题 | Short Questions (17 marks) | — | 4 |
+| 07 | Quiz 1 Key Questions / 测验 1 重点回忆题 | Decks 01–05 | — | 25 |
+| 08 | Quiz1-Fall-2026 / 2026 年秋季测验 1 真题 | 5 real exam questions (20 marks) | — | 5 |
+| 09 | Chapter 1: Review Questions / 第 1 章：复习问答题 | `Ch01v2a.pdf` | — | 18 |
+| 10 | Chapter 2: Review Questions / 第 2 章：复习问答题 | `Ch02v2a.pdf` | — | 23 |
+| 11 | UNIX Commands & Scripting / UNIX 命令与脚本速查表 | `Introduction to UNIX Commands and Scripting.pdf` | 29 sections | 235 points |
+| | **Total** | | **254** | **700** |
 
-Deck 10 is a command cheat sheet (29 sections, 235 bilingual knowledge points) rather than a slide deck, so it is not counted in the slide and exam-question totals.
+Deck 11 is a command cheat sheet (29 sections, 235 bilingual knowledge points) rather than a slide deck, so it is not counted in the slide and exam-question totals.
 
 ### Deck 01 — Introduction to Computer Hardware
 Hardware vs. software, binary numbers, PC components, the motherboard, storage devices, buses, BIOS/UEFI, and the electrical system.
@@ -49,7 +51,10 @@ What an operating system is and what it does as a resource manager, the evolutio
 ### Deck 04 — Chapter 3: Process Description and Control (Stallings)
 What a process is and its two essential elements, the process elements held in the process control block, traces and the dispatcher, the two-state and five-state process models, process creation and termination, suspended processes and swapping, the operating system control tables, process control structures and the process image, modes of execution, process switching, and UNIX SVR4 process management.
 
-### Deck 05 — Quiz1importantShortAnswer
+### Deck 05 — Chapter 4: Threads (Stallings)
+Processes vs. threads (the unit of resource ownership vs. the unit of dispatching), the two characteristics of a process, multithreading, single-threaded and multithreaded approaches, what a process provides in a multithreaded environment, what each thread has on its own and what it shares, the benefits of threads and their use in a single-user system, thread states and the operations spawn / block / unblock / finish, thread synchronization, and user-level (ULT) vs kernel-level (KLT) threads.
+
+### Deck 06 — Quiz1importantShortAnswer
 Four short-answer questions in the exact style of the quiz (17 marks), answered straight from the slides — each question quotes the **textbook source** with page references and then gives **one answer box per mark**:
 
 | Q | Topic | Source | Marks | Boxes |
@@ -59,32 +64,32 @@ Four short-answer questions in the exact style of the quiz (17 marks), answered 
 | 11 | What a program counter holds, and when its value increases | `Ch01v2a.pdf` p. 13, 15 | 4 | 4 |
 | 12 | The principle of locality in a multilevel memory structure | `Ch01v2a.pdf` p. 33, 35, 36, 37 | 7 | 7 |
 
-### Deck 06 — Quiz 1 Key Questions
+### Deck 07 — Quiz 1 Key Questions
 A professor-style consolidated recall quiz: **25 questions / 84 marks**, one mark per answer point, covering basic elements, the processor and its registers, the instruction cycle, interrupts, the memory hierarchy, cache design, the computer's internal hardware and the operating-system overview. Click any question to reveal its English + 中文 model answer.
 
-### Deck 07 — Quiz1-Fall-2026
+### Deck 08 — Quiz1-Fall-2026
 The real Fall 2026 quiz: **5 questions / 20 marks** — components of a modern microprocessor besides the CPU, BIOS and UEFI, primary vs. secondary storage, the instruction-cycle simulation diagram (cells A–L, image in `Quiz1diagram/`), and three classes of interrupts. Every answer point gets its own auto-marked box.
 
-### Deck 08 — Chapter 1: Review Questions
+### Deck 09 — Chapter 1: Review Questions
 The **18** Chapter 1 review questions (four basic elements of a computer, primary vs. secondary memory, I/O device types, GPU / DSP / cache, SoC, interrupts and their classes, the memory hierarchy, the principle of locality, cache design tradeoffs, LRU, programmed / interrupt-driven / DMA I/O, SMP and multicore). Questions are shown in English with a Chinese translation; answers are written in the simplest English using the words of the lecture slides, with a 简体中文 line under every answer.
 
-### Deck 09 — Chapter 2: Review Questions
+### Deck 10 — Chapter 2: Review Questions
 The **23** Chapter 2 review questions (ISA / ABI / API, why operating systems evolve, serial → batch → multiprogramming → time sharing, JCL, memory protection / timers / privileged instructions / interrupts, user vs kernel mode, processes, memory management, virtual memory paging, security, scheduling priorities, interrupt vs service call, monolithic vs microkernel, multithreading, SMP vs distributed systems, fault-tolerance measures, fault types, Windows fault tolerance). Same format: English question + 中文, simple English answer + 简体中文.
 
-### Deck 10 — UNIX Commands & Scripting
+### Deck 11 — UNIX Commands & Scripting
 A bilingual cheat sheet for the lab handout *Introduction to UNIX Commands and Scripting*: getting help (`man`, `whatis`, `apropos`), listing / making / changing directories (`ls`, `mkdir`, `cd`, `.`, `..`, `pwd`, `~`), copying / moving / removing (`cp`, `mv`, `rm`, `rmdir`), displaying files (`cat`, `less`, `head`, `tail`), tab completion and command history, searching (`grep`, `wc`), wildcards (`*`, `?`), redirection (`>`, `>>`, `<`) and pipes (`|`), access rights and `chmod`, processes and jobs (`&`, `^Z`, `bg`, `jobs`, `fg`, `kill`), and other useful commands (`df`, `du`, `compress`, `gzip`, `file`, `history`). Every point has a Simplified Chinese translation underneath.
 
 ---
 
 ## Features
 
-- **Slide-by-slide pages** — one HTML page per slide, 232 in total across four decks.
-- **The real slide image** — a full-width scan of the actual slide at the top of every page (232 images). Plain display: not clickable, and always scaled to fit the screen width.
+- **Slide-by-slide pages** — one HTML page per slide, 254 in total across five decks.
+- **The real slide image** — a full-width scan of the actual slide at the top of every page (254 images). Plain display: not clickable, and always scaled to fit the screen width.
 - **Back / Next at the top and the bottom** — page through a whole deck without scrolling back down.
 - **Bilingual** — every original line is followed by its Chinese translation.
 - **Read-aloud** — a speaker button after the title and after every English line reads it with the built-in Web Speech API (Chinese lines are skipped).
 - **Textbook answers highlighted** — model answers on warm highlight chips, slide points on numbered low-glare cards, Chinese lines on soft mint chips.
-- **Exam-style Q&A** — 592 click-to-reveal questions with answers and source references on the slide pages, 25 recall questions on the key-questions page, 4 short-answer drills with answer boxes, and the 5-question Fall 2026 quiz.
+- **Exam-style Q&A** — 630 click-to-reveal questions with answers and source references on the slide pages, 25 recall questions on the key-questions page, 4 short-answer drills with answer boxes, and the 5-question Fall 2026 quiz.
 - **Write-and-check drills** — one input box per answer point, marked automatically: order does not matter, English or 中文 both accepted, missing keywords are reported.
 - **Searchable navigation** — a collapsible sidebar with live filtering, plus a keyword filter on each deck page.
 - **Keyboard shortcuts** — `←` previous slide, `→` next slide, `Esc` back to home.
@@ -138,15 +143,19 @@ CSIS-2260review/
 │   ├── chapter3.html          # Deck 04 index (all 58 slides)
 │   ├── chapter3/
 │   │   └── page-01 … page-58.html
-│   ├── Quiz1importantShortAnswer.html   # Deck 05 — 4 short questions, 19 answer boxes
-│   ├── Quiz1keyQuestions.html           # Deck 06 — 25 recall questions (84 marks)
-│   ├── Quiz1Fall2026.html               # Deck 07 — Fall 2026 quiz, 20 marks
-│   ├── Chapter1Review.html              # Deck 08 — 18 Ch.1 review questions
-│   ├── Chapter2Review.html              # Deck 09 — 23 Ch.2 review questions
-│   └── UnixCommands.html                # Deck 10 — UNIX commands cheat sheet (29 sections)
+│   ├── chapter4.html          # Deck 05 index (all 22 slides)
+│   ├── chapter4/
+│   │   └── page-01 … page-22.html
+│   ├── Quiz1importantShortAnswer.html   # Deck 06 — 4 short questions, 19 answer boxes
+│   ├── Quiz1keyQuestions.html           # Deck 07 — 25 recall questions (84 marks)
+│   ├── Quiz1Fall2026.html               # Deck 08 — Fall 2026 quiz, 20 marks
+│   ├── Chapter1Review.html              # Deck 09 — 18 Ch.1 review questions
+│   ├── Chapter2Review.html              # Deck 10 — 23 Ch.2 review questions
+│   └── UnixCommands.html                # Deck 11 — UNIX commands cheat sheet (29 sections)
 ├── Ch01v2a-images/            # Slide scans for deck 02 (59 images)
 ├── Ch02v2a-images/            # Slide scans for deck 03 (75 images)
 ├── Ch03v2a-images/            # Slide scans for deck 04 (58 images)
+├── Ch04v2a-images/            # Slide scans for deck 05 (22 images)
 ├── Quiz1diagram/              # The Fall 2026 instruction-cycle simulation image
 ├── Intro to HW v2-images/     # Slide scans for deck 01 (40 images)
 └── .gitignore                 # ignores .DS_Store and temporary *.zip files
@@ -183,7 +192,7 @@ Push the repository, then go to **Settings → Pages → Build and deployment �
 
 ## Notes
 
-- Content is excerpted verbatim from the course lecture slides (`Intro to HW v2.pdf`, `Ch01v2a.pdf`, `Ch02v2a.pdf`, `Ch03v2a.pdf`) and the lab handout `Introduction to UNIX Commands and Scripting.pdf`; the PDFs themselves are **not** included in this repository (`.gitignore` ignores `*.pdf`). The images under `Intro to HW v2-images/`, `Ch01v2a-images/`, `Ch02v2a-images/` and `Ch03v2a-images/` are page scans extracted from those PDFs.
+- Content is excerpted verbatim from the course lecture slides (`Intro to HW v2.pdf`, `Ch01v2a.pdf`, `Ch02v2a.pdf`, `Ch03v2a.pdf`, `Ch04v2a.pdf`) and the lab handout `Introduction to UNIX Commands and Scripting.pdf`; the PDFs themselves are **not** included in this repository (`.gitignore` ignores `*.pdf`). The images under `Intro to HW v2-images/`, `Ch01v2a-images/`, `Ch02v2a-images/` and `Ch03v2a-images/` are page scans extracted from those PDFs.
 - Translations, exam questions and model answers are study aids generated for review purposes — always cross-check against the official slides and your instructor's guidance before the quiz.
 - The answer checking is keyword based and deliberately forgiving, so it is a memorisation aid, not a strict grader: a box marked ✓ still means "you reproduced the point", not "this is the only correct wording".
 

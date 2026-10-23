@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070b16'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%235eead4' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2360a5fa'/%3E%3C/svg%3E">
+  <title>Chapter 4: Threads &mdash; Quiz 1 Review</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <noscript><style>.reveal{opacity:1 !important}</style></noscript>
+</head>
+<body class="topic-page has-sidebar" data-topic="chapter4">
+
+  <div class="animated-bg" aria-hidden="true">
+    <span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <aside class="sidebar" id="sidebar" aria-label="Slide navigation">
+    <div class="sidebar-head">
+      <span class="sidebar-title">Slides</span>
+      <button class="sidebar-close" type="button" aria-label="Close navigation">&#10005;</button>
+    </div>
+    <div class="sidebar-search">
+      <input class="sidebar-filter" type="search" placeholder="Jump to slide&hellip;" aria-label="Filter slides">
+    </div>
+    <nav class="sidebar-list">
+        <a class="sidebar-link" href="chapter4/page-01.html" data-num="01" data-title="Title Slide">
+          <span class="snum">01</span>
+          <span class="sname">Title Slide<span class="sname-zh">第 4 章 标题页</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-02.html" data-num="02" data-title="Processes and Threads">
+          <span class="snum">02</span>
+          <span class="sname">Processes and Threads<span class="sname-zh">进程与线程</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-03.html" data-num="03" data-title="Processes and Threads (continued)">
+          <span class="snum">03</span>
+          <span class="sname">Processes and Threads (continued)<span class="sname-zh">进程与线程（续）</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-04.html" data-num="04" data-title="Single Threaded Approaches">
+          <span class="snum">04</span>
+          <span class="sname">Single Threaded Approaches<span class="sname-zh">单线程方式</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-05.html" data-num="05" data-title="Multithreaded Approaches">
+          <span class="snum">05</span>
+          <span class="sname">Multithreaded Approaches<span class="sname-zh">多线程方式</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-06.html" data-num="06" data-title="Process">
+          <span class="snum">06</span>
+          <span class="sname">Process<span class="sname-zh">进程</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-07.html" data-num="07" data-title="One or More Threads in a Process">
+          <span class="snum">07</span>
+          <span class="sname">One or More Threads in a Process<span class="sname-zh">进程中的一个或多个线程</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-08.html" data-num="08" data-title="Figure 4.2 Single Threaded and Multithreaded Process Models">
+          <span class="snum">08</span>
+          <span class="sname">Figure 4.2 Single Threaded and Multithreaded Process Models<span class="sname-zh">图 4.2 单线程与多线程进程模型</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-09.html" data-num="09" data-title="Key Benefits of Threads">
+          <span class="snum">09</span>
+          <span class="sname">Key Benefits of Threads<span class="sname-zh">线程的主要好处</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-10.html" data-num="10" data-title="Thread Use in a Single-User System">
+          <span class="snum">10</span>
+          <span class="sname">Thread Use in a Single-User System<span class="sname-zh">单用户系统中的线程用途</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-11.html" data-num="11" data-title="Threads">
+          <span class="snum">11</span>
+          <span class="sname">Threads<span class="sname-zh">线程（状态与调度）</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-12.html" data-num="12" data-title="Thread Execution States">
+          <span class="snum">12</span>
+          <span class="sname">Thread Execution States<span class="sname-zh">线程的执行状态</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-13.html" data-num="13" data-title="Figure 4.3 Remote Procedure Call (RPC) Using Threads">
+          <span class="snum">13</span>
+          <span class="sname">Figure 4.3 Remote Procedure Call (RPC) Using Threads<span class="sname-zh">图 4.3 使用线程的远程过程调用（RPC）</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-14.html" data-num="14" data-title="Figure 4.4 Multithreading Example on a Uniprocessor">
+          <span class="snum">14</span>
+          <span class="sname">Figure 4.4 Multithreading Example on a Uniprocessor<span class="sname-zh">图 4.4 单处理器上的多线程示例</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-15.html" data-num="15" data-title="Thread Synchronization">
+          <span class="snum">15</span>
+          <span class="sname">Thread Synchronization<span class="sname-zh">线程同步</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-16.html" data-num="16" data-title="Types of Threads">
+          <span class="snum">16</span>
+          <span class="sname">Types of Threads<span class="sname-zh">线程的类型</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-17.html" data-num="17" data-title="User-Level Threads (ULTs)">
+          <span class="snum">17</span>
+          <span class="sname">User-Level Threads (ULTs)<span class="sname-zh">用户级线程（ULT）</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-18.html" data-num="18" data-title="Advantages of ULTs">
+          <span class="snum">18</span>
+          <span class="sname">Advantages of ULTs<span class="sname-zh">ULT 的优点</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-19.html" data-num="19" data-title="Disadvantages of ULTs">
+          <span class="snum">19</span>
+          <span class="sname">Disadvantages of ULTs<span class="sname-zh">ULT 的缺点</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-20.html" data-num="20" data-title="Kernel-Level Threads (KLTs)">
+          <span class="snum">20</span>
+          <span class="sname">Kernel-Level Threads (KLTs)<span class="sname-zh">内核级线程（KLT）</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-21.html" data-num="21" data-title="Advantages of KLTs">
+          <span class="snum">21</span>
+          <span class="sname">Advantages of KLTs<span class="sname-zh">KLT 的优点</span></span>
+        </a>
+        <a class="sidebar-link" href="chapter4/page-22.html" data-num="22" data-title="Summary">
+          <span class="snum">22</span>
+          <span class="sname">Summary<span class="sname-zh">本章小结</span></span>
+        </a>
+    </nav>
+  </aside>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <button class="btn btn-menu" type="button" data-sidebar-toggle aria-label="Toggle navigation">&#9776;</button>
+        <a class="btn btn-home" href="https://johnnylin707.github.io/CSIS2260-reviews/index.html">&#8962; Home Page</a>
+      </div>
+      <div class="topbar-center">
+        <div class="topbar-title">Chapter 4: Threads<span>&middot; All 22 slides</span></div>
+      </div>
+      <div class="topbar-right">
+        <span class="pdf-tag">Ch04v2a.pdf</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-shell">
+    <section class="topic-hero">
+      <h1>Chapter 4: Threads</h1>
+      <p class="topic-deck-zh">第 4 章：线程</p>
+      <p class="sub">22 slides &middot; click any slide below to open its own review page with the
+        original content, Chinese translation and exam-style questions.</p>
+
+      <div class="topic-tools">
+        <input class="topic-filter" type="search" placeholder="Filter slides by keyword or number&hellip;" aria-label="Filter slides">
+        <span class="pill filter-count">22 / 22 slides</span>
+      </div>
+    </section>
+    <nav class="top-nav" aria-label="Top deck navigation">
+      <a class="btn btn-back" href="../index.html">&#8592; Back to Home</a>
+      <a class="btn btn-next" href="intro-hw.html">计算机硬件导论 &#8594;</a>
+    </nav>
+
+    <section class="topic-grid">
+      <a class="topic-card" href="chapter4/page-01.html"
+         data-num="01" data-title="Title Slide">
+        <span class="topic-num">01</span>
+        <span class="topic-name">Title Slide<span class="topic-zh">第 4 章 标题页</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-02.html"
+         data-num="02" data-title="Processes and Threads">
+        <span class="topic-num">02</span>
+        <span class="topic-name">Processes and Threads<span class="topic-zh">进程与线程</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-03.html"
+         data-num="03" data-title="Processes and Threads (continued)">
+        <span class="topic-num">03</span>
+        <span class="topic-name">Processes and Threads (continued)<span class="topic-zh">进程与线程（续）</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-04.html"
+         data-num="04" data-title="Single Threaded Approaches">
+        <span class="topic-num">04</span>
+        <span class="topic-name">Single Threaded Approaches<span class="topic-zh">单线程方式</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-05.html"
+         data-num="05" data-title="Multithreaded Approaches">
+        <span class="topic-num">05</span>
+        <span class="topic-name">Multithreaded Approaches<span class="topic-zh">多线程方式</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-06.html"
+         data-num="06" data-title="Process">
+        <span class="topic-num">06</span>
+        <span class="topic-name">Process<span class="topic-zh">进程</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-07.html"
+         data-num="07" data-title="One or More Threads in a Process">
+        <span class="topic-num">07</span>
+        <span class="topic-name">One or More Threads in a Process<span class="topic-zh">进程中的一个或多个线程</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-08.html"
+         data-num="08" data-title="Figure 4.2 Single Threaded and Multithreaded Process Models">
+        <span class="topic-num">08</span>
+        <span class="topic-name">Figure 4.2 Single Threaded and Multithreaded Process Models<span class="topic-zh">图 4.2 单线程与多线程进程模型</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-09.html"
+         data-num="09" data-title="Key Benefits of Threads">
+        <span class="topic-num">09</span>
+        <span class="topic-name">Key Benefits of Threads<span class="topic-zh">线程的主要好处</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-10.html"
+         data-num="10" data-title="Thread Use in a Single-User System">
+        <span class="topic-num">10</span>
+        <span class="topic-name">Thread Use in a Single-User System<span class="topic-zh">单用户系统中的线程用途</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-11.html"
+         data-num="11" data-title="Threads">
+        <span class="topic-num">11</span>
+        <span class="topic-name">Threads<span class="topic-zh">线程（状态与调度）</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-12.html"
+         data-num="12" data-title="Thread Execution States">
+        <span class="topic-num">12</span>
+        <span class="topic-name">Thread Execution States<span class="topic-zh">线程的执行状态</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-13.html"
+         data-num="13" data-title="Figure 4.3 Remote Procedure Call (RPC) Using Threads">
+        <span class="topic-num">13</span>
+        <span class="topic-name">Figure 4.3 Remote Procedure Call (RPC) Using Threads<span class="topic-zh">图 4.3 使用线程的远程过程调用（RPC）</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-14.html"
+         data-num="14" data-title="Figure 4.4 Multithreading Example on a Uniprocessor">
+        <span class="topic-num">14</span>
+        <span class="topic-name">Figure 4.4 Multithreading Example on a Uniprocessor<span class="topic-zh">图 4.4 单处理器上的多线程示例</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-15.html"
+         data-num="15" data-title="Thread Synchronization">
+        <span class="topic-num">15</span>
+        <span class="topic-name">Thread Synchronization<span class="topic-zh">线程同步</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-16.html"
+         data-num="16" data-title="Types of Threads">
+        <span class="topic-num">16</span>
+        <span class="topic-name">Types of Threads<span class="topic-zh">线程的类型</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-17.html"
+         data-num="17" data-title="User-Level Threads (ULTs)">
+        <span class="topic-num">17</span>
+        <span class="topic-name">User-Level Threads (ULTs)<span class="topic-zh">用户级线程（ULT）</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-18.html"
+         data-num="18" data-title="Advantages of ULTs">
+        <span class="topic-num">18</span>
+        <span class="topic-name">Advantages of ULTs<span class="topic-zh">ULT 的优点</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-19.html"
+         data-num="19" data-title="Disadvantages of ULTs">
+        <span class="topic-num">19</span>
+        <span class="topic-name">Disadvantages of ULTs<span class="topic-zh">ULT 的缺点</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-20.html"
+         data-num="20" data-title="Kernel-Level Threads (KLTs)">
+        <span class="topic-num">20</span>
+        <span class="topic-name">Kernel-Level Threads (KLTs)<span class="topic-zh">内核级线程（KLT）</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-21.html"
+         data-num="21" data-title="Advantages of KLTs">
+        <span class="topic-num">21</span>
+        <span class="topic-name">Advantages of KLTs<span class="topic-zh">KLT 的优点</span></span>
+      </a>
+      <a class="topic-card" href="chapter4/page-22.html"
+         data-num="22" data-title="Summary">
+        <span class="topic-num">22</span>
+        <span class="topic-name">Summary<span class="topic-zh">本章小结</span></span>
+      </a>
+    </section>
+
+    <nav class="bottom-nav" aria-label="deck navigation">
+      <a class="btn btn-back" href="../index.html">&#8592; Back to Home</a>
+      <a class="btn btn-next" href="intro-hw.html">计算机硬件导论 &#8594;</a>
+    </nav>
+  </main>
+
+  <footer class="page-footer">
+    Quiz 1 Review &middot; Chapter 4: Threads &middot; source file: &ldquo;Ch04v2a.pdf&rdquo;
+  </footer>
+
+  <script src="../javascript/main.js"></script>
+  <script src="../javascript/animations.js"></script>
+</body>
+</html>

@@ -10,6 +10,7 @@ https://johnnylin707.github.io/CSIS2260-reviews/index.html
 
 ## ✨ 本次更新
 
+- **新增单元 `pages/chapter4.html`** —— Stallings 第 4 章《线程》全部 **22 张幻灯片**、**38 道考题**：进程与线程（资源拥有的单位 vs 调度的单位）、单线程与多线程方式、线程各自拥有什么与共享什么、线程的好处、线程状态与 spawn/block/unblock/finish 操作、线程同步，以及用户级线程（ULT）与内核级线程（KLT）。`Ch04v2a-images/` 新增 22 张扫描图，全部 254 个复习页顶部都有真实幻灯片的整宽扫描图。
 - **UNIX 命令与脚本速查表** —— `pages/UnixCommands.html`：把《UNIX 命令与脚本入门》课件整理成一张中英对照速查表，**29 个小节、235 个知识点**，每条英文下方都有简体中文翻译，命令以等宽小徽章显示。
 - **复习问答题单元** —— `pages/Chapter1Review.html`（18 道）与 `pages/Chapter2Review.html`（23 道）：英文原题 + 中文翻译，答案用课件原词写成最简单的英文，每条答案下方附简体中文翻译。
 - **新增单元 `pages/chapter3.html`** —— Stallings 第 3 章《进程描述与控制》全部 **58 张幻灯片**、**126 道考题**：什么是进程、进程的要素与进程控制块、轨迹与分派程序、两状态与五状态模型、进程的创建与终止、挂起进程、操作系统的控制表、进程控制结构与进程映像、执行模式、进程切换，以及 UNIX SVR4 的进程管理。
@@ -27,15 +28,16 @@ https://johnnylin707.github.io/CSIS2260-reviews/index.html
 | 02 | 第 1 章：计算机系统概述 / Chapter 1: Computer System Overview | `Ch01v2a.pdf` | 59（全部） | 132 |
 | 03 | 第 2 章：操作系统概述 / Chapter 2: Operating System Overview | `Ch02v2a.pdf` | 75（全部） | 225 |
 | 04 | 第 3 章：进程描述与控制 / Chapter 3: Process Description and Control | `Ch03v2a.pdf` | 58（全部） | 126 |
-| 05 | 测验 1 重点简答题 / Quiz1importantShortAnswer | Short Questions（17 分） | — | 4 |
-| 06 | 测验 1 重点回忆题 / Quiz 1 Key Questions | 单元 01–04 | — | 25 |
-| 07 | 2026 年秋季测验 1 真题 / Quiz1-Fall-2026 | 真题 5 道（20 分） | — | 5 |
-| 08 | 第 1 章：复习问答题 / Chapter 1: Review Questions | `Ch01v2a.pdf` | — | 18 |
-| 09 | 第 2 章：复习问答题 / Chapter 2: Review Questions | `Ch02v2a.pdf` | — | 23 |
-| 10 | UNIX 命令与脚本速查表 / UNIX Commands &amp; Scripting | `Introduction to UNIX Commands and Scripting.pdf` | 29 个小节 | 235 个知识点 |
-| | **合计** | | **232** | **662** |
+| 05 | 第 4 章：线程 / Chapter 4: Threads | `Ch04v2a.pdf` | 22（全部） | 38 |
+| 06 | 测验 1 重点简答题 / Quiz1importantShortAnswer | Short Questions（17 分） | — | 4 |
+| 07 | 测验 1 重点回忆题 / Quiz 1 Key Questions | 单元 01–05 | — | 25 |
+| 08 | 2026 年秋季测验 1 真题 / Quiz1-Fall-2026 | 真题 5 道（20 分） | — | 5 |
+| 09 | 第 1 章：复习问答题 / Chapter 1: Review Questions | `Ch01v2a.pdf` | — | 18 |
+| 10 | 第 2 章：复习问答题 / Chapter 2: Review Questions | `Ch02v2a.pdf` | — | 23 |
+| 11 | UNIX 命令与脚本速查表 / UNIX Commands &amp; Scripting | `Introduction to UNIX Commands and Scripting.pdf` | 29 个小节 | 235 个知识点 |
+| | **合计** | | **254** | **700** |
 
-单元 10 是命令速查表（29 个小节、235 个中英对照知识点），不属于幻灯片单元，因此不计入幻灯片数与考题总数。
+单元 11 是命令速查表（29 个小节、235 个中英对照知识点），不属于幻灯片单元，因此不计入幻灯片数与考题总数。
 
 ### 单元 01 —— 计算机硬件导论
 硬件与软件、二进制数、PC 组成部件、主板、存储设备、总线、BIOS/UEFI 以及供电系统。
@@ -49,7 +51,10 @@ https://johnnylin707.github.io/CSIS2260-reviews/index.html
 ### 单元 04 —— 第 3 章：进程描述与控制（Stallings）
 什么是进程及其两个基本要素、进程控制块中保存的进程要素、轨迹与分派程序、两状态与五状态进程模型、进程的创建与终止、挂起进程与交换、操作系统的控制表、进程控制结构与进程映像、执行模式、进程切换，以及 UNIX SVR4 的进程管理。
 
-### 单元 05 —— 测验 1 重点简答题（Quiz1importantShortAnswer）
+### 单元 05 —— 第 4 章：线程（Stallings）
+进程与线程（资源拥有的单位 vs 调度的单位）、进程的两个特征、多线程的定义、单线程与多线程方式、多线程环境中进程提供什么、每个线程各自拥有什么与共享什么、线程的好处与在单用户系统中的用途、线程状态及 spawn/block/unblock/finish 操作、线程同步，以及用户级线程（ULT）与内核级线程（KLT）的比较。
+
+### 单元 06 —— 测验 1 重点简答题（Quiz1importantShortAnswer）
 4 道完全按测验风格出的简答题，共 17 分，答案全部来自课件原文 —— 每题先列出**教材原文并标注出处页码**，再按分数给出**一分一个输入框**：
 
 | 题 | 考点 | 出处 | 分值 | 框数 |
@@ -59,32 +64,32 @@ https://johnnylin707.github.io/CSIS2260-reviews/index.html
 | 11 | 程序计数器保存什么信息、其值何时递增 | `Ch01v2a.pdf` 第 13、15 页 | 4 | 4 |
 | 12 | 局部性原理如何应用于多级存储结构 | `Ch01v2a.pdf` 第 33、35、36、37 页 | 7 | 7 |
 
-### 单元 06 —— 测验 1 重点回忆题
+### 单元 07 —— 测验 1 重点回忆题
 按老师出题风格整理的综合回忆题：**25 道题 / 84 分**，一个要点一分，覆盖基本组成元素、处理器与寄存器、指令周期、中断、存储器层次结构、Cache 设计、计算机内部硬件以及操作系统概述。点击任意题目即可展开英文 + 中文标准答案。
 
-### 单元 07 —— Quiz1-Fall-2026
+### 单元 08 —— Quiz1-Fall-2026
 2026 年秋季真题：**5 道题 / 20 分** —— 现代微处理器中除 CPU 以外的部件、BIOS 与 UEFI、主存与外存的区别、指令周期模拟图（A–L 空格，图片在 `Quiz1diagram/`）、三种中断类别。每个要点都有独立的自动判分输入框。
 
-### 单元 08 —— 第 1 章：复习问答题
+### 单元 09 —— 第 1 章：复习问答题
 **18 道**第 1 章复习题：计算机的四个基本组成、主存与外存的区别、I/O 设备类型、GPU / DSP / Cache、SoC、中断的作用与四类中断、存储器层次结构与取舍、局部性原理、Cache 工作原理与设计取舍、LRU、程序控制 / 中断驱动 / DMA 三种 I/O 方式、SMP 与多核。题目为英文原题 + 中文翻译；答案用课件原词的**最简单英文**写出，每条答案下方都有简体中文翻译。
 
-### 单元 09 —— 第 2 章：复习问答题
+### 单元 10 —— 第 2 章：复习问答题
 **23 道**第 2 章复习题：ISA / ABI / API、操作系统演进的原因、串行→批处理→多道程序→分时各自的局限、JCL、存储器保护/定时器/特权指令/中断的作用、用户态与内核态、进程、存储器管理、虚拟内存分页、信息安全、调度目标、中断与服务调用的区别、单内核与微内核、多线程、SMP 与分布式系统、容错指标、故障类型、Windows 的容错机制。格式与单元 08 一致：英文原题 + 中文，简单英文答案 + 简体中文。
 
-### 单元 10 —— UNIX 命令与脚本速查表
+### 单元 11 —— UNIX 命令与脚本速查表
 《UNIX 命令与脚本入门》课件的中英对照速查表：获取帮助（`man`、`whatis`、`apropos`），列出/创建/切换目录（`ls`、`mkdir`、`cd`、`.`、`..`、`pwd`、`~`），复制/移动/删除（`cp`、`mv`、`rm`、`rmdir`），显示文件（`cat`、`less`、`head`、`tail`），Tab 补全与命令历史，搜索（`grep`、`wc`），通配符（`*`、`?`），重定向（`>`、`>>`、`<`）与管道（`|`），访问权限与 `chmod`，进程与作业（`&`、`^Z`、`bg`、`jobs`、`fg`、`kill`），以及其他常用命令（`df`、`du`、`compress`、`gzip`、`file`、`history`）。每个知识点下方都有简体中文翻译。
 
 ---
 
 ## 功能特点
 
-- **一页一幻灯片** —— 四个单元共 232 个独立页面。
-- **课件原图** —— 每个页面顶部都有真实幻灯片的整宽扫描图（共 232 张）。纯展示：不可点击，且始终按屏幕宽度自适应缩放。
+- **一页一幻灯片** —— 五个单元共 254 个独立页面。
+- **课件原图** —— 每个页面顶部都有真实幻灯片的整宽扫描图（共 254 张）。纯展示：不可点击，且始终按屏幕宽度自适应缩放。
 - **顶部与底部都有 Back / Next** —— 翻页不必再滚到页面底部。
 - **中英对照** —— 每一条原文后面紧跟中文翻译。
 - **点击朗读** —— 标题和每条英文后面都有小喇叭按钮，用浏览器内置语音朗读（自动跳过中文行）。
 - **教材答案高亮** —— 标准答案用暖色高亮块，幻灯片要点做成带编号的低刺激卡片，中文行用柔和薄荷底色。
-- **模拟考题** —— 幻灯片页面上有 592 道点击展开的题目（附答案与出处），重点回忆题页另有 25 道，4 道带输入框的简答题，以及 2026 年秋季真题 5 道。
+- **模拟考题** —— 幻灯片页面上有 630 道点击展开的题目（附答案与出处），重点回忆题页另有 25 道，4 道带输入框的简答题，以及 2026 年秋季真题 5 道。
 - **作答自测** —— 一个要点一个输入框，自动判分：要点顺序不限，英文或中文作答都接受，并会提示漏掉的关键词。
 - **可搜索导航** —— 可折叠侧边栏支持实时筛选，每个单元页也带关键词过滤框。
 - **键盘快捷键** —— `←` 上一页，`→` 下一页，`Esc` 回到首页。
@@ -138,15 +143,19 @@ CSIS-2260review/
 │   ├── chapter3.html          # 单元 04 索引（全部 58 页）
 │   ├── chapter3/
 │   │   └── page-01 … page-58.html
-│   ├── Quiz1importantShortAnswer.html   # 单元 05 —— 4 道简答题，19 个输入框
-│   ├── Quiz1keyQuestions.html           # 单元 06 —— 25 道回忆题（84 分）
-│   ├── Quiz1Fall2026.html               # 单元 07 —— 2026 秋季真题，20 分
-│   ├── Chapter1Review.html              # 单元 08 —— 第 1 章复习问答题 18 道
-│   ├── Chapter2Review.html              # 单元 09 —— 第 2 章复习问答题 23 道
-│   └── UnixCommands.html                # 单元 10 —— UNIX 命令速查表（29 个小节）
+│   ├── chapter4.html          # 单元 05 索引（全部 22 页）
+│   ├── chapter4/
+│   │   └── page-01 … page-22.html
+│   ├── Quiz1importantShortAnswer.html   # 单元 06 —— 4 道简答题，19 个输入框
+│   ├── Quiz1keyQuestions.html           # 单元 07 —— 25 道回忆题（84 分）
+│   ├── Quiz1Fall2026.html               # 单元 08 —— 2026 秋季真题，20 分
+│   ├── Chapter1Review.html              # 单元 09 —— 第 1 章复习问答题 18 道
+│   ├── Chapter2Review.html              # 单元 10 —— 第 2 章复习问答题 23 道
+│   └── UnixCommands.html                # 单元 11 —— UNIX 命令速查表（29 个小节）
 ├── Ch01v2a-images/            # 单元 02 的幻灯片扫描图（59 张）
 ├── Ch02v2a-images/            # 单元 03 的幻灯片扫描图（75 张）
 ├── Ch03v2a-images/            # 单元 04 的幻灯片扫描图（58 张）
+├── Ch04v2a-images/            # 单元 05 的幻灯片扫描图（22 张）
 ├── Quiz1diagram/              # 2026 秋季真题的指令周期模拟图
 ├── Intro to HW v2-images/     # 单元 01 的幻灯片扫描图（40 张）
 └── .gitignore                 # 忽略 .DS_Store 与临时 *.zip 文件
@@ -183,7 +192,7 @@ python3 -m http.server 8000
 
 ## 说明
 
-- 内容逐字摘录自课程课件（`Intro to HW v2.pdf`、`Ch01v2a.pdf`、`Ch02v2a.pdf`、`Ch03v2a.pdf`）与实验手册 `Introduction to UNIX Commands and Scripting.pdf`；这些 PDF 原文件**不在**本仓库中（`.gitignore` 忽略 `*.pdf`）。`Intro to HW v2-images/`、`Ch01v2a-images/`、`Ch02v2a-images/` 与 `Ch03v2a-images/` 下的图片是从这些 PDF 中导出的页面扫描图。
+- 内容逐字摘录自课程课件（`Intro to HW v2.pdf`、`Ch01v2a.pdf`、`Ch02v2a.pdf`、`Ch03v2a.pdf`、`Ch04v2a.pdf`）与实验手册 `Introduction to UNIX Commands and Scripting.pdf`；这些 PDF 原文件**不在**本仓库中（`.gitignore` 忽略 `*.pdf`）。`Intro to HW v2-images/`、`Ch01v2a-images/`、`Ch02v2a-images/` 与 `Ch03v2a-images/` 下的图片是从这些 PDF 中导出的页面扫描图。
 - 中文翻译、模拟考题与标准答案仅为复习辅助材料，考试前请务必与官方课件和老师的要求核对。
 - 自动判分基于关键词匹配并刻意设得宽松，它是"帮助记忆"的工具而不是严格的阅卷标准：某个框打勾代表"你写到了这个要点"，不代表"这是唯一正确的写法"。
 
