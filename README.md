@@ -10,6 +10,7 @@ A static, dependency-free review site for **Operating Systems Quiz 1**. Every le
 
 ## ✨ Latest additions
 
+- **UNIX Commands & Scripting cheat sheet** — `pages/UnixCommands.html`: the whole lab handout *Introduction to UNIX Commands and Scripting* as one bilingual page — **29 sections, 235 knowledge points**, every English line with a Simplified Chinese translation, and every command shown as a chip.
 - **Review-question decks** — `pages/Chapter1Review.html` (18 questions) and `pages/Chapter2Review.html` (23 questions): the original English question with a Chinese translation, and an answer written in the simplest English using the wording of the lecture slides, with a 简体中文 translation under every answer line.
 - **New deck — `pages/chapter3.html`** — Stallings Chapter 3 *Process Description and Control*, all **58 slides** with **126 exam questions**: what a process is, the process elements and the process control block, traces and the dispatcher, the two-state and five-state models, process creation and termination, suspended processes, the operating system control tables, process control structures, modes of execution, process switching, and UNIX SVR4 process management.
 - **Slide scans for Chapter 3** — 58 new images under `Ch03v2a-images/`, so all 232 review pages now open with a full-width scan of the real slide.
@@ -31,7 +32,10 @@ A static, dependency-free review site for **Operating Systems Quiz 1**. Every le
 | 07 | Quiz1-Fall-2026 / 2026 年秋季测验 1 真题 | 5 real exam questions (20 marks) | — | 5 |
 | 08 | Chapter 1: Review Questions / 第 1 章：复习问答题 | `Ch01v2a.pdf` | — | 18 |
 | 09 | Chapter 2: Review Questions / 第 2 章：复习问答题 | `Ch02v2a.pdf` | — | 23 |
+| 10 | UNIX Commands & Scripting / UNIX 命令与脚本速查表 | `Introduction to UNIX Commands and Scripting.pdf` | 29 sections | 235 points |
 | | **Total** | | **232** | **662** |
+
+Deck 10 is a command cheat sheet (29 sections, 235 bilingual knowledge points) rather than a slide deck, so it is not counted in the slide and exam-question totals.
 
 ### Deck 01 — Introduction to Computer Hardware
 Hardware vs. software, binary numbers, PC components, the motherboard, storage devices, buses, BIOS/UEFI, and the electrical system.
@@ -66,6 +70,9 @@ The **18** Chapter 1 review questions (four basic elements of a computer, primar
 
 ### Deck 09 — Chapter 2: Review Questions
 The **23** Chapter 2 review questions (ISA / ABI / API, why operating systems evolve, serial → batch → multiprogramming → time sharing, JCL, memory protection / timers / privileged instructions / interrupts, user vs kernel mode, processes, memory management, virtual memory paging, security, scheduling priorities, interrupt vs service call, monolithic vs microkernel, multithreading, SMP vs distributed systems, fault-tolerance measures, fault types, Windows fault tolerance). Same format: English question + 中文, simple English answer + 简体中文.
+
+### Deck 10 — UNIX Commands & Scripting
+A bilingual cheat sheet for the lab handout *Introduction to UNIX Commands and Scripting*: getting help (`man`, `whatis`, `apropos`), listing / making / changing directories (`ls`, `mkdir`, `cd`, `.`, `..`, `pwd`, `~`), copying / moving / removing (`cp`, `mv`, `rm`, `rmdir`), displaying files (`cat`, `less`, `head`, `tail`), tab completion and command history, searching (`grep`, `wc`), wildcards (`*`, `?`), redirection (`>`, `>>`, `<`) and pipes (`|`), access rights and `chmod`, processes and jobs (`&`, `^Z`, `bg`, `jobs`, `fg`, `kill`), and other useful commands (`df`, `du`, `compress`, `gzip`, `file`, `history`). Every point has a Simplified Chinese translation underneath.
 
 ---
 
@@ -135,7 +142,8 @@ CSIS-2260review/
 │   ├── Quiz1keyQuestions.html           # Deck 06 — 25 recall questions (84 marks)
 │   ├── Quiz1Fall2026.html               # Deck 07 — Fall 2026 quiz, 20 marks
 │   ├── Chapter1Review.html              # Deck 08 — 18 Ch.1 review questions
-│   └── Chapter2Review.html              # Deck 09 — 23 Ch.2 review questions
+│   ├── Chapter2Review.html              # Deck 09 — 23 Ch.2 review questions
+│   └── UnixCommands.html                # Deck 10 — UNIX commands cheat sheet (29 sections)
 ├── Ch01v2a-images/            # Slide scans for deck 02 (59 images)
 ├── Ch02v2a-images/            # Slide scans for deck 03 (75 images)
 ├── Ch03v2a-images/            # Slide scans for deck 04 (58 images)
@@ -175,7 +183,7 @@ Push the repository, then go to **Settings → Pages → Build and deployment �
 
 ## Notes
 
-- Content is excerpted verbatim from the course lecture slides (`Intro to HW v2.pdf`, `Ch01v2a.pdf`, `Ch02v2a.pdf`, `Ch03v2a.pdf`); the PDFs themselves are **not** included in this repository. The images under `Intro to HW v2-images/`, `Ch01v2a-images/`, `Ch02v2a-images/` and `Ch03v2a-images/` are page scans extracted from those PDFs.
+- Content is excerpted verbatim from the course lecture slides (`Intro to HW v2.pdf`, `Ch01v2a.pdf`, `Ch02v2a.pdf`, `Ch03v2a.pdf`) and the lab handout `Introduction to UNIX Commands and Scripting.pdf`; the PDFs themselves are **not** included in this repository (`.gitignore` ignores `*.pdf`). The images under `Intro to HW v2-images/`, `Ch01v2a-images/`, `Ch02v2a-images/` and `Ch03v2a-images/` are page scans extracted from those PDFs.
 - Translations, exam questions and model answers are study aids generated for review purposes — always cross-check against the official slides and your instructor's guidance before the quiz.
 - The answer checking is keyword based and deliberately forgiving, so it is a memorisation aid, not a strict grader: a box marked ✓ still means "you reproduced the point", not "this is the only correct wording".
 

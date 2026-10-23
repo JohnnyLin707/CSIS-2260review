@@ -10,6 +10,7 @@ https://johnnylin707.github.io/CSIS2260-reviews/index.html
 
 ## ✨ 本次更新
 
+- **UNIX 命令與腳本速查表** —— `pages/UnixCommands.html`：把《UNIX 命令與腳本入門》課件整理成一張中英對照速查表，**29 個小節、235 個知識點**，每條英文下方都有簡體中文翻譯，命令以等寬小徽章顯示。
 - **複習問答題單元** —— `pages/Chapter1Review.html`（18 題）與 `pages/Chapter2Review.html`（23 題）：英文原題 + 中文翻譯，答案以課件原詞寫成最簡單的英文，每條答案下方附簡體中文翻譯。
 - **新增單元 `pages/chapter3.html`** —— Stallings 第 3 章《行程描述與控制》全部 **58 張投影片**、**126 道考題**：什麼是行程、行程的要素與行程控制區塊、軌跡與分派程式、兩狀態與五狀態模型、行程的建立與終止、暫停行程、作業系統的控制表、行程控制結構與行程映像、執行模式、行程切換，以及 UNIX SVR4 的行程管理。
 - **第 3 章課程投影片原圖** —— `Ch03v2a-images/` 新增 58 張掃描圖，全部 232 個複習頁頂端現在都有真實投影片的整寬掃描圖。
@@ -31,7 +32,10 @@ https://johnnylin707.github.io/CSIS2260-reviews/index.html
 | 07 | 2026 年秋季小考 1 真題 / Quiz1-Fall-2026 | 真題 5 題（20 分） | — | 5 |
 | 08 | 第 1 章：複習問答題 / Chapter 1: Review Questions | `Ch01v2a.pdf` | — | 18 |
 | 09 | 第 2 章：複習問答題 / Chapter 2: Review Questions | `Ch02v2a.pdf` | — | 23 |
+| 10 | UNIX 命令與腳本速查表 / UNIX Commands &amp; Scripting | `Introduction to UNIX Commands and Scripting.pdf` | 29 個小節 | 235 個知識點 |
 | | **合計** | | **232** | **662** |
+
+單元 10 是命令速查表（29 個小節、235 個中英對照知識點），不屬於投影片單元，因此不計入投影片數與考題總數。
 
 ### 單元 01 —— 電腦硬體導論
 硬體與軟體、二進位數字、PC 組成元件、主機板、儲存裝置、匯流排、BIOS/UEFI 以及電源系統。
@@ -66,6 +70,9 @@ https://johnnylin707.github.io/CSIS2260-reviews/index.html
 
 ### 單元 09 —— 第 2 章：複習問答題
 **23 題**第 2 章複習題：ISA / ABI / API、作業系統演進的原因、序列→批次→多工程式→分時各自的限制、JCL、記憶體保護／定時器／特權指令／中斷的作用、使用者態與核心態、行程、記憶體管理、虛擬記憶體分頁、資訊安全、排程目標、中斷與服務呼叫的差異、單核心與微核心、多執行緒、SMP 與分散式系統、容錯指標、故障類型、Windows 的容錯機制。格式與單元 08 相同：英文原題 + 中文，簡單英文答案 + 簡體中文。
+
+### 單元 10 —— UNIX 命令與腳本速查表
+《UNIX 命令與腳本入門》課件的中英對照速查表：取得說明（`man`、`whatis`、`apropos`），列出／建立／切換目錄（`ls`、`mkdir`、`cd`、`.`、`..`、`pwd`、`~`），複製／移動／刪除（`cp`、`mv`、`rm`、`rmdir`），顯示檔案（`cat`、`less`、`head`、`tail`），Tab 補全與命令歷史，搜尋（`grep`、`wc`），萬用字元（`*`、`?`），重新導向（`>`、`>>`、`<`）與管線（`|`），存取權限與 `chmod`，行程與作業（`&`、`^Z`、`bg`、`jobs`、`fg`、`kill`），以及其他常用指令（`df`、`du`、`compress`、`gzip`、`file`、`history`）。每個知識點下方都有簡體中文翻譯。
 
 ---
 
@@ -135,7 +142,8 @@ CSIS-2260review/
 │   ├── Quiz1keyQuestions.html           # 單元 06 —— 25 道回憶題（84 分）
 │   ├── Quiz1Fall2026.html               # 單元 07 —— 2026 秋季真題，20 分
 │   ├── Chapter1Review.html              # 單元 08 —— 第 1 章複習問答題 18 題
-│   └── Chapter2Review.html              # 單元 09 —— 第 2 章複習問答題 23 題
+│   ├── Chapter2Review.html              # 單元 09 —— 第 2 章複習問答題 23 題
+│   └── UnixCommands.html                # 單元 10 —— UNIX 命令速查表（29 個小節）
 ├── Ch01v2a-images/            # 單元 02 的投影片掃描圖（59 張）
 ├── Ch02v2a-images/            # 單元 03 的投影片掃描圖（75 張）
 ├── Ch03v2a-images/            # 單元 04 的投影片掃描圖（58 張）
@@ -175,7 +183,7 @@ python3 -m http.server 8000
 
 ## 說明
 
-- 內容逐字摘錄自課程投影片（`Intro to HW v2.pdf`、`Ch01v2a.pdf`、`Ch02v2a.pdf`、`Ch03v2a.pdf`）；PDF 原始檔案**不在**本儲存庫中。`Intro to HW v2-images/`、`Ch01v2a-images/`、`Ch02v2a-images/` 與 `Ch03v2a-images/` 下的圖片是從這些 PDF 匯出的頁面掃描圖。
+- 內容逐字摘錄自課程投影片（`Intro to HW v2.pdf`、`Ch01v2a.pdf`、`Ch02v2a.pdf`、`Ch03v2a.pdf`）與實驗手冊 `Introduction to UNIX Commands and Scripting.pdf`；這些 PDF 原始檔案**不在**本儲存庫中（`.gitignore` 忽略 `*.pdf`）。`Intro to HW v2-images/`、`Ch01v2a-images/`、`Ch02v2a-images/` 與 `Ch03v2a-images/` 下的圖片是從這些 PDF 匯出的頁面掃描圖。
 - 中文翻譯、模擬考題與標準答案僅為複習輔助教材，考試前請務必與官方投影片及授課教師的要求核對。
 - 自動批改以關鍵字比對為基礎並刻意設得寬鬆，它是「幫助記憶」的工具而非嚴格的閱卷標準：某個框打勾代表「你寫到了這個要點」，不代表「這是唯一正確的寫法」。
 

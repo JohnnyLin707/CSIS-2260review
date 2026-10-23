@@ -10,6 +10,7 @@ https://johnnylin707.github.io/CSIS2260-reviews/index.html
 
 ## ✨ 本次更新
 
+- **UNIX 命令与脚本速查表** —— `pages/UnixCommands.html`：把《UNIX 命令与脚本入门》课件整理成一张中英对照速查表，**29 个小节、235 个知识点**，每条英文下方都有简体中文翻译，命令以等宽小徽章显示。
 - **复习问答题单元** —— `pages/Chapter1Review.html`（18 道）与 `pages/Chapter2Review.html`（23 道）：英文原题 + 中文翻译，答案用课件原词写成最简单的英文，每条答案下方附简体中文翻译。
 - **新增单元 `pages/chapter3.html`** —— Stallings 第 3 章《进程描述与控制》全部 **58 张幻灯片**、**126 道考题**：什么是进程、进程的要素与进程控制块、轨迹与分派程序、两状态与五状态模型、进程的创建与终止、挂起进程、操作系统的控制表、进程控制结构与进程映像、执行模式、进程切换，以及 UNIX SVR4 的进程管理。
 - **第 3 章课件原图** —— `Ch03v2a-images/` 新增 58 张扫描图，全部 232 个复习页顶部现在都有真实幻灯片的整宽扫描图。
@@ -31,7 +32,10 @@ https://johnnylin707.github.io/CSIS2260-reviews/index.html
 | 07 | 2026 年秋季测验 1 真题 / Quiz1-Fall-2026 | 真题 5 道（20 分） | — | 5 |
 | 08 | 第 1 章：复习问答题 / Chapter 1: Review Questions | `Ch01v2a.pdf` | — | 18 |
 | 09 | 第 2 章：复习问答题 / Chapter 2: Review Questions | `Ch02v2a.pdf` | — | 23 |
+| 10 | UNIX 命令与脚本速查表 / UNIX Commands &amp; Scripting | `Introduction to UNIX Commands and Scripting.pdf` | 29 个小节 | 235 个知识点 |
 | | **合计** | | **232** | **662** |
+
+单元 10 是命令速查表（29 个小节、235 个中英对照知识点），不属于幻灯片单元，因此不计入幻灯片数与考题总数。
 
 ### 单元 01 —— 计算机硬件导论
 硬件与软件、二进制数、PC 组成部件、主板、存储设备、总线、BIOS/UEFI 以及供电系统。
@@ -66,6 +70,9 @@ https://johnnylin707.github.io/CSIS2260-reviews/index.html
 
 ### 单元 09 —— 第 2 章：复习问答题
 **23 道**第 2 章复习题：ISA / ABI / API、操作系统演进的原因、串行→批处理→多道程序→分时各自的局限、JCL、存储器保护/定时器/特权指令/中断的作用、用户态与内核态、进程、存储器管理、虚拟内存分页、信息安全、调度目标、中断与服务调用的区别、单内核与微内核、多线程、SMP 与分布式系统、容错指标、故障类型、Windows 的容错机制。格式与单元 08 一致：英文原题 + 中文，简单英文答案 + 简体中文。
+
+### 单元 10 —— UNIX 命令与脚本速查表
+《UNIX 命令与脚本入门》课件的中英对照速查表：获取帮助（`man`、`whatis`、`apropos`），列出/创建/切换目录（`ls`、`mkdir`、`cd`、`.`、`..`、`pwd`、`~`），复制/移动/删除（`cp`、`mv`、`rm`、`rmdir`），显示文件（`cat`、`less`、`head`、`tail`），Tab 补全与命令历史，搜索（`grep`、`wc`），通配符（`*`、`?`），重定向（`>`、`>>`、`<`）与管道（`|`），访问权限与 `chmod`，进程与作业（`&`、`^Z`、`bg`、`jobs`、`fg`、`kill`），以及其他常用命令（`df`、`du`、`compress`、`gzip`、`file`、`history`）。每个知识点下方都有简体中文翻译。
 
 ---
 
@@ -135,7 +142,8 @@ CSIS-2260review/
 │   ├── Quiz1keyQuestions.html           # 单元 06 —— 25 道回忆题（84 分）
 │   ├── Quiz1Fall2026.html               # 单元 07 —— 2026 秋季真题，20 分
 │   ├── Chapter1Review.html              # 单元 08 —— 第 1 章复习问答题 18 道
-│   └── Chapter2Review.html              # 单元 09 —— 第 2 章复习问答题 23 道
+│   ├── Chapter2Review.html              # 单元 09 —— 第 2 章复习问答题 23 道
+│   └── UnixCommands.html                # 单元 10 —— UNIX 命令速查表（29 个小节）
 ├── Ch01v2a-images/            # 单元 02 的幻灯片扫描图（59 张）
 ├── Ch02v2a-images/            # 单元 03 的幻灯片扫描图（75 张）
 ├── Ch03v2a-images/            # 单元 04 的幻灯片扫描图（58 张）
@@ -175,7 +183,7 @@ python3 -m http.server 8000
 
 ## 说明
 
-- 内容逐字摘录自课程课件（`Intro to HW v2.pdf`、`Ch01v2a.pdf`、`Ch02v2a.pdf`、`Ch03v2a.pdf`）；PDF 原文件**不在**本仓库中。`Intro to HW v2-images/`、`Ch01v2a-images/`、`Ch02v2a-images/` 与 `Ch03v2a-images/` 下的图片是从这些 PDF 中导出的页面扫描图。
+- 内容逐字摘录自课程课件（`Intro to HW v2.pdf`、`Ch01v2a.pdf`、`Ch02v2a.pdf`、`Ch03v2a.pdf`）与实验手册 `Introduction to UNIX Commands and Scripting.pdf`；这些 PDF 原文件**不在**本仓库中（`.gitignore` 忽略 `*.pdf`）。`Intro to HW v2-images/`、`Ch01v2a-images/`、`Ch02v2a-images/` 与 `Ch03v2a-images/` 下的图片是从这些 PDF 中导出的页面扫描图。
 - 中文翻译、模拟考题与标准答案仅为复习辅助材料，考试前请务必与官方课件和老师的要求核对。
 - 自动判分基于关键词匹配并刻意设得宽松，它是"帮助记忆"的工具而不是严格的阅卷标准：某个框打勾代表"你写到了这个要点"，不代表"这是唯一正确的写法"。
 
