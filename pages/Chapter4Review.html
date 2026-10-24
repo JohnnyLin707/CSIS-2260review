@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070b16'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%235eead4' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2360a5fa'/%3E%3C/svg%3E">
+  <title>Chapter 4: Review Questions &middot; Quiz 1 Review</title>
+  <meta name="description" content="Chapter 4: Review Questions: 7 review questions (Q54-Q60) with simple English answers taken from the lecture slides, each with a Simplified Chinese translation.">
+  <link rel="stylesheet" href="../css/style.css">
+  <noscript><style>.reveal{opacity:1 !important}</style></noscript>
+</head>
+<body class="review-page" data-topic="ch4review" data-page="1" data-selfcheck="off">
+
+  <div class="animated-bg" aria-hidden="true">
+    <span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <a class="btn btn-home" href="https://johnnylin707.github.io/CSIS2260-reviews/index.html">&#8962; Home Page</a>
+      </div>
+      <div class="topbar-center">
+        <div class="topbar-title">Chapter 4: Review Questions<span>&middot; 7 questions</span></div>
+      </div>
+      <div class="topbar-right">
+        <span class="pdf-tag">Ch04v2a.pdf</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <header class="page-head">
+      <div class="page-meta"><span>Review questions &middot; 7</span></div>
+      <h1 class="page-title reveal">Chapter 4: Review Questions</h1>
+      <p class="page-title-zh reveal">第 4 章：复习问答题 &middot; 共 7 题</p>
+      <div class="source-badge reveal">Every answer uses the wording of the lecture slides, written in the simplest English, with a 简体中文 translation below &mdash; click a question to reveal it.</div>
+    </header>
+
+    <nav class="top-nav" aria-label="Top review navigation">
+      <a class="btn btn-back" href="Chapter3Review.html">&#8592; 第 3 章：复习问答题</a>
+      <a class="btn btn-next" href="Chapter1Review.html">第 1 章：复习问答题 &#8594;</a>
+    </nav>
+
+    <section class="qa-section">
+      <div class="qa-heading reveal">
+        <span class="icon">&#63;</span>
+        <span>Review Questions &middot; 第 4 章 复习题</span>
+        <span class="count">(7 questions &middot; click to reveal)</span>
+      </div>
+
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q54</span>
+          <span class="q-text">Briefly explain the difference between processes and threads.<span class="q-zh">简要说明进程与线程的区别。</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">A <strong>process</strong> <u>has two characteristics: resource ownership and scheduling/execution.</u></p>
+            <p class="ans-zh"><strong>进程具有两个特征</strong>：<u>资源所有权与调度/执行。</u></p>
+            <p class="ans-en">The <strong>process</strong> <u>is the unit of resource ownership (it is also called a task): it includes a virtual address space that holds the process image.</u></p>
+            <p class="ans-zh"><strong>进程是资源所有权的单位</strong><u>（也称为任务）：它包含一个容纳进程映像的虚拟地址空间。</u></p>
+            <p class="ans-en">The <strong>thread</strong> <u>is the unit of dispatching: it is also called a lightweight process.</u></p>
+            <p class="ans-zh"><strong>线程是分派的单位</strong>：<u>也称为轻量级进程。</u></p>
+            <p class="ans-en">Each <strong>thread</strong> <u>has its own program counter, an execution state (Running, Ready, etc.), a saved thread context when not running, an execution stack and some per-thread static storage for local variables.</u></p>
+            <p class="ans-zh"><u>每个线程各有自己的程序计数器、执行状态（运行、就绪等）、未运行时保存的线程上下文、执行栈以及用于局部变量的部分线程私有静态存储。</u></p>
+            <p class="ans-en"><u>All threads of a process share the memory and resources of that process, and access to them is shared with all other threads in the process.</u></p>
+            <p class="ans-zh"><u>一个进程的所有线程共享该进程的内存与资源，并与其他线程共享对这些资源的访问。</u></p>
+            <p class="ans-en"><strong>Multithreading</strong> <u>is the ability of an OS to support multiple, concurrent paths of execution within a single process.</u></p>
+            <p class="ans-zh"><strong>多线程</strong>：<u>操作系统在一个进程内支持多条并发执行路径的能力。</u></p>
+            <span class="src">Source: &ldquo;Ch04v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q55</span>
+          <span class="q-text">In an operating system that supports threads, are processes still needed, and if so, for what?<span class="q-zh">在支持线程的操作系统中，进程仍然需要吗？如果需要，是做什么用的？</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en"><strong>Yes.</strong> <u>In a multithreaded environment the process is still the unit of resource allocation and the unit of protection.</u></p>
+            <p class="ans-zh"><strong>仍然需要。</strong><u>在多线程环境中，进程仍然是资源分配的单位和保护的单位。</u></p>
+            <p class="ans-en">Associated with the <strong>process</strong>: <u>a virtual address space that holds the process image.</u></p>
+            <p class="ans-zh"><u>与进程相关联的是：容纳进程映像的虚拟地址空间。</u></p>
+            <p class="ans-en"><u>Protected access to </u><strong>processors</strong><u>, to </u><strong>other processes</strong><u> (for interprocess communication), to </u><strong>files</strong><u> and to </u><strong>I/O resources</strong><u> (devices and channels).</u></p>
+            <p class="ans-zh"><u>还包括受保护的对处理器、对其他进程（用于进程间通信）、对文件以及对 I/O 资源（设备与通道）的访问。</u></p>
+            <p class="ans-en"><u>Suspending a process involves suspending all threads of the process, and termination of a process terminates all threads within the process.</u></p>
+            <p class="ans-zh"><u>挂起一个进程意味着挂起它的所有线程；终止一个进程也会终止它内部的所有线程。</u></p>
+            <span class="src">Source: &ldquo;Ch04v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q56</span>
+          <span class="q-text">Give three specific examples in which the use of threads is superior to the use of separate processes.<span class="q-zh">举出三个使用线程优于使用独立进程的具体例子。</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">1. <strong>Foreground and background work</strong>: <u>in a spreadsheet program one thread displays menus and reads input while another thread executes user commands.</u></p>
+            <p class="ans-zh"><strong>1. 前台与后台工作</strong>：<u>在电子表格程序中，一个线程显示菜单并读取输入，另一个线程执行用户命令。</u></p>
+            <p class="ans-en">2. <strong>Asynchronous processing</strong>: <u>in a word processor a thread can be used to write the RAM buffer to disk from time to time, so the user does not have to wait.</u></p>
+            <p class="ans-zh"><strong>2. 异步处理</strong>：<u>在字处理程序中，可以用一个线程定期把 RAM 缓冲区写入磁盘，用户不必等待。</u></p>
+            <p class="ans-en">3. <strong>Speed of execution</strong>: <u>one thread can compute a batch of data while another thread reads the next batch from a device.</u></p>
+            <p class="ans-zh"><strong>3. 加快执行速度</strong>：<u>一个线程在计算一批数据的同时，另一个线程从设备读取下一批数据。</u></p>
+            <p class="ans-en">4. <strong>Modular program structure</strong>: <u>a program with many activities is easier to write as one process with several threads than as many separate processes.</u></p>
+            <p class="ans-zh"><strong>4. 模块化程序结构</strong>：<u>包含多种活动的程序，写成一个进程多个线程比写成多个独立进程更容易。</u></p>
+            <p class="ans-en">Why threads win: <u>it takes less time to create a new thread than a process, less time to terminate it, and less time to switch between two threads than between two processes.</u></p>
+            <p class="ans-zh"><u>线程更优的原因：创建新线程比创建进程快，终止线程比终止进程快，两个线程之间切换也比两个进程之间切换快。</u></p>
+            <p class="ans-en"><u>Threads also enhance communication: all threads of a process share the same address space and the same data, so when one thread alters an item of data in memory the other threads see the results immediately.</u></p>
+            <p class="ans-zh"><u>线程还使通信更高效：一个进程的所有线程共享同一地址空间和同一份数据，一个线程修改了内存中的数据，其他线程立刻就能看到结果。</u></p>
+            <span class="src">Source: &ldquo;Ch04v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q57</span>
+          <span class="q-text">In an operating system that supports multithreading, give two specific examples each of information in the process control block and the thread control block.<span class="q-zh">在支持多线程的操作系统中，分别举出进程控制块和线程控制块中的两项具体信息。</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en"><strong>Process control block (PCB)</strong>: <u>in the multithreaded process model there is only one PCB, and it is shared by all threads of the process.</u></p>
+            <p class="ans-zh"><strong>进程控制块（PCB）</strong>：<u>在多线程进程模型中只有一个 PCB，由该进程的所有线程共享。</u></p>
+            <p class="ans-en"><u>Two examples: the </u><strong>process identifier</strong><u> and the </u><strong>virtual address space</strong><u> (the user address space) of the process.</u></p>
+            <p class="ans-zh"><u>两项例子：进程的</u><strong>标识符</strong><u>与进程的</u><strong>虚拟地址空间</strong><u>（用户地址空间）。</u></p>
+            <p class="ans-en"><u>Others: memory management pointers (segment and page tables), the resources the process owns such as opened files, process privileges, and the parent-child relationships.</u></p>
+            <p class="ans-zh"><u>其他还有：存储器管理指针（段表与页表）、进程拥有的资源（如已打开的文件）、进程特权以及父子关系。</u></p>
+            <p class="ans-en"><strong>Thread control block (TCB)</strong>: <u>each thread has its own TCB, together with its own user stack and kernel stack.</u></p>
+            <p class="ans-zh"><strong>线程控制块（TCB）</strong>：<u>每个线程各有自己的 TCB，以及自己的用户栈和内核栈。</u></p>
+            <p class="ans-en"><u>Two examples: the </u><strong>execution state</strong><u> of the thread (Running, Ready, Blocked) and its </u><strong>program counter</strong><u>.</u></p>
+            <p class="ans-zh"><u>两项例子：线程的</u><strong>执行状态</strong><u>（运行、就绪、阻塞）与它的</u><strong>程序计数器</strong><u>。</u></p>
+            <p class="ans-en"><u>Others: the saved thread context (register contents) when the thread is not running, the execution stack and the per-thread static storage for local variables.</u></p>
+            <p class="ans-zh"><u>其他还有：线程未运行时保存的线程上下文（寄存器内容）、执行栈以及用于局部变量的线程私有静态存储。</u></p>
+            <span class="src">Source: &ldquo;Ch04v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q58</span>
+          <span class="q-text">Do threads make sense even on computers with only a single CPU core?<span class="q-zh">在只有一个 CPU 核心的计算机上，线程还有意义吗？</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en"><strong>Yes.</strong> <u>Even on a single processor, threads of different processes are interleaved, so the processor stays busy.</u></p>
+            <p class="ans-zh"><strong>有意义。</strong><u>即使在单个处理器上，不同进程的线程也可以交错执行，处理器因此保持忙碌。</u></p>
+            <p class="ans-en"><u>With a remote procedure call (RPC) that uses one thread per server, Thread A and Thread B of a process can keep working while one of them is blocked waiting for the response.</u></p>
+            <p class="ans-zh"><u>在远程过程调用（RPC）中，如果每个服务器用一个线程，那么进程中线程 A 与线程 B 可以在其中一个等待响应的同时继续工作。</u></p>
+            <p class="ans-en"><u>With a single thread the whole process would be blocked while it waits, so the program would stop responding.</u></p>
+            <p class="ans-zh"><u>若只有一个线程，等待期间整个进程都会被阻塞，程序就会停止响应。</u></p>
+            <p class="ans-en"><u>Threads also cost less: creating, terminating and switching threads is faster than doing the same with processes, and they give a cleaner modular program structure.</u></p>
+            <p class="ans-zh"><u>线程的开销也更小：创建、终止和切换线程都比进程更快，而且程序结构更加模块化。</u></p>
+            <span class="src">Source: &ldquo;Ch04v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q59</span>
+          <span class="q-text">What states can threads be in, and what are the main operations leading to a change of thread state?<span class="q-zh">线程可以处于哪些状态？导致线程状态变化的主要操作有哪些？</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">The key states for a <strong>thread</strong> <u>are: Running, Ready and Blocked.</u></p>
+            <p class="ans-zh"><strong>线程的关键状态是</strong>：<u>运行态、就绪态和阻塞态。</u></p>
+            <p class="ans-en"><strong>Spawn</strong>: <u>a new thread is created (usually by another thread) and becomes Ready.</u></p>
+            <p class="ans-zh"><strong>派生（Spawn）</strong>：<u>创建一个新线程（通常由另一个线程创建），它进入就绪态。</u></p>
+            <p class="ans-en"><strong>Block</strong>: <u>the thread waits for an event, for example an I/O request or a response to an RPC, and moves to Blocked.</u></p>
+            <p class="ans-zh"><strong>阻塞（Block）</strong>：<u>线程等待某个事件（例如 I/O 请求或 RPC 响应），进入阻塞态。</u></p>
+            <p class="ans-en"><strong>Unblock</strong>: <u>the event occurs and the thread moves back to Ready.</u></p>
+            <p class="ans-zh"><strong>解除阻塞（Unblock）</strong>：<u>事件发生，线程回到就绪态。</u></p>
+            <p class="ans-en"><strong>Finish</strong>: <u>the thread has completed; its register context and stacks are deallocated.</u></p>
+            <p class="ans-zh"><strong>结束（Finish）</strong>：<u>线程执行完毕，其寄存器上下文与栈被释放。</u></p>
+            <p class="ans-en"><u>There is no thread suspend state: suspending is done to a process and involves suspending all of its threads.</u></p>
+            <p class="ans-zh"><u>线程没有挂起状态：挂起是针对进程的操作，并且会挂起它的所有线程。</u></p>
+            <span class="src">Source: &ldquo;Ch04v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q60</span>
+          <span class="q-text">Can individual threads be suspended? Why or why not?<span class="q-zh">单个线程可以被挂起吗？为什么可以或不可以？</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en"><strong>No.</strong> <u>Suspending is a process-level operation: suspending a process involves suspending all threads of the process.</u></p>
+            <p class="ans-zh"><strong>不可以。</strong><u>挂起是进程级的操作：挂起一个进程意味着挂起该进程的所有线程。</u></p>
+            <p class="ans-en"><u>All threads of a process share the same address space and the same resources, so a single thread cannot be swapped out of main memory by itself.</u></p>
+            <p class="ans-zh"><u>一个进程的所有线程共享同一地址空间和同一组资源，因此单个线程无法被单独换出主存。</u></p>
+            <p class="ans-en"><u>A thread is only a unit of dispatching inside its process; the process owns the resources that suspension moves to disk.</u></p>
+            <p class="ans-zh"><u>线程只是进程内部的分派单位；被挂起时换出到磁盘的资源属于进程所有。</u></p>
+            <p class="ans-en"><u>In the same way, termination of a process terminates all threads within the process.</u></p>
+            <p class="ans-zh"><u>同理，终止一个进程也会终止它内部的全部线程。</u></p>
+            <span class="src">Source: &ldquo;Ch04v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Review navigation">
+      <a class="btn btn-back" href="Chapter3Review.html">&#8592; 第 3 章：复习问答题</a>
+      <a class="btn btn-next" href="Chapter1Review.html">第 1 章：复习问答题 &#8594;</a>
+    </nav>
+
+    <div class="kbd-hint">
+      <kbd>&#8592;</kbd> Back &nbsp; <kbd>&#8594;</kbd> Next &nbsp; <kbd>Esc</kbd> Home
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    Quiz 1 Review &middot; Chapter 4: Review Questions &middot; answers written in the wording of &ldquo;Ch04v2a.pdf&rdquo;.
+  </footer>
+
+  <script src="../javascript/main.js"></script>
+  <script src="../javascript/animations.js"></script>
+  <script src="../javascript/speech.js"></script>
+</body>
+</html>

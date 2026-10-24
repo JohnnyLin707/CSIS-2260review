@@ -10,6 +10,7 @@ A static, dependency-free review site for **Operating Systems Quiz 1**. Every le
 
 ## ✨ Latest additions
 
+- **New review-question decks — `pages/Chapter3Review.html` (12 questions) and `pages/Chapter4Review.html` (7 questions)** — questions 42–60, in the same format as the Chapter 1 and Chapter 2 decks: the original English question with a 中文 translation, and an answer written in the simplest English using the wording of the lecture slides, with a 简体中文 line under every answer. Chapter 3 covers processes, the PCB and process image, traces, creation / termination, all seven process states, control tables, processor state information, user vs. kernel mode, kernel functions, and interrupt vs. trap vs. supervisor call. Chapter 4 covers processes vs. threads, why processes are still needed, where threads beat processes, PCB vs. TCB, threads on a single core, thread states and operations, and why a single thread cannot be suspended.
 - **New deck — `pages/chapter4.html`** — Stallings Chapter 4 *Threads*, all **22 slides** with **38 exam questions**: processes vs. threads (unit of resource ownership vs. unit of dispatching), single-threaded and multithreaded approaches, what each thread has on its own and what it shares, the benefits of threads, thread states and the spawn / block / unblock / finish operations, thread synchronization, and user-level (ULT) vs kernel-level (KLT) threads. 22 new slide scans under `Ch04v2a-images/`, so all 254 review pages now open with a full-width scan of the real slide.
 - **UNIX Commands & Scripting cheat sheet** — `pages/UnixCommands.html`: the whole lab handout *Introduction to UNIX Commands and Scripting* as one bilingual page — **29 sections, 235 knowledge points**, every English line with a Simplified Chinese translation, and every command shown as a chip.
 - **Review-question decks** — `pages/Chapter1Review.html` (18 questions) and `pages/Chapter2Review.html` (23 questions): the original English question with a Chinese translation, and an answer written in the simplest English using the wording of the lecture slides, with a 简体中文 translation under every answer line.
@@ -35,7 +36,9 @@ A static, dependency-free review site for **Operating Systems Quiz 1**. Every le
 | 09 | Chapter 1: Review Questions / 第 1 章：复习问答题 | `Ch01v2a.pdf` | — | 18 |
 | 10 | Chapter 2: Review Questions / 第 2 章：复习问答题 | `Ch02v2a.pdf` | — | 23 |
 | 11 | UNIX Commands & Scripting / UNIX 命令与脚本速查表 | `Introduction to UNIX Commands and Scripting.pdf` | 29 sections | 235 points |
-| | **Total** | | **254** | **700** |
+| 12 | Chapter 3: Review Questions / 第 3 章：复习问答题 | `Ch03v2a.pdf` | — | 12 |
+| 13 | Chapter 4: Review Questions / 第 4 章：复习问答题 | `Ch04v2a.pdf` | — | 7 |
+| | **Total** | | **254** | **724** |
 
 Deck 11 is a command cheat sheet (29 sections, 235 bilingual knowledge points) rather than a slide deck, so it is not counted in the slide and exam-question totals.
 
@@ -79,6 +82,12 @@ The **23** Chapter 2 review questions (ISA / ABI / API, why operating systems ev
 ### Deck 11 — UNIX Commands & Scripting
 A bilingual cheat sheet for the lab handout *Introduction to UNIX Commands and Scripting*: getting help (`man`, `whatis`, `apropos`), listing / making / changing directories (`ls`, `mkdir`, `cd`, `.`, `..`, `pwd`, `~`), copying / moving / removing (`cp`, `mv`, `rm`, `rmdir`), displaying files (`cat`, `less`, `head`, `tail`), tab completion and command history, searching (`grep`, `wc`), wildcards (`*`, `?`), redirection (`>`, `>>`, `<`) and pipes (`|`), access rights and `chmod`, processes and jobs (`&`, `^Z`, `bg`, `jobs`, `fg`, `kill`), and other useful commands (`df`, `du`, `compress`, `gzip`, `file`, `history`). Every point has a Simplified Chinese translation underneath.
 
+### Deck 12 — Chapter 3: Review Questions
+Questions **42–53** (12 questions): what a process is, three elements of a process control block and three of a process image, a process trace and the dispatcher, four ways a process is created, the ways a process ends, all seven process states (New, Ready, Running, Blocked, Ready/Suspend, Blocked/Suspend, Exit) and the transitions between them, the resources tracked by the OS control tables, processor state information (for example the PSW), user vs. system (kernel) mode, kernel functions vs. functions outside the kernel, the steps of process creation, and interrupt vs. trap vs. supervisor call. Same format: English question + 中文, simple English answer + 简体中文.
+
+### Deck 13 — Chapter 4: Review Questions
+Questions **54–60** (7 questions): processes vs. threads (unit of resource ownership vs. unit of dispatching), why processes are still needed in a threaded OS, three examples where threads beat separate processes, PCB vs. thread control block information, whether threads make sense on a single CPU core, thread states and the spawn / block / unblock / finish operations, and why an individual thread cannot be suspended. Same format: English question + 中文, simple English answer + 简体中文.
+
 ---
 
 ## Features
@@ -89,7 +98,7 @@ A bilingual cheat sheet for the lab handout *Introduction to UNIX Commands and S
 - **Bilingual** — every original line is followed by its Chinese translation.
 - **Read-aloud** — a speaker button after the title and after every English line reads it with the built-in Web Speech API (Chinese lines are skipped).
 - **Textbook answers highlighted** — model answers on warm highlight chips, slide points on numbered low-glare cards, Chinese lines on soft mint chips.
-- **Exam-style Q&A** — 630 click-to-reveal questions with answers and source references on the slide pages, 25 recall questions on the key-questions page, 4 short-answer drills with answer boxes, and the 5-question Fall 2026 quiz.
+- **Exam-style Q&A** — 649 click-to-reveal questions with answers and source references on the slide pages, 25 recall questions on the key-questions page, 4 short-answer drills with answer boxes, and the 5-question Fall 2026 quiz.
 - **Write-and-check drills** — one input box per answer point, marked automatically: order does not matter, English or 中文 both accepted, missing keywords are reported.
 - **Searchable navigation** — a collapsible sidebar with live filtering, plus a keyword filter on each deck page.
 - **Keyboard shortcuts** — `←` previous slide, `→` next slide, `Esc` back to home.
@@ -151,7 +160,9 @@ CSIS-2260review/
 │   ├── Quiz1Fall2026.html               # Deck 08 — Fall 2026 quiz, 20 marks
 │   ├── Chapter1Review.html              # Deck 09 — 18 Ch.1 review questions
 │   ├── Chapter2Review.html              # Deck 10 — 23 Ch.2 review questions
-│   └── UnixCommands.html                # Deck 11 — UNIX commands cheat sheet (29 sections)
+│   ├── UnixCommands.html                # Deck 11 — UNIX commands cheat sheet (29 sections)
+│   ├── Chapter3Review.html              # Deck 12 — 12 Ch.3 review questions (Q42-Q53)
+│   └── Chapter4Review.html              # Deck 13 — 7 Ch.4 review questions (Q54-Q60)
 ├── Ch01v2a-images/            # Slide scans for deck 02 (59 images)
 ├── Ch02v2a-images/            # Slide scans for deck 03 (75 images)
 ├── Ch03v2a-images/            # Slide scans for deck 04 (58 images)

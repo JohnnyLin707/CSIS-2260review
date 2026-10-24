@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070b16'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%235eead4' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2360a5fa'/%3E%3C/svg%3E">
+  <title>Chapter 3: Review Questions &middot; Quiz 1 Review</title>
+  <meta name="description" content="Chapter 3: Review Questions: 12 review questions (Q42-Q53) with simple English answers taken from the lecture slides, each with a Simplified Chinese translation.">
+  <link rel="stylesheet" href="../css/style.css">
+  <noscript><style>.reveal{opacity:1 !important}</style></noscript>
+</head>
+<body class="review-page" data-topic="ch3review" data-page="1" data-selfcheck="off">
+
+  <div class="animated-bg" aria-hidden="true">
+    <span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <a class="btn btn-home" href="https://johnnylin707.github.io/CSIS2260-reviews/index.html">&#8962; Home Page</a>
+      </div>
+      <div class="topbar-center">
+        <div class="topbar-title">Chapter 3: Review Questions<span>&middot; 12 questions</span></div>
+      </div>
+      <div class="topbar-right">
+        <span class="pdf-tag">Ch03v2a.pdf</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <header class="page-head">
+      <div class="page-meta"><span>Review questions &middot; 12</span></div>
+      <h1 class="page-title reveal">Chapter 3: Review Questions</h1>
+      <p class="page-title-zh reveal">第 3 章：复习问答题 &middot; 共 12 题</p>
+      <div class="source-badge reveal">Every answer uses the wording of the lecture slides, written in the simplest English, with a 简体中文 translation below &mdash; click a question to reveal it.</div>
+    </header>
+
+    <nav class="top-nav" aria-label="Top review navigation">
+      <a class="btn btn-back" href="Chapter2Review.html">&#8592; 第 2 章：复习问答题</a>
+      <a class="btn btn-next" href="Chapter4Review.html">第 4 章：复习问答题 &#8594;</a>
+    </nav>
+
+    <section class="qa-section">
+      <div class="qa-heading reveal">
+        <span class="icon">&#63;</span>
+        <span>Review Questions &middot; 第 3 章 复习题</span>
+        <span class="count">(12 questions &middot; click to reveal)</span>
+      </div>
+
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q42</span>
+          <span class="q-text">In the context of an operating system, what is a process?<span class="q-zh">在操作系统的语境下，什么是进程？</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">A <strong>process</strong> <u>is a program in execution.</u></p>
+            <p class="ans-zh"><strong>进程</strong>：<u>正在执行的程序。</u></p>
+            <p class="ans-en"><u>It is an </u><strong>instance of a program running on a computer</strong><u>, and the entity that can be assigned to and executed on a processor.</u></p>
+            <p class="ans-zh"><u>它是在计算机上运行的一个程序实例，是可以被指派到处理器上并执行的实体。</u></p>
+            <p class="ans-en">It is <strong>a unit of activity</strong> <u>characterized by the execution of a sequence of instructions, a current state, and an associated set of system resources.</u></p>
+            <p class="ans-zh"><strong>它是一个活动单位</strong>：<u>由一串指令的执行、当前状态以及一组相关的系统资源来刻画。</u></p>
+            <p class="ans-en">A process has <strong>two essential elements</strong>: <u>program code, and a set of data associated with that code (which may be shared with other processes running the same program).</u></p>
+            <p class="ans-zh"><u>进程有两个基本要素：程序代码，以及与该代码相关的一组数据（可与运行同一程序的其他进程共享）。</u></p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q43</span>
+          <span class="q-text">Name three elements of a process control block and three elements of a process image.<span class="q-zh">举出进程控制块的三个要素和进程映像的三个要素。</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">The <strong>process control block (PCB)</strong> <u>holds the process elements; it is created and managed by the OS and is the key tool that allows support for multiple processes.</u></p>
+            <p class="ans-zh"><strong>进程控制块（PCB）</strong>：<u>保存进程的各个要素，由操作系统创建和管理，是支持多进程的关键工具。</u></p>
+            <p class="ans-en">Three <strong>PCB</strong> <u>elements, for example: identifier, state and priority.</u></p>
+            <p class="ans-zh"><strong>PCB 的三个要素（例如）</strong>：<u>标识符、状态、优先级。</u></p>
+            <p class="ans-en"><u>Other elements are: program counter, memory pointers, context data, I/O status information and accounting information.</u></p>
+            <p class="ans-zh"><u>其余要素还有：程序计数器、存储器指针、上下文数据、I/O 状态信息和记账信息。</u></p>
+            <p class="ans-en">The <strong>process image</strong> <u>is the collection of program, data, stack and attributes of a process.</u></p>
+            <p class="ans-zh"><strong>进程映像</strong>：<u>进程的程序、数据、栈与属性的集合。</u></p>
+            <p class="ans-en">Three <strong>process image</strong> <u>elements, for example: user data, user program and stack (each process has one or more LIFO stacks for parameters and calling addresses).</u></p>
+            <p class="ans-zh"><strong>进程映像的三个要素（例如）</strong>：<u>用户数据、用户程序、栈（每个进程有一个或多个后进先出栈，用于保存参数和调用地址）。</u></p>
+            <p class="ans-en"><u>The fourth element is the </u><strong>process control block</strong><u> itself: the data the OS needs to control the process.</u></p>
+            <p class="ans-zh"><u>第四个要素就是进程控制块本身：操作系统控制进程所需的数据。</u></p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q44</span>
+          <span class="q-text">What is a process trace?<span class="q-zh">什么是进程轨迹？</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">A <strong>trace</strong> <u>is the behaviour of an individual process, shown by listing the sequence of instructions that execute for that process.</u></p>
+            <p class="ans-zh"><strong>轨迹（trace）</strong>：<u>通过列出某个进程所执行的指令序列来刻画该进程的行为。</u></p>
+            <p class="ans-en"><u>The behaviour of the </u><strong>processor</strong><u> can be characterized by showing how the traces of the various processes are interleaved.</u></p>
+            <p class="ans-zh"><u>处理器的行为可以通过展示各进程的轨迹如何交错来刻画。</u></p>
+            <p class="ans-en">The <strong>dispatcher</strong> <u>is the small program that switches the processor from one process to another; it appears at the switching points between the traces.</u></p>
+            <p class="ans-zh"><strong>分派程序（dispatcher）</strong>：<u>把处理器从一个进程切换到另一个进程的小程序，出现在各轨迹的交错点上。</u></p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q45</span>
+          <span class="q-text">Briefly describe three different ways how a process can be created.<span class="q-zh">简要描述创建一个进程的三种不同方式。</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">1. <strong>New batch job</strong>: <u>the OS reads the next sequence of job control commands when it is prepared to take on new work.</u></p>
+            <p class="ans-zh"><strong>1. 新的批处理作业</strong>：<u>操作系统准备接受新工作时，读入下一段作业控制命令。</u></p>
+            <p class="ans-en">2. <strong>Interactive logon</strong>: <u>a terminal user logs on to the system.</u></p>
+            <p class="ans-zh"><strong>2. 交互式登录</strong>：<u>终端用户登录到系统。</u></p>
+            <p class="ans-en">3. <strong>Created by the OS to provide a service</strong>: <u>the OS creates a process to perform a function on behalf of a user program.</u></p>
+            <p class="ans-zh"><strong>3. 操作系统为提供服务而创建</strong>：<u>操作系统代表用户程序创建进程来完成某项功能。</u></p>
+            <p class="ans-en">4. <strong>Spawned by an existing process</strong>: <u>for modularity or to exploit parallelism, a user program can dictate the creation of new processes; the original creating process is the parent and the new process is the child.</u></p>
+            <p class="ans-zh"><strong>4. 由已有进程派生</strong>：<u>出于模块化或利用并行性，用户程序可以要求创建新进程；发起创建的进程是父进程，新进程是子进程。</u></p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q46</span>
+          <span class="q-text">Briefly describe three different ways how a process can end.<span class="q-zh">简要描述进程结束的三种不同方式。</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">1. <strong>Normal completion</strong>: <u>the process executes an OS service call (or a HALT instruction in a batch job) to indicate that it has completed running.</u></p>
+            <p class="ans-zh"><strong>1. 正常完成</strong>：<u>进程执行操作系统的服务调用（批处理作业中是 HALT 指令）以表明自己已运行完毕。</u></p>
+            <p class="ans-en">2. <strong>Time limit exceeded</strong>: <u>the process has run longer than the specified total time limit (total elapsed time, time spent executing, or time since the last user input).</u></p>
+            <p class="ans-zh"><strong>2. 超过时限</strong>：<u>进程运行时间超过了规定的总时限（总经过时间、执行时间，或距用户上次输入的时间）。</u></p>
+            <p class="ans-en">3. <strong>Memory unavailable</strong>: <u>the process requires more memory than the system can provide.</u></p>
+            <p class="ans-zh"><strong>3. 内存不足</strong>：<u>进程需要的内存超过了系统能提供的数量。</u></p>
+            <p class="ans-en"><u>Others: bounds violation, protection error, arithmetic error (for example division by zero), time overrun, I/O failure, invalid instruction, privileged instruction, data misuse, operator or OS intervention (for example a deadlock), parent termination and parent request.</u></p>
+            <p class="ans-zh"><u>其他还有：越界、保护错误、算术错误（例如除以零）、超时、I/O 故障、非法指令、特权指令、数据误用、操作员或操作系统干预（例如出现死锁）、父进程终止以及父进程请求。</u></p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q47</span>
+          <span class="q-text">A process can be in one of the following states: New, Ready, Running, Blocked, Ready/Suspend, Blocked/Suspend and Exit. Briefly explain each of these states, and how processes transition between them.<span class="q-zh">进程可以处于以下状态：新建、就绪、运行、阻塞、就绪/挂起、阻塞/挂起和退出。简要说明每种状态以及状态之间如何转换。</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en"><strong>New</strong>: <u>the process has just been created but has not yet been admitted to the pool of executable processes.</u></p>
+            <p class="ans-zh"><strong>新建态（New）</strong>：<u>进程刚被创建，还没有被接纳进可执行进程池。</u></p>
+            <p class="ans-en"><strong>Ready</strong>: <u>the process is in main memory and is prepared to run as soon as the processor is given to it.</u></p>
+            <p class="ans-zh"><strong>就绪态（Ready）</strong>：<u>进程已在主存中，一旦获得处理器就可以运行。</u></p>
+            <p class="ans-en"><strong>Running</strong>: <u>the process is the one whose instructions are being executed by the processor.</u></p>
+            <p class="ans-zh"><strong>运行态（Running）</strong>：<u>进程的指令正在被处理器执行。</u></p>
+            <p class="ans-en"><strong>Blocked</strong>: <u>the process cannot execute until some event occurs, for example the completion of an I/O operation.</u></p>
+            <p class="ans-zh"><strong>阻塞态（Blocked）</strong>：<u>进程必须等到某个事件发生（例如 I/O 操作完成）才能继续执行。</u></p>
+            <p class="ans-en"><strong>Ready/Suspend</strong>: <u>a ready process that has been swapped out to disk; it can run as soon as it is loaded back into main memory.</u></p>
+            <p class="ans-zh"><strong>就绪/挂起态</strong>：<u>一个就绪进程被换出到磁盘；一旦调回主存就可立即运行。</u></p>
+            <p class="ans-en"><strong>Blocked/Suspend</strong>: <u>a blocked process that has been swapped out to disk; it is still waiting for its event.</u></p>
+            <p class="ans-zh"><strong>阻塞/挂起态</strong>：<u>一个被阻塞的进程被换出到磁盘；它仍在等待自己的事件。</u></p>
+            <p class="ans-en"><strong>Exit</strong>: <u>the process has halted or aborted and has been released by the operating system.</u></p>
+            <p class="ans-zh"><strong>退出态（Exit）</strong>：<u>进程已停止或被中止，并被操作系统释放。</u></p>
+            <p class="ans-en"><strong>Admit</strong>: <u>New to Ready.</u> <strong>Dispatch</strong>: <u>Ready to Running.</u> <strong>Timeout</strong>: <u>Running back to Ready when the time slice ends.</u></p>
+            <p class="ans-zh"><strong>接纳（Admit）</strong>：新建 → 就绪。<strong>分派（Dispatch）</strong>：就绪 → 运行。<strong>超时（Timeout）</strong>：时间片用完，运行 → 就绪。</p>
+            <p class="ans-en"><strong>Event Wait</strong>: <u>Running to Blocked.</u> <strong>Event Occurs</strong>: <u>Blocked back to Ready.</u> <strong>Release</strong>: <u>Running to Exit.</u></p>
+            <p class="ans-zh"><strong>事件等待（Event Wait）</strong>：运行 → 阻塞。<strong>事件发生（Event Occurs）</strong>：阻塞 → 就绪。<strong>释放（Release）</strong>：运行 → 退出。</p>
+            <p class="ans-en"><strong>Suspend</strong>: <u>Ready to Ready/Suspend and Blocked to Blocked/Suspend (swapping).</u> <strong>Activate</strong>: <u>Ready/Suspend back to Ready and Blocked/Suspend back to Blocked.</u></p>
+            <p class="ans-zh"><strong>挂起（Suspend）</strong>：就绪 → 就绪/挂起，阻塞 → 阻塞/挂起（通过交换换出）。<strong>激活（Activate）</strong>：就绪/挂起 → 就绪，阻塞/挂起 → 阻塞。</p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q48</span>
+          <span class="q-text">What types of resources do the main control tables of an operating system keep track of?<span class="q-zh">操作系统的主要控制表分别跟踪哪些类型的资源？</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en"><strong>Memory tables</strong>: <u>keep track of both main (real) and secondary (virtual) memory; processes are maintained on secondary memory using virtual memory or simple swapping.</u></p>
+            <p class="ans-zh"><strong>存储器表</strong>：<u>跟踪主存（实存）与二级存储器（虚存）；通过虚拟存储器或简单的交换机制把进程保存在二级存储器上。</u></p>
+            <p class="ans-en"><strong>I/O tables</strong>: <u>used to manage the I/O devices and channels; at any given time a device may be available or assigned to a particular process.</u></p>
+            <p class="ans-zh"><strong>I/O 表</strong>：<u>用于管理 I/O 设备与通道；任一时刻设备可能是可用的，也可能已分配给某个特定进程。</u></p>
+            <p class="ans-en"><strong>File tables</strong>: <u>information about the existence of files, their location on secondary memory, their current status and other attributes.</u></p>
+            <p class="ans-zh"><strong>文件表</strong>：<u>记录文件是否存在、在二级存储器上的位置、当前状态和其他属性。</u></p>
+            <p class="ans-en"><strong>Process tables</strong>: <u>the primary process table manages the processes themselves; it must contain some reference to memory, I/O and files, directly or indirectly.</u></p>
+            <p class="ans-zh"><strong>进程表</strong>：<u>主进程表管理进程本身，必须直接或间接地包含对内存、I/O 和文件的某种引用。</u></p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q49</span>
+          <span class="q-text">Give and briefly explain an example of processor state information.<span class="q-zh">举出一个处理器状态信息的例子并简要说明。</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en"><strong>Processor state information</strong> <u>consists of the contents of the processor registers.</u></p>
+            <p class="ans-zh"><strong>处理器状态信息</strong>：<u>由处理器寄存器的内容组成。</u></p>
+            <p class="ans-en">A good example is the <strong>program status word (PSW)</strong>: <u>it contains condition codes plus other status information, for example the overflow flag, the sign flag and the interrupt enable flag.</u></p>
+            <p class="ans-zh"><u>一个典型例子是</u><strong>程序状态字（PSW）</strong>：<u>它包含条件码及其他状态信息，例如溢出标志、符号标志和中断允许标志。</u></p>
+            <p class="ans-en"><u>Other examples are </u><strong>user-visible registers</strong><u>, </u><strong>control and status registers</strong><u>, the </u><strong>program counter</strong><u> and the </u><strong>stack pointers</strong><u>.</u></p>
+            <p class="ans-zh"><u>其他例子还有：用户可见寄存器、控制与状态寄存器、程序计数器以及栈指针。</u></p>
+            <p class="ans-en"><u>This information is saved when the process is interrupted so that it can later be resumed as if the interruption had not occurred.</u></p>
+            <p class="ans-zh"><u>进程被中断时要保存这些信息，之后才能恢复执行，就好像中断从未发生过一样。</u></p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q50</span>
+          <span class="q-text">Briefly describe the difference between user and system (or kernel) mode.<span class="q-zh">简要说明用户态与系统态（内核态）的区别。</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en"><strong>User mode</strong>: <u>the less-privileged mode; user programs typically execute in this mode.</u></p>
+            <p class="ans-zh"><strong>用户态</strong>：<u>特权较低的模式；用户程序通常在该模式下执行。</u></p>
+            <p class="ans-en"><strong>System mode</strong>: <u>the more-privileged mode; it is also referred to as control mode or kernel mode, and it is the mode in which the kernel of the operating system runs.</u></p>
+            <p class="ans-zh"><strong>系统态</strong>：<u>特权更高的模式，也称为控制态或内核态，操作系统内核在该模式下运行。</u></p>
+            <p class="ans-en"><u>In kernel mode privileged instructions may be executed and protected areas of memory may be accessed; in user mode they may not.</u></p>
+            <p class="ans-zh"><u>在内核态下可以执行特权指令、访问受保护的内存区域；在用户态下则不可以。</u></p>
+            <p class="ans-en"><u>The processor enters kernel mode when an interrupt occurs, when an exception (trap) is generated, or when a system call (supervisor call) is issued.</u></p>
+            <p class="ans-zh"><u>处理器在发生中断、产生异常（陷阱）或发出系统调用（管态调用）时进入内核态。</u></p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q51</span>
+          <span class="q-text">Briefly explain three typical functions of an operating system kernel, and three operating system functions that would reside outside of the kernel.<span class="q-zh">简要说明操作系统内核的三个典型功能，以及三个位于内核之外的操作系统功能。</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">Inside the <strong>kernel</strong> &mdash; <strong>process management</strong>: <u>process creation and termination, process scheduling and dispatching, process switching, process synchronization and support for interprocess communication, management of process control blocks.</u></p>
+            <p class="ans-zh"><strong>内核内的进程管理</strong>：<u>进程的创建与终止、进程的调度与分派、进程切换、进程同步及对进程间通信的支持、进程控制块的管理。</u></p>
+            <p class="ans-en">Inside the <strong>kernel</strong> &mdash; <strong>memory management</strong>: <u>allocation of address space to processes, swapping, page and segment management.</u></p>
+            <p class="ans-zh"><strong>内核内的存储器管理</strong>：<u>为进程分配地址空间、交换、页式与段式管理。</u></p>
+            <p class="ans-en">Inside the <strong>kernel</strong> &mdash; <strong>I/O management and support functions</strong>: <u>buffer management, allocation of I/O channels and devices to processes, interrupt handling, accounting and monitoring.</u></p>
+            <p class="ans-zh"><strong>内核内的 I/O 管理与支撑功能</strong>：<u>缓冲区管理、把 I/O 通道与设备分配给进程、中断处理、记账与监视。</u></p>
+            <p class="ans-en">Outside the <strong>kernel</strong>: <u>the command interpreter (shell) and the system utilities a user calls from the command line.</u></p>
+            <p class="ans-zh"><strong>内核之外</strong>：<u>命令解释程序（shell）以及用户在命令行调用的系统实用程序。</u></p>
+            <p class="ans-en">Outside the <strong>kernel</strong>: <u>file system and print services, which in a microkernel are ordinary server processes.</u></p>
+            <p class="ans-zh"><strong>内核之外</strong>：<u>文件系统与打印服务，在微内核结构中它们只是普通的服务器进程。</u></p>
+            <p class="ans-en">Outside the <strong>kernel</strong>: <u>network protocols and device drivers, which can execute within user processes or as separate processes (Figure 3.15 b and c); a microkernel assigns only a few essential functions to the kernel.</u></p>
+            <p class="ans-zh"><strong>内核之外</strong>：<u>网络协议与设备驱动程序，它们可以在用户进程内执行，或作为独立进程执行（图 3.15 b、c）；微内核只把少数最基本的功能留给内核。</u></p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q52</span>
+          <span class="q-text">Briefly explain the steps that are necessary when a process is created.<span class="q-zh">简要说明创建进程时需要的步骤。</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en">Once the OS decides to create a new process it <strong>assigns a unique process identifier</strong> <u>to the new process.</u></p>
+            <p class="ans-zh"><u>操作系统一旦决定创建新进程，首先</u><strong>为新进程分配唯一的进程标识符</strong><u>。</u></p>
+            <p class="ans-en"><strong>Allocates space for the process</strong>: <u>the whole process image (program, data, stack and attributes).</u></p>
+            <p class="ans-zh"><strong>为进程分配空间</strong>：<u>即整个进程映像（程序、数据、栈与属性）。</u></p>
+            <p class="ans-en"><strong>Initializes the process control block</strong><u>.</u></p>
+            <p class="ans-zh"><strong>初始化进程控制块</strong><u>。</u></p>
+            <p class="ans-en"><strong>Sets the appropriate linkages</strong>: <u>for example putting the PCB into the ready queue or into the process list.</u></p>
+            <p class="ans-zh"><strong>建立相应的链接</strong>：<u>例如把 PCB 放入就绪队列或进程链表中。</u></p>
+            <p class="ans-en"><strong>Creates or expands other data structures</strong>: <u>for example the memory, I/O and file tables that the OS keeps for the process.</u></p>
+            <p class="ans-zh"><strong>创建或扩充其他数据结构</strong>：<u>例如操作系统为该进程维护的存储器表、I/O 表和文件表。</u></p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+      <article class="qa-card reveal">
+        <button class="qa-question" type="button">
+          <span class="q-label">Q53</span>
+          <span class="q-text">The execution of user processes can be interrupted by interrupts, traps and supervisor calls. Briefly explain the difference between these three ways.<span class="q-zh">用户进程的执行可以被中断、陷阱和管态调用打断。简要说明这三种方式的区别。</span></span>
+          <span class="chev" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <p class="ans-en"><strong>Interrupt</strong>: <u>external to the execution of the current instruction; a reaction to an asynchronous external event such as a clock interrupt, an I/O interrupt or a memory fault.</u></p>
+            <p class="ans-zh"><strong>中断（Interrupt）</strong>：<u>产生于当前指令执行之外，是对异步外部事件的反应，例如时钟中断、I/O 中断或存储器故障。</u></p>
+            <p class="ans-en"><strong>Trap</strong>: <u>associated with the execution of the current instruction; it handles an error or an exception condition generated within the currently running process (for example division by zero).</u></p>
+            <p class="ans-zh"><strong>陷阱（Trap）</strong>：<u>与当前指令的执行相关，用于处理当前运行进程内部产生的错误或异常状况（例如除以零）。</u></p>
+            <p class="ans-en"><u>For a trap the OS determines whether the condition is fatal; if it is fatal, the process is moved to the Exit state and a process switch occurs.</u></p>
+            <p class="ans-zh"><u>对陷阱，操作系统会判断该状况是否致命；若致命，进程被移入退出态并发生进程切换。</u></p>
+            <p class="ans-en"><strong>Supervisor call</strong>: <u>an explicit request, a call to an operating system function made by the program itself.</u></p>
+            <p class="ans-zh"><strong>管态调用（Supervisor call）</strong>：<u>程序自己发出的明确请求，即调用操作系统的某个功能。</u></p>
+            <p class="ans-en"><u>All three give control to the OS, so a </u><strong>process switch</strong><u> may occur whenever the OS has gained control from the currently running process.</u></p>
+            <p class="ans-zh"><u>三者都会把控制权交给操作系统，因此只要操作系统从当前运行进程取得控制权，就可能发生进程切换。</u></p>
+            <span class="src">Source: &ldquo;Ch03v2a.pdf&rdquo; &mdash; lecture slides</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <nav class="bottom-nav" aria-label="Review navigation">
+      <a class="btn btn-back" href="Chapter2Review.html">&#8592; 第 2 章：复习问答题</a>
+      <a class="btn btn-next" href="Chapter4Review.html">第 4 章：复习问答题 &#8594;</a>
+    </nav>
+
+    <div class="kbd-hint">
+      <kbd>&#8592;</kbd> Back &nbsp; <kbd>&#8594;</kbd> Next &nbsp; <kbd>Esc</kbd> Home
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    Quiz 1 Review &middot; Chapter 3: Review Questions &middot; answers written in the wording of &ldquo;Ch03v2a.pdf&rdquo;.
+  </footer>
+
+  <script src="../javascript/main.js"></script>
+  <script src="../javascript/animations.js"></script>
+  <script src="../javascript/speech.js"></script>
+</body>
+</html>
